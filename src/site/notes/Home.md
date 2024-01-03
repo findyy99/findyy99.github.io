@@ -2,4 +2,6 @@
 {"dg-publish":true,"permalink":"/Home/","tags":["gardenEntry"]}
 ---
 
-This is a alog for Findyy.
+# Content
+## Matplotlib
+[[Matplotlib/Matplotlib plot mixed with Chinese and English\|Matplotlib plot mixed with Chinese and English]]
