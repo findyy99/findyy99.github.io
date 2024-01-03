@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
+
   <head>
     <title>解决使用 Python 的 matplotlib 画图时中文显示为乱码的问题 | J. Xu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -268,7 +270,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T06:18:37.420Z';
+        const searchIndexDate = '2024-01-03T06:18:59.100Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -280,9 +282,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T06:18:37.420Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T06:18:59.100Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T06:18:37.420Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T06:18:59.100Z', docs}));
             window.docs = docs
             window.index = index;
         }
