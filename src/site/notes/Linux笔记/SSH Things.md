@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Linux笔记/SSH Things/"}
+{"dg-publish":true,"permalink":"/Linux笔记/SSH Things/","tags":["ssh","Linux"]}
 ---
 
 ## 映射远程端口到本地
