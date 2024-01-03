@@ -277,7 +277,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T08:13:29.840Z';
+        const searchIndexDate = '2024-01-03T08:13:30.763Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -289,9 +289,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T08:13:29.840Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T08:13:30.763Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T08:13:29.840Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T08:13:30.763Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -547,7 +547,7 @@
 <h2 id="linux" tabindex="-1">Linux</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Linux笔记/SSH Things/">SSH Things</a></p>
 <h2 id="misc" tabindex="-1">Misc</h2>
-<p><a class="internal-link" target="" data-note-icon="" href="/Misc/Delete stock input method of Windows 10 and Windows 11/">Delete stock input method of Windows 10 and Windows 11</a></p>
+<p><a class="internal-link is-unresolved" href="/404" target="">Delete stock input method of Windows 10 and Windows 11</a></p>
 
       
       

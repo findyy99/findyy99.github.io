@@ -279,7 +279,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T08:13:29.840Z';
+        const searchIndexDate = '2024-01-03T08:13:30.763Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -291,9 +291,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T08:13:29.840Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T08:13:30.763Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T08:13:29.840Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T08:13:30.763Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -531,18 +531,6 @@
           
             <div class="header-tags">
               
-                
-              
-                
-                  <a class="tag" onclick="toggleTagSearch(this)">
-                    #ssh
-                  </a>
-                
-              
-                
-                  <a class="tag" onclick="toggleTagSearch(this)">
-                    #Linux
-                  </a>
                 
               
             </div>
