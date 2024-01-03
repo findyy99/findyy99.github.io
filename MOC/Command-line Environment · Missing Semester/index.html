@@ -81,6 +81,7 @@
   <body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section ">
     
     
+    
       
     <nav class="navbar">
         <div class="navbar-inner">
@@ -104,6 +105,7 @@
     </nav>
     
     
+
     
       <div class="search-container" id="globalsearch" onclick="toggleSearch()">
     <div class="search-box">
@@ -266,7 +268,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T05:34:39.672Z';
+        const searchIndexDate = '2024-01-03T05:36:20.071Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -278,9 +280,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:34:39.672Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:36:20.071Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:34:39.672Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:36:20.071Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -508,23 +510,26 @@
     }
 </script>
     
+
     <main class="content cm-s-obsidian ">
       <header>
-      
-        <h1></h1>
-      
-
-      <div class="header-meta">
         
-          <div class="header-tags">
-            
+          <h1 data-note-icon="">Command-line Environment · Missing Semester</h1>
+        
+        <div class="header-meta">
+          
+            <div class="header-tags">
               
-            
+                
               
-            
+                
+                  <a class="tag" onclick="toggleTagSearch(this)">
+                    #Code
+                  </a>
+                
+              
+            </div>
           </div>
-        
-      </div>
       
       
       </header>
@@ -1118,6 +1123,39 @@ Host *.mit.edu
 </script>
 
     
+        <script>
+      if (window.location.hash) {
+        document.getElementById(window.location.hash.slice(1)).classList.add('referred');
+      }
+      window.addEventListener('hashchange', (evt) => {
+        const oldParts = evt.oldURL.split("#");
+        if (oldParts[1]) {
+          document.getElementById(oldParts[1]).classList.remove('referred');
+        }
+        const newParts = evt.newURL.split("#");
+        if (newParts[1]) {
+          document.getElementById(newParts[1]).classList.add('referred');
+        }
+      }, false);
+      const url_parts = window.location.href.split("#")
+      const url = url_parts[0];
+      const referrence = url_parts[1];
+      document.querySelectorAll(".cm-s-obsidian > *[id]").forEach(function (el) {
+        el.ondblclick = function(evt) {
+          const ref_url = url + '#' + evt.target.id
+          navigator.clipboard.writeText(ref_url);
+      }
+      });
+
+      
+    </script>
+    <script src=" https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js "></script>
+<script defer>
+    TIMESTAMP_FORMAT = "MMM dd, yyyy h:mm a";
+    document.querySelectorAll('.human-date').forEach(function (el) {
+        el.innerHTML = luxon.DateTime.fromISO(el.getAttribute('data-date') || el.innerText).toFormat(TIMESTAMP_FORMAT);
+      });
+</script>
     
     
     <script>
@@ -1127,5 +1165,5 @@ lucide.createIcons({
             }
         });
 </script>
-    </body>
-  </html>
+  </body>
+</html>
