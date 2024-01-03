@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Data Wrangling · Missing Semester</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://fastly.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({
+        startOnLoad: true,
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>
+    // Create callout icons
+    window.addEventListener("load", () => {
+        document.querySelectorAll(".callout").forEach((elem) => {
+            const icon = getComputedStyle(elem).getPropertyValue('--callout-icon');
+            const iconName = icon && icon.trim().replace(/^lucide-/, "");
+
+            if (iconName) {
+                const calloutTitle = elem.querySelector(".callout-title");
+
+                if (calloutTitle) {
+                    const calloutIconContainer = document.createElement("div");
+                    const calloutIcon = document.createElement("i");
+
+                    calloutIconContainer.appendChild(calloutIcon);
+                    calloutIcon.setAttribute("icon-name", iconName);
+                    calloutIconContainer.setAttribute("class", "callout-icon");
+                    calloutTitle.insertBefore(calloutIconContainer, calloutTitle.firstChild);
+                }
+            }
+        });
+
+        lucide.createIcons();
+
+        // Collapse callouts
+        Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((elem) => {
+            elem.querySelector('.callout-title').addEventListener("click", (event) => {
+                if (elem.classList.contains("is-collapsed")) {
+                    elem.classList.remove("is-collapsed");
+                } else {
+                    elem.classList.add("is-collapsed");
+                }
+            });
+        });
+    });
+</script>
+
+
+<script src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+
+<script defer src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" defer></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+    <link href="/styles/style.css" rel="stylesheet">
+
+
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+
+
+
+
+
+<style></style>
+    
+    
+  </head>
+  <body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section ">
+    
+    
+    
+      
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/" style="text-decoration: none;">
+                <h1 style="margin: 15px !important;">Findyy</h1>
+            </a>
+        </div>
+        
+            <div class="search-button align-icon" onclick="toggleSearch()">
+    <span class="search-icon">
+        <i icon-name="search" ></i>
+    </span>
+    <span class="search-text">
+        <span>Search</span>
+        <span style="font-size: 0.6rem; padding: 2px 2px 0 6px; text-align:center; transform: translateY(4px);" class="search-keys">
+            CTRL + K
+        </span>
+    </span>
+</div>
+        
+    </nav>
+    
+    
+
+    
+      <div class="search-container" id="globalsearch" onclick="toggleSearch()">
+    <div class="search-box">
+        <input type="search" id="term" placeholder="Start typing...">
+        <div id="search-results"></div>
+        <footer class="search-box-footer">
+            <div class="navigation-hint">
+                <span>Enter to select</span>
+            </div>
+
+            <div class="navigation-hint align-icon">
+                <i  icon-name="arrow-up" aria-hidden="true"></i>
+                <i  icon-name="arrow-down" aria-hidden="true"></i>
+                <span>to navigate</span>
+            </div>
+
+            <div class="navigation-hint">
+                <span>ESC to close</span>
+            </div>
+
+        </footer>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', init, false);
+    document.addEventListener('DOMContentLoaded', setCorrectShortcut, false);
+
+    window.toggleSearch = function () {
+        if (document.getElementById('globalsearch').classList.contains('active')) {
+            document
+                .getElementById('globalsearch')
+                .classList
+                .remove('active');
+        } else {
+            document
+                .getElementById('globalsearch')
+                .classList
+                .add('active');
+            document
+                .getElementById('term')
+                .focus();
+        }
+    }
+
+    window.toggleTagSearch = function (evt) {
+        console.log(evt.textContent);
+        const term = evt.textContent;
+        if (term) {
+            window
+                .document
+                .getElementById('term')
+                .value = term.trim();
+            window.toggleSearch();
+            window.search();
+        }
+    }
+
+    const loadingSvg = `
+    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">
+          <circle cx="22" cy="22" r="6" stroke-opacity="0">
+              <animate attributeName="r"
+                   begin="1.5s" dur="3s"
+                   values="6;22"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-opacity"
+                   begin="1.5s" dur="3s"
+                   values="1;0" calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-width"
+                   begin="1.5s" dur="3s"
+                   values="2;0" calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+          <circle cx="22" cy="22" r="6" stroke-opacity="0">
+              <animate attributeName="r"
+                   begin="3s" dur="3s"
+                   values="6;22"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-opacity"
+                   begin="3s" dur="3s"
+                   values="1;0" calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-width"
+                   begin="3s" dur="3s"
+                   values="2;0" calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+          <circle cx="22" cy="22" r="8">
+              <animate attributeName="r"
+                   begin="0s" dur="1.5s"
+                   values="6;1;2;3;4;5;6"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+      </g>
+  </svg>`;
+
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function () {
+            var context = this,
+                args = arguments;
+            var later = function () {
+                timeout = null;
+                if (!immediate) 
+                    func.apply(context, args);
+                };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) 
+                func.apply(context, args);
+            };
+    };
+
+    function setCorrectShortcut() {
+        if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
+            document
+                .querySelectorAll(".search-keys")
+                .forEach(x => x.innerHTML = "⌘ + K");
+        }
+    }
+
+    function createIndex(posts) {
+        const encoder = (str) => str
+            .toLowerCase()
+            .split(/([^a-z]|[^\x00-\x7F])/)
+        const contentIndex = new FlexSearch.Document({
+            cache: true,
+            charset: "latin:extra",
+            optimize: true,
+            index: [
+                {
+                    field: "content",
+                    tokenize: "reverse",
+                    encode: encoder
+                }, {
+                    field: "title",
+                    tokenize: "forward",
+                    encode: encoder
+                }, {
+                    field: "tags",
+                    tokenize: "forward",
+                    encode: encoder
+                }
+            ]
+        })
+        posts.forEach((p, idx) => {
+            contentIndex.add({
+                id: idx, title: p.title, content: p.content, tags: p.tags //Change to removeHTML
+            })
+        });
+        return contentIndex;
+    }
+
+    async function init() {
+        //init offline search index
+
+        const searchIndexDate = '2024-01-03T05:36:22.851Z';
+        let shouldFetch = true;
+        if(localStorage.getItem("searchIndex")) {
+            let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
+            if(date === searchIndexDate){
+                shouldFetch = false;
+                let index = createIndex(docs);
+                window.docs = docs
+                window.index = index;
+            }        
+        }
+        if(shouldFetch){
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:36:22.851Z')).json();
+            let index = createIndex(docs);
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:36:22.851Z', docs}));
+            window.docs = docs
+            window.index = index;
+        }
+
+        //open searchmodal when ctrl + k is pressed, cmd + k on mac
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                toggleSearch();
+            }
+            if (e.key === 'Escape') {
+                document
+                    .getElementById('globalsearch')
+                    .classList
+                    .remove('active');
+            }
+
+            //navigate search results with arrow keys
+            if (document.getElementById('globalsearch').classList.contains('active')) {
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        active
+                            .classList
+                            .remove('active');
+                        if (active.nextElementSibling) {
+                            active
+                                .nextElementSibling
+                                .classList
+                                .add('active');
+                        } else {
+                            document
+                                .querySelector('.searchresult')
+                                .classList
+                                .add('active');
+                        }
+                    } else {
+                        document
+                            .querySelector('.searchresult')
+                            .classList
+                            .add('active');
+                    }
+
+                    let currentActive = document.querySelector('.searchresult.active');
+                    if (currentActive) {
+                        currentActive.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'});
+                    }
+                }
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        active
+                            .classList
+                            .remove('active');
+                        if (active.previousElementSibling) {
+                            active
+                                .previousElementSibling
+                                .classList
+                                .add('active');
+                        } else {
+                            document
+                                .querySelectorAll('.searchresult')
+                                .forEach((el) => {
+                                    if (!el.nextElementSibling) {
+                                        el
+                                            .classList
+                                            .add('active');
+                                    }
+                                });
+                        }
+                    } else {
+                        document
+                            .querySelectorAll('.searchresult')
+                            .forEach((el) => {
+                                if (el.nextElementSibling) {
+                                    el
+                                        .classList
+                                        .add('active');
+                                }
+                            });
+                    }
+
+                    let currentActive = document.querySelector('.searchresult.active');
+                    if (currentActive) {
+                        currentActive.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'});
+                    }
+
+                }
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        window.location.href = active
+                            .querySelector("a")
+                            .href;
+                    }
+                }
+            }
+        });
+
+        const debouncedSearch = debounce(search, 200, false);
+        field = document.querySelector('#term');
+        field.addEventListener('keydown', (e) => {
+            if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') {
+                debouncedSearch();
+            }
+        });
+        resultsDiv = document.querySelector('#search-results');
+
+        const params = new URL(location.href).searchParams;
+        if (params.get('q')) {
+            field.setAttribute('value', params.get('q'));
+            toggleSearch();
+            search();
+        }
+    }
+    window.lastSearch = '';
+    async function search() {
+        let search = field
+            .value
+            .trim();
+        if (!search) 
+            return;
+        if (search == lastSearch) 
+            return;
+        console.log(`search for ${search}`);
+        window.lastSearch = search;
+
+        resultsDiv.innerHTML = loadingSvg;
+        //let searchRequest = await fetch(`/api/search?term=${encodeURIComponent(search)}`);
+        //let results = await searchRequest.json();
+        let results = offlineSearch(search);
+        let resultsHTML = '';
+        if (!results.length) {
+            let resultParagraph = document.createElement("p");
+            resultParagraph.innerText = `No results for "${search}"`;
+            resultsDiv.innerHTML = '';
+            resultsDiv.appendChild(resultParagraph);
+            return;
+        }
+        resultsHTML += '<div style="max-width:100%;">';
+        // we need to add title, url from ref
+        results.forEach(r => {
+            if(r.tags && r.tags.length > 0){
+                resultsHTML += `<div class="searchresult">
+                    <a class="search-link" href="${r.url}">${r.title}</a>
+                    <div onclick="window.location='${r.url}'">
+                        <div class="header-meta">
+                            <div class="header-tags">
+                                ${r.tags.map(tag=>'<a class="tag" href="JavaScript:Void(0);">#'+tag+'</a>').join("")}
+                            </div>
+                        </div>
+                        ${r.content}
+                    </div>
+                </div>`;
+            } else {
+                resultsHTML += `<div class="searchresult">
+                    <a class="search-link" href="${r.url}">${r.title}</a>
+                    <div onclick="window.location='${r.url}'">
+                        ${r.content}
+                    </div>
+                </div>`;
+            }
+        });
+        resultsHTML += '</div>';
+        resultsDiv.innerHTML = resultsHTML;
+    }
+
+    function truncate(str, size) {
+        //first, remove HTML
+        str = str.replaceAll(/<[^>]*>/g, '');
+        if (str.length < size) 
+            return str;
+        return str.substring(0, size - 3) + '...';
+    }
+
+    function offlineSearch(searchQuery) {
+        let data = window.docs;
+
+        let isTagSearch = searchQuery[0] === "#" && searchQuery.length > 1;
+
+        let searchResults = isTagSearch
+            ? index.search(searchQuery.substring(1), [
+                {
+                    field: "tags"
+                }
+            ])
+            : index.search(searchQuery, [
+                {
+                    field: "title",
+                    limit: 5
+                }, {
+                    field: "content",
+                    weight: 10
+                }
+            ]);
+
+        const getByField = (field) => {
+            const results = searchResults.filter((x) => x.field === field)
+            if (results.length === 0) {
+                return []
+            } else {
+                return [...results[0].result]
+            }
+        }
+        const allIds = new Set([
+            ...getByField("title"),
+            ...getByField("content"),
+            ...getByField("tags")
+        ])
+        const dataIds = [...allIds];
+        const finalResults = dataIds.map((id) => {
+            let result = data[id];
+            result.content = truncate(result.content, 400);
+            result.tags = result
+                .tags
+                .filter((x) => x != "gardenEntry" && x != "note"); //Note is automatically added by 11ty. GardenEntry is used internally to mark the home page
+
+            return result;
+        })
+        return finalResults;
+
+    }
+</script>
+    
+
+    <main class="content cm-s-obsidian ">
+      <header>
+        
+          <h1 data-note-icon="">Data Wrangling · Missing Semester</h1>
+        
+        <div class="header-meta">
+          
+            <div class="header-tags">
+              
+                
+              
+                
+                  <a class="tag" onclick="toggleTagSearch(this)">
+                    #Code
+                  </a>
+                
+              
+            </div>
+          </div>
+      
+      
+      </header>
+      
+      
+      <p>Have you ever wanted to take data in one format and turn it into a different format? Of course you have! That, in very general terms, is what this lecture is all about. Specifically, massaging data, whether in text or binary format, until you end up with exactly what you wanted.</p>
+<p>We’ve already seen some basic data wrangling in past lectures. Pretty much any time you use the <code>|</code> operator, you are performing some kind of data wrangling. Consider a command like <code>journalctl | grep -i intel</code>. It finds all system log entries that mention Intel (case insensitive). You may not think of it as wrangling data, but it is going from one format (your entire system log) to a format that is more useful to you (just the intel log entries). Most data wrangling is about knowing what tools you have at your disposal, and how to combine them.</p>
+<p>Let’s start from the beginning. To wrangle data, we need two things: data to wrangle, and something to do with it. Logs often make for a good use-case, because you often want to investigate things about them, and reading the whole thing isn’t feasible. Let’s figure out who’s trying to log into my server by looking at my server’s log:</p>
+<p>That’s far too much stuff. Let’s limit it to ssh stuff:</p>
+<pre><code class="language-bash">ssh myserver journalctl
+</code></pre>
+<p>Notice that we’re using a pipe to stream a <em>remote</em> file through <code>grep</code> on our local computer! <code>ssh</code> is magical, and we will talk more about it in the next lecture on the command-line environment. This is still way more stuff than we wanted though. And pretty hard to read. Let’s do better:</p>
+<pre><code class="language-bash">ssh myserver journalctl | grep sshd
+</code></pre>
+<p>Why the additional quoting? Well, our logs may be quite large, and it’s wasteful to stream it all to our computer and then do the filtering. Instead, we can do the filtering on the remote server, and then massage the data locally. <code>less</code> gives us a “pager” that allows us to scroll up and down through the long output. To save some additional traffic while we debug our command-line, we can even stick the current filtered logs into a file so that we don’t have to access the network while developing:</p>
+<pre><code class="language-bash">ssh myserver 'journalctl | grep sshd | grep &quot;Disconnected from&quot;' | less
+</code></pre>
+<p>There’s still a lot of noise here. There are <em>a lot</em> of ways to get rid of that, but let’s look at one of the most powerful tools in your toolkit: <code>sed</code>.</p>
+<p><code>sed</code> is a “stream editor” that builds on top of the old <code>ed</code> editor. In it, you basically give short commands for how to modify the file, rather than manipulate its contents directly (although you can do that too). There are tons of commands, but one of the most common ones is <code>s</code>: substitution. For example, we can write:</p>
+<pre><code class="language-bash">$ ssh myserver 'journalctl | grep sshd | grep &quot;Disconnected from&quot;' &gt; ssh.log
+$ less ssh.log
+</code></pre>
+<p>What we just wrote was a simple <em>regular expression</em>; a powerful construct that lets you match text against patterns. The <code>s</code> command is written on the form: <code>s/REGEX/SUBSTITUTION/</code>, where <code>REGEX</code> is the regular expression you want to search for, and <code>SUBSTITUTION</code> is the text you want to substitute matching text with.</p>
+<p>(You may recognize this syntax from the “Search and replace” section of our Vim <a href="https://missing.csail.mit.edu/2020/editors/#advanced-vim" target="_blank" class="external-link">lecture notes</a>! Indeed, Vim uses a syntax for searching and replacing that is similar to <code>sed</code>’s substitution command. Learning one tool often helps you become more proficient with others.)</p>
+<h2 id="regular-expressions" tabindex="-1">Regular expressions</h2>
+<p>Regular expressions are common and useful enough that it’s worthwhile to take some time to understand how they work. Let’s start by looking at the one we used above: <code>/.*Disconnected from /</code>. Regular expressions are usually (though not always) surrounded by <code>/</code>. Most ASCII characters just carry their normal meaning, but some characters have “special” matching behavior. Exactly which characters do what vary somewhat between different implementations of regular expressions, which is a source of great frustration. Very common patterns are:</p>
+<ul>
+<li><code>.</code> means “any single character” except newline</li>
+<li><code>*</code> zero or more of the preceding match</li>
+<li><code>+</code> one or more of the preceding match</li>
+<li><code>[abc]</code> any one character of <code>a</code>, <code>b</code>, and <code>c</code></li>
+<li><code>(RX1|RX2)</code> either something that matches <code>RX1</code> or <code>RX2</code></li>
+<li><code>^</code> the start of the line</li>
+<li><code>$</code> the end of the line</li>
+</ul>
+<p><code>sed</code>’s regular expressions are somewhat weird, and will require you to put a <code>\</code> before most of these to give them their special meaning. Or you can pass <code>-E</code>.</p>
+<p>So, looking back at <code>/.*Disconnected from /</code>, we see that it matches any text that starts with any number of characters, followed by the literal string “Disconnected from”. Which is what we wanted. But</p>
+<p>beware, regular expressions are trixy. What if someone tried to log in with the username “Disconnected from”? We’d have:</p>
+<pre><code class="language-bash">ssh myserver journalctl
+ | grep sshd
+ | grep &quot;Disconnected from&quot;
+ | sed 's/.*Disconnected from //'
+</code></pre>
+<p>What would we end up with? Well, <code>*</code> and <code>+</code> are, by default, “greedy”. They will match as much text as they can. So, in the above, we’d end up with just</p>
+<pre><code class="language-bash">Jan 17 03:13:00 thesquareplanet.com sshd[2631]: Disconnected from invalid user Disconnected from 46.97.239.16 port 55920 [preauth]
+</code></pre>
+<p>Which may not be what we wanted. In some regular expression implementations, you can just suffix <code>*</code> or <code>+</code> with a <code>?</code> to make them non-greedy, but sadly <code>sed</code> doesn’t support that. We <em>could</em> switch to perl’s command-line mode though, which <em>does</em> support that construct:</p>
+<pre><code class="language-bash">46.97.239.16 port 55920 [preauth]
+</code></pre>
+<p>We’ll stick to <code>sed</code> for the rest of this, because it’s by far the more common tool for these kinds of jobs. <code>sed</code> can also do other handy things like print lines following a given match, do multiple substitutions per invocation, search for things, etc. But we won’t cover that too much here. <code>sed</code> is basically an entire topic in and of itself, but there are often better tools.</p>
+<p>Okay, so we also have a suffix we’d like to get rid of. How might we do that? It’s a little tricky to match just the text that follows the username, especially if the username can have spaces and such! What we need to do is match the <em>whole</em> line:</p>
+<pre><code class="language-bash">perl -pe 's/.*?Disconnected from //'
+</code></pre>
+<p>Let’s look at what’s going on with a <a href="https://regex101.com/r/qqbZqh/2" target="_blank" class="external-link">regex debugger</a>. Okay, so the start is still as before. Then, we’re matching any of the “user” variants (there are two prefixes in the logs). Then we’re matching on any string of characters where the username is. Then we’re matching on any single word (<code>[^ ]+</code>; any non-empty sequence of non-space characters). Then the word “port” followed by a sequence of digits. Then possibly the suffix <code>[preauth]</code>, and then the end of the line.</p>
+<p>Notice that with this technique, as username of “Disconnected from” won’t confuse us any more. Can you see why?</p>
+<p>There is one problem with this though, and that is that the entire log becomes empty. We want to <em>keep</em> the username after all. For this, we can use “capture groups”. Any text matched by a regex surrounded by parentheses is stored in a numbered capture group. These are available in the substitution (and in some engines, even in the pattern itself!) as <code>\1</code>, <code>\2</code>, <code>\3</code>, etc. So:</p>
+<pre><code class="language-bash">| sed -E 's/.*Disconnected from (invalid |authenticating )?user .* [^ ]+ port [0-9]+( \[preauth\])?$//'
+</code></pre>
+<p>As you can probably imagine, you can come up with <em>really</em> complicated regular expressions. For example, here’s an article on how you might match an <a href="https://www.regular-expressions.info/email.html" target="_blank" class="external-link">e-mail address</a>. It’s <a href="https://emailregex.com/" target="_blank" class="external-link">not easy</a>. And there’s <a href="https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression/1917982" target="_blank" class="external-link">lots of discussion</a>. And people have <a href="https://fightingforalostcause.net/content/misc/2006/compare-email-regex.php" target="_blank" class="external-link">written tests</a>. And <a href="https://mathiasbynens.be/demo/url-regex" target="_blank" class="external-link">test matrices</a>. You can even write a regex for determining if a given number <a href="https://www.noulakaz.net/2007/03/18/a-regular-expression-to-check-for-prime-numbers/" target="_blank" class="external-link">is a prime number</a>.</p>
+<p>Regular expressions are notoriously hard to get right, but they are also very handy to have in your toolbox!</p>
+<h2 id="back-to-data-wrangling" tabindex="-1">Back to data wrangling</h2>
+<p>Okay, so we now have</p>
+<pre><code class="language-bash">| sed -E 's/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/'
+</code></pre>
+<p><code>sed</code> can do all sorts of other interesting things, like injecting text (with the <code>i</code> command), explicitly printing lines (with the <code>p</code> command), selecting lines by index, and lots of other things. Check <code>man sed</code>!</p>
+<p>Anyway. What we have now gives us a list of all the usernames that have attempted to log in. But this is pretty unhelpful. Let’s look for common ones:</p>
+<pre><code class="language-bash">ssh myserver journalctl
+ | grep sshd
+ | grep &quot;Disconnected from&quot;
+ | sed -E 's/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/'
+</code></pre>
+<p><code>sort</code> will, well, sort its input. <code>uniq -c</code> will collapse consecutive lines that are the same into a single line, prefixed with a count of the number of occurrences. We probably want to sort that too and only keep the most common usernames:</p>
+<pre><code class="language-bash">ssh myserver journalctl
+ | grep sshd
+ | grep &quot;Disconnected from&quot;
+ | sed -E 's/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/'
+ | sort | uniq -c
+</code></pre>
+<p><code>sort -n</code> will sort in numeric (instead of lexicographic) order. <code>-k1,1</code> means “sort by only the first whitespace-separated column”. The <code>,n</code> part says “sort until the <code>n</code>th field, where the default is the end of the line. In this <em>particular</em> example, sorting by the whole line wouldn’t matter, but we’re here to learn!</p>
+<p>If we wanted the <em>least</em> common ones, we could use <code>head</code> instead of <code>tail</code>. There’s also <code>sort -r</code>, which sorts in reverse order.</p>
+<p>Okay, so that’s pretty cool, but what if we’d like these extract only the usernames as a comma-separated list instead of one per line, perhaps for a config file?</p>
+<pre><code class="language-bash">ssh myserver journalctl
+ | grep sshd
+ | grep &quot;Disconnected from&quot;
+ | sed -E 's/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/'
+ | sort | uniq -c
+ | sort -nk1,1 | tail -n10
+</code></pre>
+<p>If you’re using macOS: note that the command as shown won’t work with the BSD <code>paste</code> shipped with macOS. See <a href="https://missing.csail.mit.edu/2020/shell-tools/#exercises" target="_blank" class="external-link">exercise 4 from the shell tools lecture</a> for more on the difference between BSD and GNU coreutils and instructions for how to install GNU coreutils on macOS.</p>
+<p>Let’s start with <code>paste</code>: it lets you combine lines (<code>-s</code>) by a given single-character delimiter (<code>-d</code>; <code>,</code> in this case). But what’s this <code>awk</code> business?</p>
+<h2 id="awk-another-editor" tabindex="-1">awk – another editor</h2>
+<p><code>awk</code> is a programming language that just happens to be really good at processing text streams. There is <em>a lot</em> to say about <code>awk</code> if you were to learn it properly, but as with many other things here, we’ll just go through the basics.</p>
+<p>First, what does <code>{print $2}</code> do? Well, <code>awk</code> programs take the form of an optional pattern plus a block saying what to do if the pattern matches a given line. The default pattern (which we used above) matches all lines. Inside the block, <code>$0</code> is set to the entire line’s contents, and <code>$1</code> through <code>$n</code> are set to the <code>n</code>th <em>field</em> of that line, when separated by the <code>awk</code> field separator (whitespace by default, change with <code>-F</code>). In this case, we’re saying that, for every line, print the contents of the second field, which happens to be the username!</p>
+<p>Let’s see if we can do something fancier. Let’s compute the number of single-use usernames that start with <code>c</code> and end with <code>e</code>:</p>
+<pre><code class="language-bash">ssh myserver journalctl
+ | grep sshd
+ | grep &quot;Disconnected from&quot;
+ | sed -E 's/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/'
+ | sort | uniq -c
+ | sort -nk1,1 | tail -n10
+ | awk '{print $2}' | paste -sd,
+</code></pre>
+<p>There’s a lot to unpack here. First, notice that we now have a pattern (the stuff that goes before <code>{...}</code>). The pattern says that the first field of the line should be equal to 1 (that’s the count from <code>uniq -c</code>), and that the second field should match the given regular expression. And the block just says to print the username. We then count the number of lines in the output with <code>wc -l</code>.</p>
+<p>However, <code>awk</code> is a programming language, remember?</p>
+<pre><code class="language-bash">| awk '$1 == 1 &amp;&amp; $2 ~ /^c[^ ]*e$/ { print $2 }' | wc -l
+</code></pre>
+<p><code>BEGIN</code> is a pattern that matches the start of the input (and <code>END</code> matches the end). Now, the per-line block just adds the count from the first field (although it’ll always be 1 in this case), and then we print it out at the end. In fact, we <em>could</em> get rid of <code>grep</code> and <code>sed</code> entirely, because <code>awk</code> <a href="https://backreference.org/2010/02/10/idiomatic-awk/" target="_blank" class="external-link">can do it all</a>, but we’ll leave that as an exercise to the reader.</p>
+<h2 id="analyzing-data" tabindex="-1">Analyzing data</h2>
+<p>You can do math directly in your shell using <code>bc</code>, a calculator that can read from STDIN! For example, add the numbers on each line together by concatenating them together, delimited by <code>+</code>:</p>
+<p>Or produce more elaborate expressions:</p>
+<pre><code class="language-bash">BEGIN { rows = 0 }
+$1 == 1 &amp;&amp; $2 ~ /^c[^ ]*e$/ { rows += $1 }
+END { print rows }
+</code></pre>
+<p>You can get stats in a variety of ways. <a href="https://github.com/nferraz/st" target="_blank" class="external-link"><code>st</code></a> is pretty neat, but if you already have <a href="https://www.r-project.org/" target="_blank" class="external-link">R</a>:</p>
+<pre><code class="language-bash">| paste -sd+ | bc -l
+</code></pre>
+<p>R is another (weird) programming language that’s great at data analysis and <a href="https://ggplot2.tidyverse.org/" target="_blank" class="external-link">plotting</a>. We won’t go into too much detail, but suffice to say that <code>summary</code> prints summary statistics for a vector, and we created a vector containing the input stream of numbers, so R gives us the statistics we wanted!</p>
+<p>If you just want some simple plotting, <code>gnuplot</code> is your friend:</p>
+<pre><code class="language-bash">echo &quot;2*($(data | paste -sd+))&quot; | bc -l
+</code></pre>
+<h2 id="data-wrangling-to-make-arguments" tabindex="-1">Data wrangling to make arguments</h2>
+<p>Sometimes you want to do data wrangling to find things to install or remove based on some longer list. The data wrangling we’ve talked about so far + <code>xargs</code> can be a powerful combo.</p>
+<p>For example, as seen in lecture, I can use the following command to uninstall old nightly builds of Rust from my system by extracting the old build names using data wrangling tools and then passing them via <code>xargs</code> to the uninstaller:</p>
+<pre><code class="language-bash">ssh myserver journalctl
+ | grep sshd
+ | grep &quot;Disconnected from&quot;
+ | sed -E 's/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/'
+ | sort | uniq -c
+ | awk '{print $1}' | R --no-echo -e 'x &lt;- scan(file=&quot;stdin&quot;, quiet=TRUE); summary(x)'
+</code></pre>
+<h2 id="wrangling-binary-data" tabindex="-1">Wrangling binary data</h2>
+<p>So far, we have mostly talked about wrangling textual data, but pipes are just as useful for binary data. For example, we can use ffmpeg to capture an image from our camera, convert it to grayscale, compress it, send it to a remote machine over SSH, decompress it there, make a copy, and then display it.</p>
+<pre><code class="language-bash">ssh myserver journalctl
+ | grep sshd
+ | grep &quot;Disconnected from&quot;
+ | sed -E 's/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/'
+ | sort | uniq -c
+ | sort -nk1,1 | tail -n10
+ | gnuplot -p -e 'set boxwidth 0.5; plot &quot;-&quot; using 1:xtic(2) with boxes'
+</code></pre>
+<ol>
+<li>
+<p>Take this <a href="https://regexone.com/" target="_blank" class="external-link">short interactive regex tutorial</a>.</p>
+</li>
+<li>
+<p>Find the number of words (in <code>/usr/share/dict/words</code>) that contain at least three <code>a</code>s and don’t have a <code>'s</code> ending. What are the three most common last two letters of those words? <code>sed</code>’s <code>y</code> command, or the <code>tr</code> program, may help you with case insensitivity. How many of those two-letter combinations are there? And for a challenge: which combinations do not occur?</p>
+</li>
+<li>
+<p>To do in-place substitution it is quite tempting to do something like <code>sed s/REGEX/SUBSTITUTION/ input.txt &gt; input.txt</code>. However this is a bad idea, why? Is this particular to <code>sed</code>? Use <code>man sed</code> to find out how to accomplish this.</p>
+</li>
+<li>
+<p>Find your average, median, and max system boot time over the last ten boots. Use <code>journalctl</code> on Linux and <code>log show</code> on macOS, and look for log timestamps near the beginning and end of each boot. On Linux, they may look something like:</p>
+<p>and</p>
+<pre><code class="language-bash">rustup toolchain list | grep nightly | grep -vE &quot;nightly-x86&quot; | sed 's/-x86.*//' | xargs rustup toolchain uninstall
+</code></pre>
+<p>On macOS, <a href="https://eclecticlight.co/2018/03/21/macos-unified-log-3-finding-your-way/" target="_blank" class="external-link">look for</a>:</p>
+<p>and</p>
+<pre><code class="language-bash">ffmpeg -loglevel panic -i /dev/video0 -frames 1 -f image2 -
+ | convert - -colorspace gray -
+ | gzip
+ | ssh mymachine 'gzip -d | tee copy.jpg | env DISPLAY=:0 feh -'
+</code></pre>
+</li>
+<li>
+<p>Look for boot messages that are <em>not</em> shared between your past three reboots (see <code>journalctl</code>’s <code>-b</code> flag). Break this task down into multiple steps. First, find a way to get just the logs from the past three boots. There may be an applicable flag on the tool you use to extract the boot logs, or you can use <code>sed '0,/STRING/d'</code> to remove all lines previous to one that matches <code>STRING</code>. Next, remove any parts of the line that <em>always</em> varies (like the timestamp). Then, de-duplicate the input lines and keep a count of each one (<code>uniq</code> is your friend). And finally, eliminate any line whose count is 3 (since it <em>was</em> shared among all the boots).</p>
+</li>
+<li>
+<p>Find an online data set like <a href="https://stats.wikimedia.org/EN/TablesWikipediaZZ.htm" target="_blank" class="external-link">this one</a>, <a href="https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/topic-pages/tables/table-1" target="_blank" class="external-link">this one</a>, or maybe one <a href="https://www.springboard.com/blog/free-public-data-sets-data-science-project/" target="_blank" class="external-link">from here</a>. Fetch it using <code>curl</code> and extract out just two columns of numerical data. If you’re fetching HTML data, <a href="https://github.com/EricChiang/pup" target="_blank" class="external-link"><code>pup</code></a> might be helpful. For JSON data, try <a href="https://stedolan.github.io/jq/" target="_blank" class="external-link"><code>jq</code></a>. Find the min and max of one column in a single command, and the difference of the sum of each column in another.</p>
+</li>
+</ol>
+
+      
+      
+    </main>
+
+    
+      <aside>
+      <div class="sidebar">
+            <div class="sidebar-container">
+                  
+                  
+
+                  
+                        
+                        
+                              <div class="toc">
+                                    <div class="toc-title-container">
+                                          <div class="toc-title">
+                                                On this page
+                                          </div>
+                                    </div>
+                                    <div class="toc-container">
+                                          <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#regular-expressions">Regular expressions</a>
+            		</li>
+
+                    <li><a href="#back-to-data-wrangling">Back to data wrangling</a>
+            		</li>
+
+                    <li><a href="#awk-another-editor">awk – another editor</a>
+            		</li>
+
+                    <li><a href="#analyzing-data">Analyzing data</a>
+            		</li>
+
+                    <li><a href="#data-wrangling-to-make-arguments">Data wrangling to make arguments</a>
+            		</li>
+
+                    <li><a href="#wrangling-binary-data">Wrangling binary data</a>
+            		</li>
+                </ol>
+            </nav>
+                                    </div>
+                              </div>
+                        
+
+                  
+
+                        
+                  
+            </div>
+      </div>
+</aside>
+    
+
+    
+      
+<style>
+#tooltip-wrapper {
+  background: var(--background-primary);
+  padding: 1em;
+  border-radius: 4px;
+  overflow: hidden;
+  position: fixed;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  max-height: 300px;
+  font-size: 0.8em;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  transition: opacity 100ms;
+  unicode-bidi: plaintext;
+  overflow-y: scroll;
+  z-index: 10;
+}
+
+#tooltip-wrapper:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  unicode-bidi: plaintext;
+  height: 75px;
+}
+</style>
+<div style="opacity: 0; display: none;" id='tooltip-wrapper'>
+  <div id='tooltip-content'>
+  </div>
+</div>
+
+<iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src="">
+</iframe>
+
+<script>
+  var opacityTimeout;
+  var contentTimeout;
+  var transitionDurationMs = 100;
+
+  var iframe = document.getElementById('link-preview-iframe')
+  var tooltipWrapper = document.getElementById('tooltip-wrapper')
+  var tooltipContent = document.getElementById('tooltip-content')
+
+  var linkHistories = {};
+
+  function hideTooltip() {
+    opacityTimeout = setTimeout(function () {
+      tooltipWrapper.style.opacity = 0;
+      contentTimeout = setTimeout(function () {
+        tooltipContent.innerHTML = '';
+        tooltipWrapper.style.display = 'none';
+      }, transitionDurationMs + 1);
+    }, transitionDurationMs)
+  }
+
+  function showTooltip(event) {
+    var elem = event.target;
+    var elem_props = elem.getClientRects()[elem.getClientRects().length - 1];
+    var top = window.pageYOffset || document.documentElement.scrollTop;
+    var url = event.target.getAttribute("href");
+    if (url.indexOf("http") === -1 || url.indexOf(window.location.host) !== -1) {
+      let contentURL = url.split('#')[0]
+      if (!linkHistories[contentURL]) {
+        iframe.src = contentURL
+        iframe.onload = function () {
+          tooltipContentHtml = ''
+          tooltipContentHtml += '<div style="font-weight: bold; unicode-bidi: plaintext;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
+          tooltipContentHtml += iframe.contentWindow.document.querySelector('.content').innerHTML
+          tooltipContent.innerHTML = tooltipContentHtml
+          linkHistories[contentURL] = tooltipContentHtml
+          tooltipWrapper.style.display = 'block';
+          tooltipWrapper.scrollTop = 0;
+          setTimeout(function () {
+            tooltipWrapper.style.opacity = 1;
+            if (url.indexOf("#") != -1) {
+              let id = url.split('#')[1];
+              const focus = tooltipWrapper.querySelector(`[id='${id}']`);
+              focus.classList.add('referred');
+              console.log(focus);
+              focus.scrollIntoView({behavior: 'smooth'}, true)
+            } else {
+              tooltipWrapper.scroll(0, 0);
+            }
+          }, 1)
+        }
+      } else {
+        tooltipContent.innerHTML = linkHistories[contentURL]
+        tooltipWrapper.style.display = 'block';
+        setTimeout(function () {
+          tooltipWrapper.style.opacity = 1;
+          if (url.indexOf("#") != -1) {
+              let id = url.split('#')[1];
+              const focus = tooltipWrapper.querySelector(`[id='${id}']`);
+              focus.classList.add('referred');
+              focus.scrollIntoView({behavior: 'smooth'}, true)
+          } else {
+              tooltipWrapper.scroll(0, 0);
+          }
+        }, 1)
+      }
+
+      function getInnerWidth(elem) {
+        var style = window.getComputedStyle(elem);
+        return elem.offsetWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - parseFloat(style.borderLeft) - parseFloat(style.borderRight) - parseFloat(style.marginLeft) - parseFloat(style.marginRight);
+      }
+
+      tooltipWrapper.style.left = elem_props.left - (tooltipWrapper.offsetWidth / 2) + (elem_props.width / 2) + "px";
+
+      if ((window.innerHeight - elem_props.top) < (tooltipWrapper.offsetHeight)) {
+        tooltipWrapper.style.top = elem_props.top + top - tooltipWrapper.offsetHeight - 10 + "px";
+      } else if ((window.innerHeight - elem_props.top) > (tooltipWrapper.offsetHeight)) {
+        tooltipWrapper.style.top = elem_props.top + top + 35 + "px";
+      }
+
+      if ((elem_props.left + (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+        tooltipWrapper.style.left = "10px";
+      } else if ((document.body.clientWidth - elem_props.left - (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+        tooltipWrapper.style.left = document.body.clientWidth - tooltipWrapper.offsetWidth - 20 + "px";
+      }
+    }
+  }
+
+  function setupListeners(linkElement) {
+    linkElement.addEventListener('mouseleave', function (_event) {
+      hideTooltip();
+    });
+
+    tooltipWrapper.addEventListener('mouseleave', function (_event) {
+      hideTooltip();
+    });
+
+    linkElement.addEventListener('mouseenter', function (event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+      showTooltip(event);
+    });
+
+    tooltipWrapper.addEventListener('mouseenter', function (event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+    });
+  }
+
+  window.addEventListener("load", function(event) 
+  {
+    document.querySelectorAll('.internal-link').forEach(setupListeners);
+    document.querySelectorAll('.backlink-card a').forEach(setupListeners);
+  });
+</script>
+
+    
+        <script>
+      if (window.location.hash) {
+        document.getElementById(window.location.hash.slice(1)).classList.add('referred');
+      }
+      window.addEventListener('hashchange', (evt) => {
+        const oldParts = evt.oldURL.split("#");
+        if (oldParts[1]) {
+          document.getElementById(oldParts[1]).classList.remove('referred');
+        }
+        const newParts = evt.newURL.split("#");
+        if (newParts[1]) {
+          document.getElementById(newParts[1]).classList.add('referred');
+        }
+      }, false);
+      const url_parts = window.location.href.split("#")
+      const url = url_parts[0];
+      const referrence = url_parts[1];
+      document.querySelectorAll(".cm-s-obsidian > *[id]").forEach(function (el) {
+        el.ondblclick = function(evt) {
+          const ref_url = url + '#' + evt.target.id
+          navigator.clipboard.writeText(ref_url);
+      }
+      });
+
+      
+    </script>
+    <script src=" https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js "></script>
+<script defer>
+    TIMESTAMP_FORMAT = "MMM dd, yyyy h:mm a";
+    document.querySelectorAll('.human-date').forEach(function (el) {
+        el.innerHTML = luxon.DateTime.fromISO(el.getAttribute('data-date') || el.innerText).toFormat(TIMESTAMP_FORMAT);
+      });
+</script>
+    
+    
+    <script>
+lucide.createIcons({
+            attrs: {
+                class: ["svg-icon"]
+            }
+        });
+</script>
+  </body>
+</html>
