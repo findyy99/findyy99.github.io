@@ -268,7 +268,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T05:54:11.821Z';
+        const searchIndexDate = '2024-01-03T05:54:23.434Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -280,9 +280,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:54:11.821Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:54:23.434Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:54:11.821Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:54:23.434Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -661,6 +661,44 @@ plt.rc('figure', titlesize=SIZE)
       
     </main>
 
+    
+      <aside>
+      <div class="sidebar">
+            <div class="sidebar-container">
+                  
+                  
+
+                  
+                        
+                        
+                              <div class="toc">
+                                    <div class="toc-title-container">
+                                          <div class="toc-title">
+                                                On this page
+                                          </div>
+                                    </div>
+                                    <div class="toc-container">
+                                          <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#a-href-e6-95-b4-e4-bd-93-e8-b0-83-e6-95-b4-title-target-blank-class-external-link-a">整体调整</a>
+            		</li>
+
+                    <li><a href="#a-href-e5-8-d-95-e4-b8-aa-e8-b0-83-e6-95-b4-title-target-blank-class-external-link-a">单个调整</a>
+            		</li>
+                </ol>
+            </nav>
+                                    </div>
+                              </div>
+                        
+
+                  
+
+                        
+                  
+            </div>
+      </div>
+</aside>
     
 
     
