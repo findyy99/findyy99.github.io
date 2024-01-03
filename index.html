@@ -266,7 +266,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T05:54:26.372Z';
+        const searchIndexDate = '2024-01-03T05:54:33.558Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -278,9 +278,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:54:26.372Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:54:33.558Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:54:26.372Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:54:33.558Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -530,7 +530,8 @@
       </header>
       
       
-      
+      <p>This is a alog for Findyy.</p>
+
       
       
     </main>
