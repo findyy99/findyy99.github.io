@@ -266,7 +266,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T05:54:36.976Z';
+        const searchIndexDate = '2024-01-03T05:58:54.933Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -278,9 +278,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:54:36.976Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:58:54.933Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:54:36.976Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:58:54.933Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -530,7 +530,9 @@
       </header>
       
       
-      <p>This is a alog for Findyy.</p>
+      <h1 id="content" tabindex="-1">Content</h1>
+<h2 id="matplotlib" tabindex="-1">Matplotlib</h2>
+<p><a class="internal-link" target="" data-note-icon="" href="/Matplotlib/Matplotlib plot mixed with Chinese and English/">Matplotlib plot mixed with Chinese and English</a></p>
 
       
       
@@ -545,6 +547,29 @@
 
                   
                         
+                        
+                              <div class="toc">
+                                    <div class="toc-title-container">
+                                          <div class="toc-title">
+                                                On this page
+                                          </div>
+                                    </div>
+                                    <div class="toc-container">
+                                          <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#content">Content</a>
+            
+                <ol>
+                    
+                    <li><a href="#matplotlib">Matplotlib</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            </nav>
+                                    </div>
+                              </div>
                         
 
                   
