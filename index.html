@@ -82,7 +82,12 @@
     
     
       
-    <div class="empty-navbar" >
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/" style="text-decoration: none;">
+                <h1 style="margin: 15px !important;">Findyy</h1>
+            </a>
+        </div>
         
             <div class="search-button align-icon" onclick="toggleSearch()">
     <span class="search-icon">
@@ -96,8 +101,8 @@
     </span>
 </div>
         
-    </div>
-
+    </nav>
+    
     
     
       <div class="search-container" id="globalsearch" onclick="toggleSearch()">
@@ -261,7 +266,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T05:48:58.448Z';
+        const searchIndexDate = '2024-01-03T05:54:11.821Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -273,9 +278,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:48:58.448Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:54:11.821Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:48:58.448Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:54:11.821Z', docs}));
             window.docs = docs
             window.index = index;
         }
