@@ -2,6 +2,15 @@
 <html lang="en">
   <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QWL0JNMRP1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QWL0JNMRP1');
+</script>
+
   <head>
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -268,7 +277,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T06:18:59.100Z';
+        const searchIndexDate = '2024-01-03T06:31:08.921Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -280,9 +289,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T06:18:59.100Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T06:31:08.921Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T06:18:59.100Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T06:31:08.921Z', docs}));
             window.docs = docs
             window.index = index;
         }
