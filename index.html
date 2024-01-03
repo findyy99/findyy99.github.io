@@ -277,7 +277,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T06:48:18.675Z';
+        const searchIndexDate = '2024-01-03T08:13:27.946Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -289,9 +289,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T06:48:18.675Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T08:13:27.946Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T06:48:18.675Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T08:13:27.946Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -544,8 +544,10 @@
       <h1 id="content" tabindex="-1">Content</h1>
 <h2 id="matplotlib" tabindex="-1">Matplotlib</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Matplotlib/Matplotlib plot mixed with Chinese and English/">Matplotlib plot mixed with Chinese and English</a></p>
-<h1 id="linux" tabindex="-1">Linux</h1>
+<h2 id="linux" tabindex="-1">Linux</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Linux笔记/SSH Things/">SSH Things</a></p>
+<h2 id="misc" tabindex="-1">Misc</h2>
+<p><a class="internal-link is-unresolved" href="/404" target="">Delete stock input method of Windows 10 and Windows 11</a></p>
 
       
       
@@ -577,10 +579,13 @@
                     
                     <li><a href="#matplotlib">Matplotlib</a>
             		</li>
-                </ol>
-            		</li>
 
                     <li><a href="#linux">Linux</a>
+            		</li>
+
+                    <li><a href="#misc">Misc</a>
+            		</li>
+                </ol>
             		</li>
                 </ol>
             </nav>
