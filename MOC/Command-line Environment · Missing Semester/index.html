@@ -268,7 +268,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T05:39:57.865Z';
+        const searchIndexDate = '2024-01-03T05:40:03.241Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -280,9 +280,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:39:57.865Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:40:03.241Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:39:57.865Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:40:03.241Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1173,6 +1173,15 @@ Host *.mit.edu
                   
 
                         
+                              
+                              <div class="backlinks">
+                                    <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
+                                          <div class="backlink-list"><div class="backlink-card">
+                                                            <span class="no-backlinks-message">No other pages mentions this page</span>
+                                                      </div></div>
+                              </div>
+                        
+                  
                   
             </div>
       </div>
