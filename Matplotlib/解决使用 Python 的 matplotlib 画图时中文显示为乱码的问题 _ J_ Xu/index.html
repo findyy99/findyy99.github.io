@@ -268,7 +268,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-03T05:54:23.434Z';
+        const searchIndexDate = '2024-01-03T05:54:26.372Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -280,9 +280,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:54:23.434Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-03T05:54:26.372Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:54:23.434Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-03T05:54:26.372Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -513,6 +513,8 @@
 
     <main class="content cm-s-obsidian ">
       <header>
+        
+          <h1 data-note-icon="">解决使用 Python 的 matplotlib 画图时中文显示为乱码的问题 | J. Xu</h1>
         
         <div class="header-meta">
           
