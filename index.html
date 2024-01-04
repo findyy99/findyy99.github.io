@@ -277,7 +277,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-04T13:55:55.146Z';
+        const searchIndexDate = '2024-01-04T13:56:03.250Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -289,9 +289,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-04T13:55:55.146Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-04T13:56:03.250Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-04T13:55:55.146Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-04T13:56:03.250Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -549,7 +549,7 @@
 <h2 id="misc" tabindex="-1">Misc</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Misc/Delete stock input method of Windows 10 and Windows 11/">Delete stock input method of Windows 10 and Windows 11</a></p>
 <h2 id="latex" tabindex="-1">Latex</h2>
-<p><a class="internal-link is-unresolved" href="/404" target="">希腊字母-Greek alphabet Using in Tex</a></p>
+<p><a class="internal-link" target="" data-note-icon="" href="/Latex/希腊字母-Greek alphabet Using in Tex/">希腊字母-Greek alphabet Using in Tex</a></p>
 
       
       
