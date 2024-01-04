@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
-
+  
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWL0JNMRP1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,6 +9,7 @@
 
   gtag('config', 'G-QWL0JNMRP1');
 </script>
+<script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
 
   <head>
     <title>Delete stock input method of Windows 10 and Windows 11</title>
@@ -279,7 +279,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-04T13:56:03.250Z';
+        const searchIndexDate = '2024-01-04T14:02:56.662Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -291,9 +291,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-04T13:56:03.250Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-04T14:02:56.662Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-04T13:56:03.250Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-04T14:02:56.662Z', docs}));
             window.docs = docs
             window.index = index;
         }
