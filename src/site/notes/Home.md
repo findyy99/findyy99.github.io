@@ -11,3 +11,6 @@
 
 ## Misc
 [[Misc/Delete stock input method of Windows 10 and Windows 11\|Delete stock input method of Windows 10 and Windows 11]]
+
+## Latex
+[[Latex/希腊字母-Greek alphabet Using in Tex\|希腊字母-Greek alphabet Using in Tex]]
