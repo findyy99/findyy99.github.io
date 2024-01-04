@@ -12,7 +12,7 @@
 </script>
 
   <head>
-    <title>SSH Things</title>
+    <title>Delete stock input method of Windows 10 and Windows 11</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://fastly.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
 <script>
@@ -525,7 +525,7 @@
     <main class="content cm-s-obsidian ">
       <header>
         
-          <h1 data-note-icon="">SSH Things</h1>
+          <h1 data-note-icon="">Delete stock input method of Windows 10 and Windows 11</h1>
         
         <div class="header-meta">
           
@@ -535,13 +535,7 @@
               
                 
                   <a class="tag" onclick="toggleTagSearch(this)">
-                    #ssh
-                  </a>
-                
-              
-                
-                  <a class="tag" onclick="toggleTagSearch(this)">
-                    #Linux
+                    #Windows
                   </a>
                 
               
@@ -552,10 +546,40 @@
       </header>
       
       
-      <h2 id="映射远程端口到本地" tabindex="-1">映射远程端口到本地</h2>
-<pre><code class="language-bash">ssh -L53682:localhost:53682 ubuntu@158.101.140.179
+      <p>由于中文输入法自带了中英文切换，而windows安装后自动又加了一个英语的输入法，导致在切换输入法及切换中英文时出现很烦人的情况，故查了很多网页，找了一个可以自动删除自带输入法的脚本。</p>
+<h1 id="1" tabindex="-1">1.  新建删除脚本</h1>
+<p>脚本内容如下，将其复制到NotePad中，保存，后缀改为<code>.xml</code> ，类似：<code>Remove_en-US.xml</code>.</p>
+<pre><code class="language-xml">&lt;gs:GlobalizationServices xmlns:gs=&quot;urn:longhornGlobalizationUnattend&quot;&gt;
+
+    &lt;!--User List--&gt;
+
+    &lt;gs:UserList&gt;
+
+        &lt;gs:User UserID=&quot;Current&quot;/&gt;
+
+    &lt;/gs:UserList&gt;
+
+    &lt;!--input preferences--&gt; 
+
+    &lt;gs:InputPreferences&gt;
+
+        &lt;!--add en-US keyboard input--&gt;
+
+        &lt;gs:InputLanguageID Action=&quot;add&quot; ID=&quot;0409:00000409&quot;/&gt;
+
+        &lt;!--remove en-US keyboard input--&gt;
+
+        &lt;gs:InputLanguageID Action=&quot;remove&quot; ID=&quot;0409:00000409&quot;/&gt;
+
+    &lt;/gs:InputPreferences&gt;
+
+&lt;/gs:GlobalizationServices&gt;
 </code></pre>
-<p><a class="tag" onclick="toggleTagSearch(this)" data-content="#Todo">#Todo</a></p>
+<h1 id="2" tabindex="-1">2. 新建批处理文件执行删除脚本</h1>
+<p>内容如下：</p>
+<pre><code class="language-bash">control intl.cpl,, /f:&quot;\\Mac\Home\Desktop\windows11\delete_input\Remove_en-US.xml&quot;
+</code></pre>
+<p>将上述内容复制到NotePad中，保存为<code>bat</code>文件，类似：<code>Remove_en-US.bat</code>。<em>请将<code>\\Mac</code>后的内容改为<code>Remove_en-US.xml</code>的路径。</em></p>
 
       
       
@@ -581,7 +605,10 @@
                                           <nav class="toc">
                 <ol>
                     
-                    <li><a href="#映射远程端口到本地">映射远程端口到本地</a>
+                    <li><a href="#1">1.  新建删除脚本</a>
+            		</li>
+
+                    <li><a href="#2">2. 新建批处理文件执行删除脚本</a>
             		</li>
                 </ol>
             </nav>
