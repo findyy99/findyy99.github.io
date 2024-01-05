@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta name="google-site-verification" content="BH4dv4Ml-XWYGvVLP0WXz44VmpGZ2zyE4x4id8lYlpQ" >
+  <head>
+    <meta name="google-site-verification" content="BH4dv4Ml-XWYGvVLP0WXz44VmpGZ2zyE4x4id8lYlpQ" >
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWL0JNMRP1"></script>
 <script>
@@ -12,7 +13,6 @@
 </script>
 <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
 
-  <head>
     <title>解决使用 Python 的 matplotlib 画图时中文显示为乱码的问题 | J. Xu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://fastly.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
@@ -280,7 +280,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-05T01:04:14.387Z';
+        const searchIndexDate = '2024-01-05T01:04:40.116Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -292,9 +292,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-05T01:04:14.387Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-05T01:04:40.116Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-05T01:04:14.387Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-05T01:04:40.116Z', docs}));
             window.docs = docs
             window.index = index;
         }
