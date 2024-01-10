@@ -278,7 +278,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-10T06:10:49.509Z';
+        const searchIndexDate = '2024-01-10T06:14:11.033Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -290,9 +290,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-10T06:10:49.509Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-10T06:14:11.033Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-10T06:10:49.509Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-10T06:14:11.033Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -546,7 +546,8 @@
 <h2 id="matplotlib" tabindex="-1">Matplotlib</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Matplotlib/Matplotlib plot mixed with Chinese and English/">Matplotlib plot mixed with Chinese and English</a></p>
 <h2 id="linux" tabindex="-1">Linux</h2>
-<p><a class="internal-link" target="" data-note-icon="" href="/Linux笔记/SSH Things/">SSH Things</a></p>
+<p><a class="internal-link" target="" data-note-icon="" href="/Linux笔记/SSH Things/">SSH Things</a><br>
+<a class="internal-link" target="" data-note-icon="" href="/Linux笔记/坑爹的Safari & Jupyter/">坑爹的Safari &amp; Jupyter</a></p>
 <h2 id="misc" tabindex="-1">Misc</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Misc/Delete stock input method of Windows 10 and Windows 11/">Delete stock input method of Windows 10 and Windows 11</a></p>
 <h2 id="latex" tabindex="-1">Latex</h2>
