@@ -6,4 +6,8 @@
 ```bash
 ssh -L53682:localhost:53682 ubuntu@158.101.140.179
 ```
-#Todo 
+## scp传输文件
+
+```bash
+scp -O -i xxxx.pem user@ip:/xx/xx/xx/xxx.ipynb ~/Desktop/xxxx.ipynb
+```
