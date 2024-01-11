@@ -280,7 +280,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-11T13:28:07.616Z';
+        const searchIndexDate = '2024-01-11T13:28:33.763Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -292,9 +292,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-11T13:28:07.616Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-11T13:28:33.763Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-11T13:28:07.616Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-11T13:28:33.763Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -556,9 +556,7 @@
       <h2 id="映射远程端口到本地" tabindex="-1">映射远程端口到本地</h2>
 <pre><code class="language-bash">ssh -L53682:localhost:53682 ubuntu@158.101.140.179
 </code></pre>
-<h2 id="scp" tabindex="-1">scp传输文件</h2>
-<pre><code class="language-bash">scp -O -i xxxx.pem user@ip:/xx/xx/xx/xxx.ipynb ~/Desktop/xxxx.ipynb
-</code></pre>
+<p><a class="tag" onclick="toggleTagSearch(this)" data-content="#Todo">#Todo</a></p>
 
       
       
@@ -585,9 +583,6 @@
                 <ol>
                     
                     <li><a href="#映射远程端口到本地">映射远程端口到本地</a>
-            		</li>
-
-                    <li><a href="#scp">scp传输文件</a>
             		</li>
                 </ol>
             </nav>
