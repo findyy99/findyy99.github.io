@@ -3,14 +3,14 @@
     <title>Findyy</title>
     <link href="https://findyy99.github/feed.xml" rel="self" >
     <link href="https://findyy99.github" >
-    <updated>2024-01-11T13:28:33Z</updated>
+    <updated>2024-01-11T13:30:56Z</updated>
     <id>https://findyy99.github</id>
         <entry>
             <title>
                 Delete stock input method of Windows 10 and Windows 11
                 
             </title>
-            <updated>2024-01-11T13:28:20Z</updated>
+            <updated>2024-01-11T13:30:43Z</updated>
             <id>https://findyy99.github/Misc/Delete stock input method of Windows 10 and Windows 11/</id>
             <content type="html">
                 &lt;p&gt;由于中文输入法自带了中英文切换，而windows安装后自动又加了一个英语的输入法，导致在切换输入法及切换中英文时出现很烦人的情况，故查了很多网页，找了一个可以自动删除自带输入法的脚本。&lt;/p&gt;
@@ -56,7 +56,7 @@
                 Matplotlib plot mixed with Chinese and English
                 
             </title>
-            <updated>2024-01-11T13:28:20Z</updated>
+            <updated>2024-01-11T13:30:43Z</updated>
             <id>https://findyy99.github/Matplotlib/Matplotlib plot mixed with Chinese and English/</id>
             <content type="html">
                 &lt;p&gt;在使用 &lt;code&gt;Python&lt;/code&gt; 的 &lt;code&gt;matplotlib&lt;/code&gt; 画图时如果设置了标题或者坐标轴名称为中文时，显示图片上中文出现乱码或四边形，不能正常显示我们需要的中文字，体验非常不好。下面给出一个解决方法。本篇以 Linux （Debian）系统为例。&lt;/p&gt;
@@ -191,32 +191,21 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 坑爹的Safari &amp; Jupyter
                 
             </title>
-            <updated>2024-01-11T13:28:20Z</updated>
+            <updated>2024-01-11T13:30:43Z</updated>
             <id>https://findyy99.github/Linux笔记/坑爹的Safari &amp; Jupyter/</id>
             <content type="html">
                 &lt;p&gt;今天，搭建了一个远程的Jupyter服务器，这玩意用Safari打开，一直报错404，给搞麻了；后面换了Chrome，一切OK。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;[W 2024-01-10 06:12:38.774 ServerApp] 404 GET ws://xxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.92ms referer=None
-
 [W 2024-01-10 06:12:39.150 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.09ms referer=None
-
 [W 2024-01-10 06:12:40.136 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.10ms referer=None
-
 [W 2024-01-10 06:12:40.719 ServerApp] 404 GET ws://xxxxx:8889/terminals/websocket/1 (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.23ms referer=None
-
 [W 2024-01-10 06:12:40.848 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=f0c4b3b4-387d-4b43-9a4a-7cc897d7ce5c (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.99ms referer=None
-
 [W 2024-01-10 06:12:41.432 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.01ms referer=None
-
 [W 2024-01-10 06:12:41.569 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.06ms referer=None
-
 [W 2024-01-10 06:12:42.608 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=f0c4b3b4-387d-4b43-9a4a-7cc897d7ce5c (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.13ms referer=None
-
 [W 2024-01-10 06:12:44.401 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.15ms referer=None
-
 [W 2024-01-10 06:12:45.005 ServerApp] 404 GET ws://xxxxx:8889/terminals/websocket/1 (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.78ms referer=None
-
 [W 2024-01-10 06:12:45.354 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.09ms referer=None
-
 [W 2024-01-10 06:12:46.965 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.12ms referer=None
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -228,13 +217,15 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 SSH Things
                 
             </title>
-            <updated>2024-01-11T13:28:20Z</updated>
+            <updated>2024-01-11T13:30:43Z</updated>
             <id>https://findyy99.github/Linux笔记/SSH Things/</id>
             <content type="html">
                 &lt;h2 id=&quot;映射远程端口到本地&quot; tabindex=&quot;-1&quot;&gt;映射远程端口到本地&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;ssh -L53682:localhost:53682 ubuntu@158.101.140.179
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a class=&quot;tag&quot; onclick=&quot;toggleTagSearch(this)&quot; data-content=&quot;#Todo&quot;&gt;#Todo&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;scp&quot; tabindex=&quot;-1&quot;&gt;scp传输文件&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;scp -O -i xxxx.pem user@ip:/xx/xx/xx/xxx.ipynb ~/Desktop/xxxx.ipynb
+&lt;/code&gt;&lt;/pre&gt;
 
             </content>
             <link href="https://findyy99.github/Linux笔记/SSH Things/" >
@@ -244,7 +235,7 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 希腊字母-Greek alphabet Using in Tex
                 
             </title>
-            <updated>2024-01-11T13:28:20Z</updated>
+            <updated>2024-01-11T13:30:43Z</updated>
             <id>https://findyy99.github/Latex/希腊字母-Greek alphabet Using in Tex/</id>
             <content type="html">
                 &lt;table&gt;
@@ -423,7 +414,7 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 Home
                 
             </title>
-            <updated>2024-01-11T13:28:20Z</updated>
+            <updated>2024-01-11T13:30:43Z</updated>
             <id>https://findyy99.github/</id>
             <content type="html">
                 &lt;h1 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h1&gt;
