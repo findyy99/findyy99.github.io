@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://findyy99.github">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://findyy99.github.io">
     <title>Findyy</title>
-    <link href="https://findyy99.github/feed.xml" rel="self" >
-    <link href="https://findyy99.github" >
-    <updated>2024-01-11T13:30:56Z</updated>
-    <id>https://findyy99.github</id>
+    <link href="https://findyy99.github.io/feed.xml" rel="self" >
+    <link href="https://findyy99.github.io" >
+    <updated>2024-01-11T13:36:18Z</updated>
+    <id>https://findyy99.github.io</id>
         <entry>
             <title>
                 Delete stock input method of Windows 10 and Windows 11
                 
             </title>
-            <updated>2024-01-11T13:30:43Z</updated>
-            <id>https://findyy99.github/Misc/Delete stock input method of Windows 10 and Windows 11/</id>
+            <updated>2024-01-11T13:36:09Z</updated>
+            <id>https://findyy99.github.io/Misc/Delete stock input method of Windows 10 and Windows 11/</id>
             <content type="html">
                 &lt;p&gt;由于中文输入法自带了中英文切换，而windows安装后自动又加了一个英语的输入法，导致在切换输入法及切换中英文时出现很烦人的情况，故查了很多网页，找了一个可以自动删除自带输入法的脚本。&lt;/p&gt;
 &lt;h1 id=&quot;1&quot; tabindex=&quot;-1&quot;&gt;1.  新建删除脚本&lt;/h1&gt;
@@ -49,15 +49,15 @@
 &lt;p&gt;将上述内容复制到NotePad中，保存为&lt;code&gt;bat&lt;/code&gt;文件，类似：&lt;code&gt;Remove_en-US.bat&lt;/code&gt;。&lt;em&gt;请将&lt;code&gt;&#92;&#92;Mac&lt;/code&gt;后的内容改为&lt;code&gt;Remove_en-US.xml&lt;/code&gt;的路径。&lt;/em&gt;&lt;/p&gt;
 
             </content>
-            <link href="https://findyy99.github/Misc/Delete stock input method of Windows 10 and Windows 11/" >
+            <link href="https://findyy99.github.io/Misc/Delete stock input method of Windows 10 and Windows 11/" >
         </entry>
         <entry>
             <title>
                 Matplotlib plot mixed with Chinese and English
                 
             </title>
-            <updated>2024-01-11T13:30:43Z</updated>
-            <id>https://findyy99.github/Matplotlib/Matplotlib plot mixed with Chinese and English/</id>
+            <updated>2024-01-11T13:36:09Z</updated>
+            <id>https://findyy99.github.io/Matplotlib/Matplotlib plot mixed with Chinese and English/</id>
             <content type="html">
                 &lt;p&gt;在使用 &lt;code&gt;Python&lt;/code&gt; 的 &lt;code&gt;matplotlib&lt;/code&gt; 画图时如果设置了标题或者坐标轴名称为中文时，显示图片上中文出现乱码或四边形，不能正常显示我们需要的中文字，体验非常不好。下面给出一个解决方法。本篇以 Linux （Debian）系统为例。&lt;/p&gt;
 &lt;p&gt;可以在 &lt;a href=&quot;https://www.wfonts.com/font/simhei&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;wfonts&lt;/a&gt; 下载，也可以在其他任何能够下载到 &lt;code&gt;SimHei.ttf&lt;/code&gt; 的地方下载。&lt;/p&gt;
@@ -143,7 +143,7 @@ plt.yticks([])
 plt.axis(&amp;quot;equal&amp;quot;)
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;a-href-e6-95-b4-e4-bd-93-e8-b0-83-e6-95-b4-title-target-blank-class-external-link-a&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://findyy99.github/#%E6%95%B4%E4%BD%93%E8%B0%83%E6%95%B4&quot; title=&quot;整体调整&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;&lt;/a&gt;整体调整&lt;/h2&gt;
+&lt;h2 id=&quot;a-href-e6-95-b4-e4-bd-93-e8-b0-83-e6-95-b4-title-target-blank-class-external-link-a&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://findyy99.github.io/#%E6%95%B4%E4%BD%93%E8%B0%83%E6%95%B4&quot; title=&quot;整体调整&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;&lt;/a&gt;整体调整&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import matplotlib
 
 font = {&amp;quot;family&amp;quot;: &amp;quot;SimHei&amp;quot;, &amp;quot;weight&amp;quot;: &amp;quot;bold&amp;quot;, &amp;quot;size&amp;quot;: 20}
@@ -158,7 +158,7 @@ matplotlib.rcParams.update({&#39;font.size&#39;: 20})
 
 plt.rcParams.update({&#39;font.size&#39;: 20})
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;a-href-e5-8-d-95-e4-b8-aa-e8-b0-83-e6-95-b4-title-target-blank-class-external-link-a&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://findyy99.github/#%E5%8D%95%E4%B8%AA%E8%B0%83%E6%95%B4&quot; title=&quot;单个调整&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;&lt;/a&gt;单个调整&lt;/h2&gt;
+&lt;h2 id=&quot;a-href-e5-8-d-95-e4-b8-aa-e8-b0-83-e6-95-b4-title-target-blank-class-external-link-a&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://findyy99.github.io/#%E5%8D%95%E4%B8%AA%E8%B0%83%E6%95%B4&quot; title=&quot;单个调整&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;&lt;/a&gt;单个调整&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import matplotlib
 
 SIZE = 20
@@ -184,15 +184,15 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
 &lt;/ol&gt;
 
             </content>
-            <link href="https://findyy99.github/Matplotlib/Matplotlib plot mixed with Chinese and English/" >
+            <link href="https://findyy99.github.io/Matplotlib/Matplotlib plot mixed with Chinese and English/" >
         </entry>
         <entry>
             <title>
                 坑爹的Safari &amp; Jupyter
                 
             </title>
-            <updated>2024-01-11T13:30:43Z</updated>
-            <id>https://findyy99.github/Linux笔记/坑爹的Safari &amp; Jupyter/</id>
+            <updated>2024-01-11T13:36:09Z</updated>
+            <id>https://findyy99.github.io/Linux笔记/坑爹的Safari &amp; Jupyter/</id>
             <content type="html">
                 &lt;p&gt;今天，搭建了一个远程的Jupyter服务器，这玩意用Safari打开，一直报错404，给搞麻了；后面换了Chrome，一切OK。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;[W 2024-01-10 06:12:38.774 ServerApp] 404 GET ws://xxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.92ms referer=None
@@ -210,15 +210,15 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
 &lt;/code&gt;&lt;/pre&gt;
 
             </content>
-            <link href="https://findyy99.github/Linux笔记/坑爹的Safari &amp; Jupyter/" >
+            <link href="https://findyy99.github.io/Linux笔记/坑爹的Safari &amp; Jupyter/" >
         </entry>
         <entry>
             <title>
                 SSH Things
                 
             </title>
-            <updated>2024-01-11T13:30:43Z</updated>
-            <id>https://findyy99.github/Linux笔记/SSH Things/</id>
+            <updated>2024-01-11T13:36:09Z</updated>
+            <id>https://findyy99.github.io/Linux笔记/SSH Things/</id>
             <content type="html">
                 &lt;h2 id=&quot;映射远程端口到本地&quot; tabindex=&quot;-1&quot;&gt;映射远程端口到本地&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;ssh -L53682:localhost:53682 ubuntu@158.101.140.179
@@ -228,15 +228,15 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
 &lt;/code&gt;&lt;/pre&gt;
 
             </content>
-            <link href="https://findyy99.github/Linux笔记/SSH Things/" >
+            <link href="https://findyy99.github.io/Linux笔记/SSH Things/" >
         </entry>
         <entry>
             <title>
                 希腊字母-Greek alphabet Using in Tex
                 
             </title>
-            <updated>2024-01-11T13:30:43Z</updated>
-            <id>https://findyy99.github/Latex/希腊字母-Greek alphabet Using in Tex/</id>
+            <updated>2024-01-11T13:36:09Z</updated>
+            <id>https://findyy99.github.io/Latex/希腊字母-Greek alphabet Using in Tex/</id>
             <content type="html">
                 &lt;table&gt;
 &lt;thead&gt;
@@ -407,28 +407,28 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
 &lt;p&gt;参考来源：&lt;a href=&quot;https://bcc16.ncu.edu.tw/7/latex/math_tex/2-html/&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://bcc16.ncu.edu.tw/7/latex/math_tex/2-html/&lt;/a&gt;&lt;/p&gt;
 
             </content>
-            <link href="https://findyy99.github/Latex/希腊字母-Greek alphabet Using in Tex/" >
+            <link href="https://findyy99.github.io/Latex/希腊字母-Greek alphabet Using in Tex/" >
         </entry>
         <entry>
             <title>
                 Home
                 
             </title>
-            <updated>2024-01-11T13:30:43Z</updated>
-            <id>https://findyy99.github/</id>
+            <updated>2024-01-11T13:36:09Z</updated>
+            <id>https://findyy99.github.io/</id>
             <content type="html">
                 &lt;h1 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h1&gt;
 &lt;h2 id=&quot;matplotlib&quot; tabindex=&quot;-1&quot;&gt;Matplotlib&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github/Matplotlib/Matplotlib%20plot%20mixed%20with%20Chinese%20and%20English/&quot;&gt;Matplotlib plot mixed with Chinese and English&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Matplotlib/Matplotlib%20plot%20mixed%20with%20Chinese%20and%20English/&quot;&gt;Matplotlib plot mixed with Chinese and English&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;linux&quot; tabindex=&quot;-1&quot;&gt;Linux&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github/Linux%E7%AC%94%E8%AE%B0/SSH%20Things/&quot;&gt;SSH Things&lt;/a&gt;&lt;br /&gt;
-&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github/Linux%E7%AC%94%E8%AE%B0/%E5%9D%91%E7%88%B9%E7%9A%84Safari%20&amp;%20Jupyter/&quot;&gt;坑爹的Safari &amp;amp; Jupyter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/SSH%20Things/&quot;&gt;SSH Things&lt;/a&gt;&lt;br /&gt;
+&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/%E5%9D%91%E7%88%B9%E7%9A%84Safari%20&amp;%20Jupyter/&quot;&gt;坑爹的Safari &amp;amp; Jupyter&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;misc&quot; tabindex=&quot;-1&quot;&gt;Misc&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github/Misc/Delete%20stock%20input%20method%20of%20Windows%2010%20and%20Windows%2011/&quot;&gt;Delete stock input method of Windows 10 and Windows 11&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Misc/Delete%20stock%20input%20method%20of%20Windows%2010%20and%20Windows%2011/&quot;&gt;Delete stock input method of Windows 10 and Windows 11&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;latex&quot; tabindex=&quot;-1&quot;&gt;Latex&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github/Latex/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D-Greek%20alphabet%20Using%20in%20Tex/&quot;&gt;希腊字母-Greek alphabet Using in Tex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Latex/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D-Greek%20alphabet%20Using%20in%20Tex/&quot;&gt;希腊字母-Greek alphabet Using in Tex&lt;/a&gt;&lt;/p&gt;
 
             </content>
-            <link href="https://findyy99.github/" >
+            <link href="https://findyy99.github.io/" >
         </entry>
 </feed>
