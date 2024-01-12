@@ -12,6 +12,7 @@
   gtag('config', 'G-QWL0JNMRP1');
 </script>
 <meta name="yandex-verification" content="e02fd77fd1b15fd4" >
+<meta name="google-adsense-account" content="ca-pub-1958043528169920">
 <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
 
     <title>希腊字母-Greek alphabet Using in Tex</title>
@@ -281,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-11T13:49:33.500Z';
+        const searchIndexDate = '2024-01-12T14:05:55.160Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -293,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-11T13:49:33.500Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-12T14:05:55.160Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-11T13:49:33.500Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-12T14:05:55.160Z', docs}));
             window.docs = docs
             window.index = index;
         }
