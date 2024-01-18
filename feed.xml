@@ -3,14 +3,14 @@
     <title>Findyy</title>
     <link href="https://findyy99.github.io/feed.xml" rel="self" >
     <link href="https://findyy99.github.io" >
-    <updated>2024-01-12T14:05:55Z</updated>
+    <updated>2024-01-18T02:32:26Z</updated>
     <id>https://findyy99.github.io</id>
         <entry>
             <title>
                 Delete stock input method of Windows 10 and Windows 11
                 
             </title>
-            <updated>2024-01-12T14:05:47Z</updated>
+            <updated>2024-01-18T02:32:09Z</updated>
             <id>https://findyy99.github.io/Misc/Delete stock input method of Windows 10 and Windows 11/</id>
             <content type="html">
                 &lt;p&gt;由于中文输入法自带了中英文切换，而windows安装后自动又加了一个英语的输入法，导致在切换输入法及切换中英文时出现很烦人的情况，故查了很多网页，找了一个可以自动删除自带输入法的脚本。&lt;/p&gt;
@@ -56,7 +56,7 @@
                 Matplotlib plot mixed with Chinese and English
                 
             </title>
-            <updated>2024-01-12T14:05:47Z</updated>
+            <updated>2024-01-18T02:32:09Z</updated>
             <id>https://findyy99.github.io/Matplotlib/Matplotlib plot mixed with Chinese and English/</id>
             <content type="html">
                 &lt;p&gt;在使用 &lt;code&gt;Python&lt;/code&gt; 的 &lt;code&gt;matplotlib&lt;/code&gt; 画图时如果设置了标题或者坐标轴名称为中文时，显示图片上中文出现乱码或四边形，不能正常显示我们需要的中文字，体验非常不好。下面给出一个解决方法。本篇以 Linux （Debian）系统为例。&lt;/p&gt;
@@ -191,7 +191,7 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 坑爹的Safari &amp; Jupyter
                 
             </title>
-            <updated>2024-01-12T14:05:47Z</updated>
+            <updated>2024-01-18T02:32:09Z</updated>
             <id>https://findyy99.github.io/Linux笔记/坑爹的Safari &amp; Jupyter/</id>
             <content type="html">
                 &lt;p&gt;今天，搭建了一个远程的Jupyter服务器，这玩意用Safari打开，一直报错404，给搞麻了；后面换了Chrome，一切OK。&lt;/p&gt;
@@ -214,10 +214,111 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
         </entry>
         <entry>
             <title>
+                ifconfig输出解读
+                
+            </title>
+            <updated>2024-01-18T02:32:09Z</updated>
+            <id>https://findyy99.github.io/Linux笔记/ifconfig输出解读/</id>
+            <content type="html">
+                &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;docker0: flags=4099&amp;lt;UP,BROADCAST,MULTICAST&amp;gt;  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:ae:71:c7:0a  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s5: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULTICAST&amp;gt;  mtu 1500
+        inet 10.211.55.12  netmask 255.255.255.0  broadcast 10.211.55.255
+        inet6 fdb2:2c26:f4e4:0:21c:42ff:feca:2cdd  prefixlen 64  scopeid 0x0&amp;lt;global&amp;gt;
+        inet6 fe80::21c:42ff:feca:2cdd  prefixlen 64  scopeid 0x20&amp;lt;link&amp;gt;
+        ether 00:1c:42:ca:2c:dd  txqueuelen 1000  (Ethernet)
+        RX packets 423  bytes 276453 (269.9 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 332  bytes 33369 (32.5 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&amp;lt;host&amp;gt;
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这是通过运行&lt;code&gt;sudo ifconfig&lt;/code&gt;命令获取的网络接口信息。以下是对输出中每个网络接口的解释：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;docker0:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;flags:&lt;/strong&gt; 网络接口的标志，此处包括UP（已启动）、BROADCAST（支持广播）和MULTICAST（支持多播）等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mtu:&lt;/strong&gt; 最大传输单元，指定在单个网络层上通过一个连接传送的最大数据包大小。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;inet:&lt;/strong&gt; 接口的IPv4地址（172.17.0.1）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;netmask:&lt;/strong&gt; 掩码，用于确定网络上的主机和网络部分。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;broadcast:&lt;/strong&gt; 广播地址，用于向网络上所有主机发送数据。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ether:&lt;/strong&gt; 以太网地址（MAC地址）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;txqueuelen:&lt;/strong&gt; 发送队列的长度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RX packets/bytes:&lt;/strong&gt; 接收的数据包和字节数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TX packets/bytes:&lt;/strong&gt; 发送的数据包和字节数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RX errors/TX errors:&lt;/strong&gt; 接收和发送的错误数量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;dropped:&lt;/strong&gt; 丢弃的数据包数量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;overruns:&lt;/strong&gt; 接收或发送缓冲区溢出次数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;frame:&lt;/strong&gt; 接收到的帧错误次数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;carrier:&lt;/strong&gt; 与载波相关的错误数量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;collisions:&lt;/strong&gt; 发送时的碰撞次数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;enp0s5:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类似于docker0，但这是物理网络接口。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;inet:&lt;/strong&gt; 接口的IPv4地址（10.211.55.12）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;netmask:&lt;/strong&gt; 掩码，用于确定网络上的主机和网络部分。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;broadcast:&lt;/strong&gt; 广播地址，用于向网络上所有主机发送数据。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ether:&lt;/strong&gt; 以太网地址（MAC地址）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;inet6:&lt;/strong&gt; IPv6地址和相关信息。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;txqueuelen:&lt;/strong&gt; 发送队列的长度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RX packets/bytes:&lt;/strong&gt; 接收的数据包和字节数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TX packets/bytes:&lt;/strong&gt; 发送的数据包和字节数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RX errors/TX errors:&lt;/strong&gt; 接收和发送的错误数量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;dropped:&lt;/strong&gt; 丢弃的数据包数量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;overruns:&lt;/strong&gt; 接收或发送缓冲区溢出次数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;frame:&lt;/strong&gt; 接收到的帧错误次数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;carrier:&lt;/strong&gt; 与载波相关的错误数量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;collisions:&lt;/strong&gt; 发送时的碰撞次数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;lo (Loopback):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;flags:&lt;/strong&gt; 网络接口的标志，包括UP（已启动）和LOOPBACK（环回）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mtu:&lt;/strong&gt; 最大传输单元，65536表示Loopback接口支持非常大的数据包。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;inet:&lt;/strong&gt; 环回接口的IPv4地址（127.0.0.1）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;netmask:&lt;/strong&gt; 掩码，用于确定网络上的主机和网络部分。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;inet6:&lt;/strong&gt; IPv6地址和相关信息。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;loop:&lt;/strong&gt; 发送队列的长度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RX packets/bytes:&lt;/strong&gt; 接收的数据包和字节数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TX packets/bytes:&lt;/strong&gt; 发送的数据包和字节数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RX errors/TX errors:&lt;/strong&gt; 接收和发送的错误数量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;dropped:&lt;/strong&gt; 丢弃的数据包数量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;overruns:&lt;/strong&gt; 接收或发送缓冲区溢出次数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;frame:&lt;/strong&gt; 接收到的帧错误次数。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;carrier:&lt;/strong&gt; 与载波相关的错误数量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;collisions:&lt;/strong&gt; 发送时的碰撞次数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+            </content>
+            <link href="https://findyy99.github.io/Linux笔记/ifconfig输出解读/" >
+        </entry>
+        <entry>
+            <title>
                 SSH Things
                 
             </title>
-            <updated>2024-01-12T14:05:47Z</updated>
+            <updated>2024-01-18T02:32:09Z</updated>
             <id>https://findyy99.github.io/Linux笔记/SSH Things/</id>
             <content type="html">
                 &lt;h2 id=&quot;映射远程端口到本地&quot; tabindex=&quot;-1&quot;&gt;映射远程端口到本地&lt;/h2&gt;
@@ -235,7 +336,7 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 希腊字母-Greek alphabet Using in Tex
                 
             </title>
-            <updated>2024-01-12T14:05:47Z</updated>
+            <updated>2024-01-18T02:32:09Z</updated>
             <id>https://findyy99.github.io/Latex/希腊字母-Greek alphabet Using in Tex/</id>
             <content type="html">
                 &lt;table&gt;
@@ -414,7 +515,7 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 Home
                 
             </title>
-            <updated>2024-01-12T14:05:47Z</updated>
+            <updated>2024-01-18T02:32:09Z</updated>
             <id>https://findyy99.github.io/</id>
             <content type="html">
                 &lt;h1 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h1&gt;

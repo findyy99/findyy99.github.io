@@ -15,7 +15,7 @@
 <meta name="google-adsense-account" content="ca-pub-1958043528169920">
 <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
 
-    <title>解决使用 Python 的 matplotlib 画图时中文显示为乱码的问题 | J. Xu</title>
+    <title>ifconfig输出解读</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://fastly.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
 <script>
@@ -528,18 +528,12 @@
     <main class="content cm-s-obsidian ">
       <header>
         
-          <h1 data-note-icon="">解决使用 Python 的 matplotlib 画图时中文显示为乱码的问题 | J. Xu</h1>
+          <h1 data-note-icon="">ifconfig输出解读</h1>
         
         <div class="header-meta">
           
             <div class="header-tags">
               
-                
-              
-                
-                  <a class="tag" onclick="toggleTagSearch(this)">
-                    #Matplotlib
-                  </a>
                 
               
                 
@@ -555,128 +549,94 @@
       </header>
       
       
-      <p>在使用 <code>Python</code> 的 <code>matplotlib</code> 画图时如果设置了标题或者坐标轴名称为中文时，显示图片上中文出现乱码或四边形，不能正常显示我们需要的中文字，体验非常不好。下面给出一个解决方法。本篇以 Linux （Debian）系统为例。</p>
-<p>可以在 <a href="https://www.wfonts.com/font/simhei" target="_blank" class="external-link">wfonts</a> 下载，也可以在其他任何能够下载到 <code>SimHei.ttf</code> 的地方下载。</p>
-<p>把字体放在 <code>matplotlib</code> 能够发现的位置，如何指导正确的位置</p>
-<pre><code class="language-python">➜  ~ ipython
-Python 3.8.5 (default, Sep  4 2020, 07:30:14) 
-Type 'copyright', 'credits' or 'license' for more information
-IPython 7.23.0 -- An enhanced Interactive Python. Type '?' for help.
+      <pre><code class="language-bash">docker0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:ae:71:c7:0a  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-In [1]: import matplotlib
+enp0s5: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 10.211.55.12  netmask 255.255.255.0  broadcast 10.211.55.255
+        inet6 fdb2:2c26:f4e4:0:21c:42ff:feca:2cdd  prefixlen 64  scopeid 0x0&lt;global&gt;
+        inet6 fe80::21c:42ff:feca:2cdd  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 00:1c:42:ca:2c:dd  txqueuelen 1000  (Ethernet)
+        RX packets 423  bytes 276453 (269.9 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 332  bytes 33369 (32.5 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-In [2]: matplotlib.matplotlib_fname()
-Out[2]: '/usr/local/miniconda/lib/python3.8/site-packages/matplotlib/mpl-data/matplotlibrc'
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 </code></pre>
-<p>从上面可以发现一个目录：<code>'/usr/local/miniconda/lib/python3.8/site-packages/matplotlib/mpl-data/'</code>，在该目录下有个文件夹</p>
-<pre><code class="language-bash">➜  ~ ls /usr/local/miniconda/lib/python3.8/site-packages/matplotlib/mpl-data
-fonts  images  matplotlibrc  plot_directive  sample_data  stylelib
-➜  ~ ls /usr/local/miniconda/lib/python3.8/site-packages/matplotlib/mpl-data/fonts
-afm  pdfcorefonts  ttf
-</code></pre>
-<p>把下载的 <code>SimHei.ttf</code> 拷贝到 <code>ttf</code> 文件夹下</p>
-<p>一般需要先清除掉旧的 <code>matplotlib</code> 缓存后才能正常使用，缓存一般在家目录下，可以通过如下方法获得缓存地址</p>
-<pre><code class="language-python">➜  ~ ipython 
-Python 3.8.5 (default, Sep  4 2020, 07:30:14) 
-Type 'copyright', 'credits' or 'license' for more information
-IPython 7.23.0 -- An enhanced Interactive Python. Type '?' for help.
-
-In [1]: import matplotlib
-
-In [2]: matplotlib.get_cachedir()
-Out[2]: '/home/jinzhongxu/.cache/matplotlib'
-</code></pre>
-<p>发现我的确实在家目录下，因此直接去家目录删除即可</p>
-<pre><code class="language-python">➜  ~ ls .cache            
-jedi  matplotlib  yarn
-➜  ~ ls .cache/matplotlib 
-fontlist-v330.json
-➜  ~ rm -r ~/.cache/matplotlib
-</code></pre>
-<p>配置好中文字体后，只需要在每次画图时指定字体就可以正常显示中文字符了。</p>
-<pre><code class="language-python">import matplotlib.pyplot as plt
-import numpy as np
-
-plt.rcParams[&quot;font.sans-serif&quot;] = [&quot;SimHei&quot;]  
-plt.rcParams[&quot;axes.unicode_minus&quot;] = False  
-
-x = np.linspace(-5, 5, 101)
-y = np.cos(x)
-plt.plot(x, y, &quot;r&quot;)
-plt.title(u&quot;余弦&quot;)
-plt.show()
-</code></pre>
-<p>从上面可知，每次画图都需要在代码中配置中文字体才能正常显示中文字符，下面通过设置可以直接使用中文字体，那就是修改上面的配置文件</p>
-<pre><code class="language-python">vim /usr/local/miniconda/lib/python3.8/site-packages/matplotlib/mpl-data/matplotlibrc
-
-
-font.family         : sans-serif
-
-font.sans-serif     : SimHei, Bitstream Vera Sans, ...
-
-axes.unicode_minus  : False
-</code></pre>
-<pre><code class="language-python">import matplotlib.pyplot as plt
-import numpy as np
-
-
-a = 3
-x = np.linspace(-(a + 1) * np.pi / 4, (a + 1) * np.pi / 4, 301)
-y1 = a * (1 + np.cos(x)) * np.cos(x)
-y2 = a * (1 + np.cos(x)) * np.sin(x)
-
-
-fig, ax = plt.subplots()
-for key, spine in ax.spines.items():
-    
-    
-    spine.set_visible(False)
-
-
-plt.plot(y2, -y1)
-plt.xticks([])
-plt.yticks([])
-plt.axis(&quot;equal&quot;)
-plt.show()
-</code></pre>
-<h2 id="a-href-e6-95-b4-e4-bd-93-e8-b0-83-e6-95-b4-title-target-blank-class-external-link-a" tabindex="-1"><a href="#%E6%95%B4%E4%BD%93%E8%B0%83%E6%95%B4" title="整体调整" target="_blank" class="external-link"></a>整体调整</h2>
-<pre><code class="language-python">import matplotlib
-
-font = {&quot;family&quot;: &quot;SimHei&quot;, &quot;weight&quot;: &quot;bold&quot;, &quot;size&quot;: 20}
-
-matplotlib.rc(&quot;font&quot;, **font)
-</code></pre>
-<pre><code class="language-python">import matplotlib
-
-matplotlib.rcParams.update({'font.size': 20})
-</code></pre>
-<pre><code class="language-python">import matplotlib.pyplot as plt
-
-plt.rcParams.update({'font.size': 20})
-</code></pre>
-<h2 id="a-href-e5-8-d-95-e4-b8-aa-e8-b0-83-e6-95-b4-title-target-blank-class-external-link-a" tabindex="-1"><a href="#%E5%8D%95%E4%B8%AA%E8%B0%83%E6%95%B4" title="单个调整" target="_blank" class="external-link"></a>单个调整</h2>
-<pre><code class="language-python">import matplotlib
-
-SIZE = 20
-matplotlib.rc('font', size=SIZE)
-matplotlib.rc('axes', titlesize=SIZE)
-</code></pre>
-<pre><code class="language-python">import matplotlib.pyplot as plt
-
-SIZE = 20
-
-plt.rc('font', size=SIZE)          
-plt.rc('axes', titlesize=SIZE)     
-plt.rc('axes', labelsize=SIZE)    
-plt.rc('xtick', labelsize=SIZE)    
-plt.rc('ytick', labelsize=SIZE)    
-plt.rc('legend', fontsize=SIZE)    
-plt.rc('figure', titlesize=SIZE)
-</code></pre>
+<p>这是通过运行<code>sudo ifconfig</code>命令获取的网络接口信息。以下是对输出中每个网络接口的解释：</p>
 <ol>
-<li><a href="https://www.codenong.com/cs106003277/" target="_blank" class="external-link">matplotlib 对中文的支持（Font family [‘sans-serif’] not found.Falling back to DejaVu Sans）</a></li>
-<li><a href="https://blog.csdn.net/jeff_liu_sky_/article/details/54023745" target="_blank" class="external-link">ubuntu 系统下 matplotlib 中文乱码问题</a></li>
-<li><a href="https://www.delftstack.com/zh/howto/matplotlib/how-to-set-tick-labels-font-size-in-matplotlib/" target="_blank" class="external-link">如何在 Matplotlib 中设置刻度标签 xticks 字体大小</a></li>
+<li>
+<p><strong>docker0:</strong></p>
+<ul>
+<li><strong>flags:</strong> 网络接口的标志，此处包括UP（已启动）、BROADCAST（支持广播）和MULTICAST（支持多播）等。</li>
+<li><strong>mtu:</strong> 最大传输单元，指定在单个网络层上通过一个连接传送的最大数据包大小。</li>
+<li><strong>inet:</strong> 接口的IPv4地址（172.17.0.1）。</li>
+<li><strong>netmask:</strong> 掩码，用于确定网络上的主机和网络部分。</li>
+<li><strong>broadcast:</strong> 广播地址，用于向网络上所有主机发送数据。</li>
+<li><strong>ether:</strong> 以太网地址（MAC地址）。</li>
+<li><strong>txqueuelen:</strong> 发送队列的长度。</li>
+<li><strong>RX packets/bytes:</strong> 接收的数据包和字节数。</li>
+<li><strong>TX packets/bytes:</strong> 发送的数据包和字节数。</li>
+<li><strong>RX errors/TX errors:</strong> 接收和发送的错误数量。</li>
+<li><strong>dropped:</strong> 丢弃的数据包数量。</li>
+<li><strong>overruns:</strong> 接收或发送缓冲区溢出次数。</li>
+<li><strong>frame:</strong> 接收到的帧错误次数。</li>
+<li><strong>carrier:</strong> 与载波相关的错误数量。</li>
+<li><strong>collisions:</strong> 发送时的碰撞次数。</li>
+</ul>
+</li>
+<li>
+<p><strong>enp0s5:</strong></p>
+<ul>
+<li>类似于docker0，但这是物理网络接口。</li>
+<li><strong>inet:</strong> 接口的IPv4地址（10.211.55.12）。</li>
+<li><strong>netmask:</strong> 掩码，用于确定网络上的主机和网络部分。</li>
+<li><strong>broadcast:</strong> 广播地址，用于向网络上所有主机发送数据。</li>
+<li><strong>ether:</strong> 以太网地址（MAC地址）。</li>
+<li><strong>inet6:</strong> IPv6地址和相关信息。</li>
+<li><strong>txqueuelen:</strong> 发送队列的长度。</li>
+<li><strong>RX packets/bytes:</strong> 接收的数据包和字节数。</li>
+<li><strong>TX packets/bytes:</strong> 发送的数据包和字节数。</li>
+<li><strong>RX errors/TX errors:</strong> 接收和发送的错误数量。</li>
+<li><strong>dropped:</strong> 丢弃的数据包数量。</li>
+<li><strong>overruns:</strong> 接收或发送缓冲区溢出次数。</li>
+<li><strong>frame:</strong> 接收到的帧错误次数。</li>
+<li><strong>carrier:</strong> 与载波相关的错误数量。</li>
+<li><strong>collisions:</strong> 发送时的碰撞次数。</li>
+</ul>
+</li>
+<li>
+<p><strong>lo (Loopback):</strong></p>
+<ul>
+<li><strong>flags:</strong> 网络接口的标志，包括UP（已启动）和LOOPBACK（环回）。</li>
+<li><strong>mtu:</strong> 最大传输单元，65536表示Loopback接口支持非常大的数据包。</li>
+<li><strong>inet:</strong> 环回接口的IPv4地址（127.0.0.1）。</li>
+<li><strong>netmask:</strong> 掩码，用于确定网络上的主机和网络部分。</li>
+<li><strong>inet6:</strong> IPv6地址和相关信息。</li>
+<li><strong>loop:</strong> 发送队列的长度。</li>
+<li><strong>RX packets/bytes:</strong> 接收的数据包和字节数。</li>
+<li><strong>TX packets/bytes:</strong> 发送的数据包和字节数。</li>
+<li><strong>RX errors/TX errors:</strong> 接收和发送的错误数量。</li>
+<li><strong>dropped:</strong> 丢弃的数据包数量。</li>
+<li><strong>overruns:</strong> 接收或发送缓冲区溢出次数。</li>
+<li><strong>frame:</strong> 接收到的帧错误次数。</li>
+<li><strong>carrier:</strong> 与载波相关的错误数量。</li>
+<li><strong>collisions:</strong> 发送时的碰撞次数。</li>
+</ul>
+</li>
 </ol>
 
       
@@ -692,26 +652,6 @@ plt.rc('figure', titlesize=SIZE)
 
                   
                         
-                        
-                              <div class="toc">
-                                    <div class="toc-title-container">
-                                          <div class="toc-title">
-                                                On this page
-                                          </div>
-                                    </div>
-                                    <div class="toc-container">
-                                          <nav class="toc">
-                <ol>
-                    
-                    <li><a href="#a-href-e6-95-b4-e4-bd-93-e8-b0-83-e6-95-b4-title-target-blank-class-external-link-a">整体调整</a>
-            		</li>
-
-                    <li><a href="#a-href-e5-8-d-95-e4-b8-aa-e8-b0-83-e6-95-b4-title-target-blank-class-external-link-a">单个调整</a>
-            		</li>
-                </ol>
-            </nav>
-                                    </div>
-                              </div>
                         
 
                   
