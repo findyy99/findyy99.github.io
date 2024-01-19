@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/Linux笔记/ifconfig输出解读/","tags":["Linux"]}
 ---
 
-```sh
+```bash
 docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
         inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
         ether 02:42:ae:71:c7:0a  txqueuelen 0  (Ethernet)
