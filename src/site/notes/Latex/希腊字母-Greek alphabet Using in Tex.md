@@ -21,4 +21,4 @@
 |$\mu$ |mu|_M_|M|$\psi$ |psi|$\Psi$ |Psi|
 |$\nu$ |nu|_N_|N|$\omega$ |omega|$\Omega$ |Omega|
 
-参考来源：[https://bcc16.ncu.edu.tw/7/latex/math_tex/2-html/](https://bcc16.ncu.edu.tw/7/latex/math_tex/2-html/)
+Reference：[https://bcc16.ncu.edu.tw/7/latex/math_tex/2-html/](https://bcc16.ncu.edu.tw/7/latex/math_tex/2-html/)
