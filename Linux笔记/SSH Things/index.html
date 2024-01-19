@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-19T11:50:27.425Z';
+        const searchIndexDate = '2024-01-19T11:50:30.122Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-19T11:50:27.425Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-19T11:50:30.122Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-19T11:50:27.425Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-19T11:50:30.122Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -555,10 +555,10 @@
       </header>
       
       
-      <h2 id="映射远程端口到本地" tabindex="-1">映射远程端口到本地</h2>
+      <h2 id="map-the-remote-port-to-local" tabindex="-1">Map the remote port to local</h2>
 <pre><code class="language-bash">ssh -L53682:localhost:53682 ubuntu@158.101.140.179
 </code></pre>
-<h2 id="scp" tabindex="-1">scp传输文件</h2>
+<h2 id="transfer-file-using-scp" tabindex="-1">Transfer file using scp</h2>
 <pre><code class="language-bash">scp -O -i xxxx.pem user@ip:/xx/xx/xx/xxx.ipynb ~/Desktop/xxxx.ipynb
 </code></pre>
 
@@ -586,10 +586,10 @@
                                           <nav class="toc">
                 <ol>
                     
-                    <li><a href="#映射远程端口到本地">映射远程端口到本地</a>
+                    <li><a href="#map-the-remote-port-to-local">Map the remote port to local</a>
             		</li>
 
-                    <li><a href="#scp">scp传输文件</a>
+                    <li><a href="#transfer-file-using-scp">Transfer file using scp</a>
             		</li>
                 </ol>
             </nav>

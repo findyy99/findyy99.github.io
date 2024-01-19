@@ -15,7 +15,7 @@
 <meta name="google-adsense-account" content="ca-pub-1958043528169920">
 <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
 
-    <title>Delete stock input method of Windows 10 and Windows 11</title>
+    <title>Interpretation of ifconfig output</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://fastly.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
 <script>
@@ -528,7 +528,7 @@
     <main class="content cm-s-obsidian ">
       <header>
         
-          <h1 data-note-icon="">Delete stock input method of Windows 10 and Windows 11</h1>
+          <h1 data-note-icon="">Interpretation of ifconfig output</h1>
         
         <div class="header-meta">
           
@@ -538,7 +538,7 @@
               
                 
                   <a class="tag" onclick="toggleTagSearch(this)">
-                    #Windows
+                    #Linux
                   </a>
                 
               
@@ -549,40 +549,95 @@
       </header>
       
       
-      <p>由于中文输入法自带了中英文切换，而windows安装后自动又加了一个英语的输入法，导致在切换输入法及切换中英文时出现很烦人的情况，故查了很多网页，找了一个可以自动删除自带输入法的脚本。</p>
-<h1 id="1" tabindex="-1">1.  新建删除脚本</h1>
-<p>脚本内容如下，将其复制到NotePad中，保存，后缀改为<code>.xml</code> ，类似：<code>Remove_en-US.xml</code>.</p>
-<pre><code class="language-xml">&lt;gs:GlobalizationServices xmlns:gs=&quot;urn:longhornGlobalizationUnattend&quot;&gt;
+      <pre><code class="language-bash">docker0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:ae:71:c7:0a  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-    &lt;!--User List--&gt;
+enp0s5: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 10.211.55.12  netmask 255.255.255.0  broadcast 10.211.55.255
+        inet6 fdb2:2c26:f4e4:0:21c:42ff:feca:2cdd  prefixlen 64  scopeid 0x0&lt;global&gt;
+        inet6 fe80::21c:42ff:feca:2cdd  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 00:1c:42:ca:2c:dd  txqueuelen 1000  (Ethernet)
+        RX packets 423  bytes 276453 (269.9 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 332  bytes 33369 (32.5 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-    &lt;gs:UserList&gt;
-
-        &lt;gs:User UserID=&quot;Current&quot;/&gt;
-
-    &lt;/gs:UserList&gt;
-
-    &lt;!--input preferences--&gt; 
-
-    &lt;gs:InputPreferences&gt;
-
-        &lt;!--add en-US keyboard input--&gt;
-
-        &lt;gs:InputLanguageID Action=&quot;add&quot; ID=&quot;0409:00000409&quot;/&gt;
-
-        &lt;!--remove en-US keyboard input--&gt;
-
-        &lt;gs:InputLanguageID Action=&quot;remove&quot; ID=&quot;0409:00000409&quot;/&gt;
-
-    &lt;/gs:InputPreferences&gt;
-
-&lt;/gs:GlobalizationServices&gt;
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 </code></pre>
-<h1 id="2" tabindex="-1">2. 新建批处理文件执行删除脚本</h1>
-<p>内容如下：</p>
-<pre><code class="language-bash">control intl.cpl,, /f:&quot;\\Mac\Home\Desktop\windows11\delete_input\Remove_en-US.xml&quot;
-</code></pre>
-<p>将上述内容复制到NotePad中，保存为<code>bat</code>文件，类似：<code>Remove_en-US.bat</code>。<em>请将<code>\\Mac</code>后的内容改为<code>Remove_en-US.xml</code>的路径。</em></p>
+<p>这是通过运行<code>sudo ifconfig</code>命令获取的网络接口信息。以下是对输出中每个网络接口的解释：</p>
+<ol>
+<li>
+<p><strong>docker0:</strong></p>
+<ul>
+<li><strong>flags:</strong> 网络接口的标志，此处包括UP（已启动）、BROADCAST（支持广播）和MULTICAST（支持多播）等。</li>
+<li><strong>mtu:</strong> 最大传输单元，指定在单个网络层上通过一个连接传送的最大数据包大小。</li>
+<li><strong>inet:</strong> 接口的IPv4地址（172.17.0.1）。</li>
+<li><strong>netmask:</strong> 掩码，用于确定网络上的主机和网络部分。</li>
+<li><strong>broadcast:</strong> 广播地址，用于向网络上所有主机发送数据。</li>
+<li><strong>ether:</strong> 以太网地址（MAC地址）。</li>
+<li><strong>txqueuelen:</strong> 发送队列的长度。</li>
+<li><strong>RX packets/bytes:</strong> 接收的数据包和字节数。</li>
+<li><strong>TX packets/bytes:</strong> 发送的数据包和字节数。</li>
+<li><strong>RX errors/TX errors:</strong> 接收和发送的错误数量。</li>
+<li><strong>dropped:</strong> 丢弃的数据包数量。</li>
+<li><strong>overruns:</strong> 接收或发送缓冲区溢出次数。</li>
+<li><strong>frame:</strong> 接收到的帧错误次数。</li>
+<li><strong>carrier:</strong> 与载波相关的错误数量。</li>
+<li><strong>collisions:</strong> 发送时的碰撞次数。</li>
+</ul>
+</li>
+<li>
+<p><strong>enp0s5:</strong></p>
+<ul>
+<li>类似于docker0，但这是物理网络接口。</li>
+<li><strong>inet:</strong> 接口的IPv4地址（10.211.55.12）。</li>
+<li><strong>netmask:</strong> 掩码，用于确定网络上的主机和网络部分。</li>
+<li><strong>broadcast:</strong> 广播地址，用于向网络上所有主机发送数据。</li>
+<li><strong>ether:</strong> 以太网地址（MAC地址）。</li>
+<li><strong>inet6:</strong> IPv6地址和相关信息。</li>
+<li><strong>txqueuelen:</strong> 发送队列的长度。</li>
+<li><strong>RX packets/bytes:</strong> 接收的数据包和字节数。</li>
+<li><strong>TX packets/bytes:</strong> 发送的数据包和字节数。</li>
+<li><strong>RX errors/TX errors:</strong> 接收和发送的错误数量。</li>
+<li><strong>dropped:</strong> 丢弃的数据包数量。</li>
+<li><strong>overruns:</strong> 接收或发送缓冲区溢出次数。</li>
+<li><strong>frame:</strong> 接收到的帧错误次数。</li>
+<li><strong>carrier:</strong> 与载波相关的错误数量。</li>
+<li><strong>collisions:</strong> 发送时的碰撞次数。</li>
+</ul>
+</li>
+<li>
+<p><strong>lo (<a href="https://www.baeldung.com/linux/loopback-lo-device" target="_blank" class="external-link">Loopback</a>):</strong></p>
+<ul>
+<li><strong>flags:</strong> 网络接口的标志，包括UP（已启动）和LOOPBACK（环回）。</li>
+<li><strong>mtu:</strong> 最大传输单元，65536表示Loopback接口支持非常大的数据包。</li>
+<li><strong>inet:</strong> 环回接口的IPv4地址（127.0.0.1）。</li>
+<li><strong>netmask:</strong> 掩码，用于确定网络上的主机和网络部分。</li>
+<li><strong>inet6:</strong> IPv6地址和相关信息。</li>
+<li><strong>loop:</strong> 发送队列的长度。</li>
+<li><strong>RX packets/bytes:</strong> 接收的数据包和字节数。</li>
+<li><strong>TX packets/bytes:</strong> 发送的数据包和字节数。</li>
+<li><strong>RX errors/TX errors:</strong> 接收和发送的错误数量。</li>
+<li><strong>dropped:</strong> 丢弃的数据包数量。</li>
+<li><strong>overruns:</strong> 接收或发送缓冲区溢出次数。</li>
+<li><strong>frame:</strong> 接收到的帧错误次数。</li>
+<li><strong>carrier:</strong> 与载波相关的错误数量。</li>
+<li><strong>collisions:</strong> 发送时的碰撞次数。</li>
+</ul>
+</li>
+</ol>
 
       
       
@@ -597,26 +652,6 @@
 
                   
                         
-                        
-                              <div class="toc">
-                                    <div class="toc-title-container">
-                                          <div class="toc-title">
-                                                On this page
-                                          </div>
-                                    </div>
-                                    <div class="toc-container">
-                                          <nav class="toc">
-                <ol>
-                    
-                    <li><a href="#1">1.  新建删除脚本</a>
-            		</li>
-
-                    <li><a href="#2">2. 新建批处理文件执行删除脚本</a>
-            		</li>
-                </ol>
-            </nav>
-                                    </div>
-                              </div>
                         
 
                   
