@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-18T13:12:09.702Z';
+        const searchIndexDate = '2024-01-19T03:28:52.220Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-18T13:12:09.702Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-19T03:28:52.220Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-18T13:12:09.702Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-19T03:28:52.220Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -549,7 +549,7 @@
       </header>
       
       
-      <pre><code class="language-bash">docker0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
+      <pre><code class="language-sh">docker0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
         inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
         ether 02:42:ae:71:c7:0a  txqueuelen 0  (Ethernet)
         RX packets 0  bytes 0 (0.0 B)
@@ -619,7 +619,7 @@ lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
 </ul>
 </li>
 <li>
-<p><strong>lo (Loopback):</strong></p>
+<p><strong>lo (<a href="https://www.baeldung.com/linux/loopback-lo-device" target="_blank" class="external-link">Loopback</a>):</strong></p>
 <ul>
 <li><strong>flags:</strong> 网络接口的标志，包括UP（已启动）和LOOPBACK（环回）。</li>
 <li><strong>mtu:</strong> 最大传输单元，65536表示Loopback接口支持非常大的数据包。</li>
