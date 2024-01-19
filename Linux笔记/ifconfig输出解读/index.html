@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-19T03:28:52.220Z';
+        const searchIndexDate = '2024-01-19T11:46:48.196Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-19T03:28:52.220Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-19T11:46:48.196Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-19T03:28:52.220Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-19T11:46:48.196Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -549,7 +549,7 @@
       </header>
       
       
-      <pre><code class="language-sh">docker0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
+      <pre><code class="language-bash">docker0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
         inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
         ether 02:42:ae:71:c7:0a  txqueuelen 0  (Ethernet)
         RX packets 0  bytes 0 (0.0 B)
