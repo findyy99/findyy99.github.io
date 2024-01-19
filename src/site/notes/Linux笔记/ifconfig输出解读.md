@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/Linux笔记/ifconfig输出解读/","tags":["Linux"]}
 ---
 
-```bash
+```sh
 docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
         inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
         ether 02:42:ae:71:c7:0a  txqueuelen 0  (Ethernet)
@@ -68,7 +68,7 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
    - **carrier:** 与载波相关的错误数量。
    - **collisions:** 发送时的碰撞次数。
 
-3. **lo (Loopback):**
+3. **lo ([Loopback](https://www.baeldung.com/linux/loopback-lo-device)):**
    - **flags:** 网络接口的标志，包括UP（已启动）和LOOPBACK（环回）。
    - **mtu:** 最大传输单元，65536表示Loopback接口支持非常大的数据包。
    - **inet:** 环回接口的IPv4地址（127.0.0.1）。
