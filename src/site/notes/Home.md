@@ -10,7 +10,7 @@
 [[Linux笔记/SSH Things\|SSH Things]]
 [[Linux笔记/Issue caused by Safari & Jupyter\|Issue caused by Safari & Jupyter]]
 [[Linux笔记/Interpretation of ifconfig output\|Interpretation of ifconfig output]]
-
+[[Linux笔记/Nginx proxy port of docker\|Nginx proxy port of docker]]
 ## Misc
 [[Misc/Delete stock input method of Windows 10 and Windows 11\|Delete stock input method of Windows 10 and Windows 11]]
 
