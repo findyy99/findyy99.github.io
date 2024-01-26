@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-26T15:38:01.431Z';
+        const searchIndexDate = '2024-01-26T15:38:04.580Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-26T15:38:01.431Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-26T15:38:04.580Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-26T15:38:01.431Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-26T15:38:04.580Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -567,7 +567,7 @@
       </header>
       
       
-      <p>今天，搭建了一个远程的Jupyter服务器，这玩意用Safari打开，一直报错404，给搞麻了；后面换了Chrome，一切OK。</p>
+      <p>I created an environment of jupyter on my linux server today, when I use Safari to access this jupyter server, it always raises the following error. After changing from Safari to Chrome, everything works fine!</p>
 <pre><code class="language-bash">[W 2024-01-10 06:12:38.774 ServerApp] 404 GET ws://xxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.92ms referer=None
 [W 2024-01-10 06:12:39.150 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.09ms referer=None
 [W 2024-01-10 06:12:40.136 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.10ms referer=None

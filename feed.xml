@@ -3,14 +3,14 @@
     <title>Findyy</title>
     <link href="https://findyy99.github.io/feed.xml" rel="self" >
     <link href="https://findyy99.github.io" >
-    <updated>2024-01-26T15:38:01Z</updated>
+    <updated>2024-01-26T15:38:04Z</updated>
     <id>https://findyy99.github.io</id>
         <entry>
             <title>
                 Delete stock input method of Windows 10 and Windows 11
                 
             </title>
-            <updated>2024-01-26T15:37:53Z</updated>
+            <updated>2024-01-26T15:37:55Z</updated>
             <id>https://findyy99.github.io/Misc/Delete stock input method of Windows 10 and Windows 11/</id>
             <content type="html">
                 &lt;p&gt;由于中文输入法自带了中英文切换，而windows安装后自动又加了一个英语的输入法，导致在切换输入法及切换中英文时出现很烦人的情况，故查了很多网页，找了一个可以自动删除自带输入法的脚本。&lt;/p&gt;
@@ -56,7 +56,7 @@
                 Matplotlib plot mixed with Chinese and English
                 
             </title>
-            <updated>2024-01-26T15:37:53Z</updated>
+            <updated>2024-01-26T15:37:55Z</updated>
             <id>https://findyy99.github.io/Matplotlib/Matplotlib plot mixed with Chinese and English/</id>
             <content type="html">
                 &lt;p&gt;在使用 &lt;code&gt;Python&lt;/code&gt; 的 &lt;code&gt;matplotlib&lt;/code&gt; 画图时如果设置了标题或者坐标轴名称为中文时，显示图片上中文出现乱码或四边形，不能正常显示我们需要的中文字，体验非常不好。下面给出一个解决方法。本篇以 Linux （Debian）系统为例。&lt;/p&gt;
@@ -191,7 +191,7 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 SSH Things
                 
             </title>
-            <updated>2024-01-26T15:37:53Z</updated>
+            <updated>2024-01-26T15:37:55Z</updated>
             <id>https://findyy99.github.io/Linux笔记/SSH Things/</id>
             <content type="html">
                 &lt;h2 id=&quot;map-the-remote-port-to-local&quot; tabindex=&quot;-1&quot;&gt;Map the remote port to local&lt;/h2&gt;
@@ -209,10 +209,10 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 Issue caused by Safari &amp; Jupyter
                 
             </title>
-            <updated>2024-01-26T15:37:53Z</updated>
+            <updated>2024-01-26T15:37:55Z</updated>
             <id>https://findyy99.github.io/Linux笔记/Issue caused by Safari &amp; Jupyter/</id>
             <content type="html">
-                &lt;p&gt;今天，搭建了一个远程的Jupyter服务器，这玩意用Safari打开，一直报错404，给搞麻了；后面换了Chrome，一切OK。&lt;/p&gt;
+                &lt;p&gt;I created an environment of jupyter on my linux server today, when I use Safari to access this jupyter server, it always raises the following error. After changing from Safari to Chrome, everything works fine!&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;[W 2024-01-10 06:12:38.774 ServerApp] 404 GET ws://xxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.92ms referer=None
 [W 2024-01-10 06:12:39.150 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.09ms referer=None
 [W 2024-01-10 06:12:40.136 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.10ms referer=None
@@ -235,7 +235,7 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 Interpretation of ifconfig output
                 
             </title>
-            <updated>2024-01-26T15:37:53Z</updated>
+            <updated>2024-01-26T15:37:55Z</updated>
             <id>https://findyy99.github.io/Linux笔记/Interpretation of ifconfig output/</id>
             <content type="html">
                 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;docker0: flags=4099&amp;lt;UP,BROADCAST,MULTICAST&amp;gt;  mtu 1500
@@ -336,7 +336,7 @@ lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt;  mtu 65536
                 希腊字母-Greek alphabet Using in Tex
                 
             </title>
-            <updated>2024-01-26T15:37:53Z</updated>
+            <updated>2024-01-26T15:37:55Z</updated>
             <id>https://findyy99.github.io/Latex/希腊字母-Greek alphabet Using in Tex/</id>
             <content type="html">
                 &lt;table&gt;
@@ -515,7 +515,7 @@ lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt;  mtu 65536
                 Home
                 
             </title>
-            <updated>2024-01-26T15:37:53Z</updated>
+            <updated>2024-01-26T15:37:55Z</updated>
             <id>https://findyy99.github.io/</id>
             <content type="html">
                 &lt;h1 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h1&gt;
