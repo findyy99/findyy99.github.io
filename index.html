@@ -280,7 +280,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-19T11:50:38.715Z';
+        const searchIndexDate = '2024-01-26T15:38:01.431Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -292,9 +292,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-19T11:50:38.715Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-26T15:38:01.431Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-19T11:50:38.715Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-26T15:38:01.431Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -550,7 +550,8 @@
 <h2 id="linux" tabindex="-1">Linux</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Linux笔记/SSH Things/">SSH Things</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Issue caused by Safari & Jupyter/">Issue caused by Safari &amp; Jupyter</a><br>
-<a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Interpretation of ifconfig output/">Interpretation of ifconfig output</a></p>
+<a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Interpretation of ifconfig output/">Interpretation of ifconfig output</a><br>
+<a class="internal-link is-unresolved" href="/404" target="">Nginx proxy port of docker</a></p>
 <h2 id="misc" tabindex="-1">Misc</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Misc/Delete stock input method of Windows 10 and Windows 11/">Delete stock input method of Windows 10 and Windows 11</a></p>
 <h2 id="latex" tabindex="-1">Latex</h2>
