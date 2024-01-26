@@ -3,7 +3,7 @@
     <title>Findyy</title>
     <link href="https://findyy99.github.io/feed.xml" rel="self" >
     <link href="https://findyy99.github.io" >
-    <updated>2024-01-26T15:38:04Z</updated>
+    <updated>2024-01-26T15:38:09Z</updated>
     <id>https://findyy99.github.io</id>
         <entry>
             <title>
@@ -203,6 +203,18 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
 
             </content>
             <link href="https://findyy99.github.io/Linux笔记/SSH Things/" >
+        </entry>
+        <entry>
+            <title>
+                Nginx proxy port of docker
+                
+            </title>
+            <updated>2024-01-26T15:37:55Z</updated>
+            <id>https://findyy99.github.io/Linux笔记/Nginx proxy port of docker/</id>
+            <content type="html">
+                
+            </content>
+            <link href="https://findyy99.github.io/Linux笔记/Nginx proxy port of docker/" >
         </entry>
         <entry>
             <title>
@@ -525,7 +537,7 @@ lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt;  mtu 65536
 &lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/SSH%20Things/&quot;&gt;SSH Things&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/Issue%20caused%20by%20Safari%20&amp;%20Jupyter/&quot;&gt;Issue caused by Safari &amp;amp; Jupyter&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/Interpretation%20of%20ifconfig%20output/&quot;&gt;Interpretation of ifconfig output&lt;/a&gt;&lt;br /&gt;
-&lt;a class=&quot;internal-link is-unresolved&quot; href=&quot;https://findyy99.github.io/404&quot; target=&quot;&quot;&gt;Nginx proxy port of docker&lt;/a&gt;&lt;/p&gt;
+&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/Nginx%20proxy%20port%20of%20docker/&quot;&gt;Nginx proxy port of docker&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;misc&quot; tabindex=&quot;-1&quot;&gt;Misc&lt;/h2&gt;
 &lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Misc/Delete%20stock%20input%20method%20of%20Windows%2010%20and%20Windows%2011/&quot;&gt;Delete stock input method of Windows 10 and Windows 11&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;latex&quot; tabindex=&quot;-1&quot;&gt;Latex&lt;/h2&gt;

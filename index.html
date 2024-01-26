@@ -280,7 +280,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-26T15:38:04.580Z';
+        const searchIndexDate = '2024-01-26T15:38:09.046Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -292,9 +292,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-26T15:38:04.580Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-26T15:38:09.046Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-26T15:38:04.580Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-26T15:38:09.046Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -551,7 +551,7 @@
 <p><a class="internal-link" target="" data-note-icon="" href="/Linux笔记/SSH Things/">SSH Things</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Issue caused by Safari & Jupyter/">Issue caused by Safari &amp; Jupyter</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Interpretation of ifconfig output/">Interpretation of ifconfig output</a><br>
-<a class="internal-link is-unresolved" href="/404" target="">Nginx proxy port of docker</a></p>
+<a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Nginx proxy port of docker/">Nginx proxy port of docker</a></p>
 <h2 id="misc" tabindex="-1">Misc</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Misc/Delete stock input method of Windows 10 and Windows 11/">Delete stock input method of Windows 10 and Windows 11</a></p>
 <h2 id="latex" tabindex="-1">Latex</h2>
