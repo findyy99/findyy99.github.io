@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Linux笔记/SSH Things/","tags":["ssh","Linux"]}
+{"dg-publish":true,"permalink":"/Linux笔记/SSH Things/","tags":["ssh","Linux"],"noteIcon":"","created":"2022-10-27T14:28:51.344+08:00","updated":"2024-01-19T19:49:03.315+08:00"}
 ---
 
 ## Map the remote port to local
