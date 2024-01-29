@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Linux笔记/Interpretation of ifconfig output/","tags":["Linux"]}
+{"dg-publish":true,"permalink":"/Linux笔记/Interpretation of ifconfig output/","tags":["Linux"],"noteIcon":"","created":"2024-01-18T10:30:09.713+08:00","updated":"2024-01-19T19:46:14.403+08:00"}
 ---
 
 ```bash
