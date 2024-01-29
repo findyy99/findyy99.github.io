@@ -92,7 +92,7 @@
     
     
   </head>
-  <body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section ">
+  <body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section title-note-icon filetree-note-icon links-note-icon backlinks-note-icon">
     
     
     
@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-29T07:54:30.614Z';
+        const searchIndexDate = '2024-01-29T07:54:45.620Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-29T07:54:30.614Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-29T07:54:45.620Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-29T07:54:30.614Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-29T07:54:45.620Z', docs}));
             window.docs = docs
             window.index = index;
         }
