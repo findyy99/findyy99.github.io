@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-29T07:55:08.261Z';
+        const searchIndexDate = '2024-01-29T07:56:46.183Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-29T07:55:08.261Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-29T07:56:46.183Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-29T07:55:08.261Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-29T07:56:46.183Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -543,13 +543,16 @@
                 
               
             </div>
-          <div class="timestamps"></div></div>
+          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-01-26T23:36:01.585+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-01-29T15:54:38.181+08:00"></span></div></div></div>
       
       
       </header>
       
       
-      
+      <h1 id="generate-certificate" tabindex="-1">Generate certificate</h1>
+<pre><code class="language-bash">certbot certonly --nginx -d vw.202025.xyz
+</code></pre>
+
       
       
     </main>
@@ -563,6 +566,23 @@
 
                   
                         
+                        
+                              <div class="toc">
+                                    <div class="toc-title-container">
+                                          <div class="toc-title">
+                                                On this page
+                                          </div>
+                                    </div>
+                                    <div class="toc-container">
+                                          <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#generate-certificate">Generate certificate</a>
+            		</li>
+                </ol>
+            </nav>
+                                    </div>
+                              </div>
                         
 
                   
