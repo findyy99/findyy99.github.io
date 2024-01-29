@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Latex/希腊字母-Greek alphabet Using in Tex/","tags":["Latex"]}
+{"dg-publish":true,"permalink":"/Latex/希腊字母-Greek alphabet Using in Tex/","tags":["Latex"],"noteIcon":"","created":"2024-01-04T21:47:23.319+08:00","updated":"2024-01-19T19:49:54.640+08:00"}
 ---
 
 
