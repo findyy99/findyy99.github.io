@@ -10,7 +10,7 @@
                 Delete stock input method of Windows 10 and Windows 11
                 
             </title>
-            <updated>2024-01-29T07:54:56Z</updated>
+            <updated>2024-01-29T07:54:55Z</updated>
             <id>https://findyy99.github.io/Misc/Delete stock input method of Windows 10 and Windows 11/</id>
             <content type="html">
                 &lt;p&gt;由于中文输入法自带了中英文切换，而windows安装后自动又加了一个英语的输入法，导致在切换输入法及切换中英文时出现很烦人的情况，故查了很多网页，找了一个可以自动删除自带输入法的脚本。&lt;/p&gt;
@@ -56,7 +56,7 @@
                 Matplotlib plot mixed with Chinese and English
                 
             </title>
-            <updated>2024-01-29T07:54:56Z</updated>
+            <updated>2024-01-29T07:54:55Z</updated>
             <id>https://findyy99.github.io/Matplotlib/Matplotlib plot mixed with Chinese and English/</id>
             <content type="html">
                 &lt;p&gt;在使用 &lt;code&gt;Python&lt;/code&gt; 的 &lt;code&gt;matplotlib&lt;/code&gt; 画图时如果设置了标题或者坐标轴名称为中文时，显示图片上中文出现乱码或四边形，不能正常显示我们需要的中文字，体验非常不好。下面给出一个解决方法。本篇以 Linux （Debian）系统为例。&lt;/p&gt;
@@ -191,7 +191,7 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 SSH Things
                 
             </title>
-            <updated>2024-01-19T11:49:03.315Z</updated>
+            <updated>2024-01-29T07:54:55Z</updated>
             <id>https://findyy99.github.io/Linux笔记/SSH Things/</id>
             <content type="html">
                 &lt;h2 id=&quot;map-the-remote-port-to-local&quot; tabindex=&quot;-1&quot;&gt;Map the remote port to local&lt;/h2&gt;
