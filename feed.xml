@@ -3,7 +3,7 @@
     <title>Yet Another Blog</title>
     <link href="https://findyy99.github.io/feed.xml" rel="self" >
     <link href="https://findyy99.github.io" >
-    <updated>2024-01-29T07:55:07Z</updated>
+    <updated>2024-01-29T07:55:08Z</updated>
     <id>https://findyy99.github.io</id>
         <entry>
             <title>
@@ -209,13 +209,10 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 Nginx proxy port of docker
                 
             </title>
-            <updated>2024-01-29T07:54:38.181Z</updated>
+            <updated>2024-01-29T07:54:55Z</updated>
             <id>https://findyy99.github.io/Linux笔记/Nginx proxy port of docker/</id>
             <content type="html">
-                &lt;h1 id=&quot;generate-certificate&quot; tabindex=&quot;-1&quot;&gt;Generate certificate&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;certbot certonly --nginx -d vw.202025.xyz
-&lt;/code&gt;&lt;/pre&gt;
-
+                
             </content>
             <link href="https://findyy99.github.io/Linux笔记/Nginx proxy port of docker/" >
         </entry>
@@ -224,7 +221,7 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 Issue caused by Safari &amp; Jupyter
                 
             </title>
-            <updated>2024-01-20T09:49:43.607Z</updated>
+            <updated>2024-01-29T07:54:55Z</updated>
             <id>https://findyy99.github.io/Linux笔记/Issue caused by Safari &amp; Jupyter/</id>
             <content type="html">
                 &lt;p&gt;I created an environment of jupyter on my linux server today, when I use Safari to access this jupyter server, it always raises the following error. After changing from Safari to Chrome, everything works fine!&lt;/p&gt;

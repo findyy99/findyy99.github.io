@@ -35,7 +35,7 @@
 		"title": "Nginx proxy port of docker",
 		"date":"Mon Jan 29 2024 07:54:55 GMT+0000 (Coordinated Universal Time)",
 		"url":"/Linux笔记/Nginx proxy port of docker/",
-		"content": "Generate certificate\ncertbot certonly --nginx -d vw.202025.xyz",
+		"content": "",
 		"tags": [ "note","Linux"]
 },
 
