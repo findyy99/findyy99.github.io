@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Linux笔记/Issue caused by Safari & Jupyter/","tags":["Linux","Jupyter","Safari","macOS"]}
+{"dg-publish":true,"permalink":"/Linux笔记/Issue caused by Safari & Jupyter/","tags":["Linux","Jupyter","Safari","macOS"],"noteIcon":"","created":"2024-01-10T14:08:54.773+08:00","updated":"2024-01-20T17:49:43.607+08:00"}
 ---
 
 I created an environment of jupyter on my linux server today, when I use Safari to access this jupyter server, it always raises the following error. After changing from Safari to Chrome, everything works fine!
