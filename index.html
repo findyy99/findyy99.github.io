@@ -99,7 +99,7 @@
     <nav class="navbar">
         <div class="navbar-inner">
             <a href="/" style="text-decoration: none;">
-                <h1 style="margin: 15px !important;">Findyy</h1>
+                <h1 style="margin: 15px !important;">Yet Another Blog</h1>
             </a>
         </div>
         
@@ -280,7 +280,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-26T15:41:59.460Z';
+        const searchIndexDate = '2024-01-29T07:54:30.614Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -292,9 +292,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-26T15:41:59.460Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-29T07:54:30.614Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-26T15:41:59.460Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-29T07:54:30.614Z', docs}));
             window.docs = docs
             window.index = index;
         }
