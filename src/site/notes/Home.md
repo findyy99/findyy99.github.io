@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Home/","tags":["gardenEntry"],"noteIcon":"","created":"2024-01-03T13:48:15.870+08:00","updated":"2024-01-26T23:37:37.898+08:00"}
+{"dg-publish":true,"permalink":"/Home/","tags":["gardenEntry"],"noteIcon":"","created":"2024-01-03T13:48:15.870+08:00","updated":"2024-01-29T17:06:03.814+08:00"}
 ---
 
 # Content
@@ -11,6 +11,7 @@
 [[Linux笔记/Issue caused by Safari & Jupyter\|Issue caused by Safari & Jupyter]]
 [[Linux笔记/Interpretation of ifconfig output\|Interpretation of ifconfig output]]
 [[Linux笔记/Nginx proxy port of docker\|Nginx proxy port of docker]]
+[[Linux笔记/Linux enable and disable swap\|Linux enable and disable swap]]
 ## Misc
 [[Misc/Delete stock input method of Windows 10 and Windows 11\|Delete stock input method of Windows 10 and Windows 11]]
 
