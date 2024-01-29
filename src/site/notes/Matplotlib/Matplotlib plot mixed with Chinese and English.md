@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Matplotlib/Matplotlib plot mixed with Chinese and English/","title":"解决使用 Python 的 matplotlib 画图时中文显示为乱码的问题 | J. Xu","tags":["Matplotlib","Linux"]}
+{"dg-publish":true,"permalink":"/Matplotlib/Matplotlib plot mixed with Chinese and English/","title":"解决使用 Python 的 matplotlib 画图时中文显示为乱码的问题 | J. Xu","tags":["Matplotlib","Linux"],"noteIcon":"","created":"2022-10-28T21:34:04.056+08:00","updated":"2024-01-11T21:30:21.855+08:00"}
 ---
 
 在使用 `Python` 的 `matplotlib` 画图时如果设置了标题或者坐标轴名称为中文时，显示图片上中文出现乱码或四边形，不能正常显示我们需要的中文字，体验非常不好。下面给出一个解决方法。本篇以 Linux （Debian）系统为例。
