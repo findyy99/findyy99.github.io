@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Misc/Delete stock input method of Windows 10 and Windows 11/","tags":["Windows"]}
+{"dg-publish":true,"permalink":"/Misc/Delete stock input method of Windows 10 and Windows 11/","tags":["Windows"],"noteIcon":"","created":"2024-01-03T16:05:17.402+08:00","updated":"2024-01-03T16:12:34.182+08:00"}
 ---
 
 由于中文输入法自带了中英文切换，而windows安装后自动又加了一个英语的输入法，导致在切换输入法及切换中英文时出现很烦人的情况，故查了很多网页，找了一个可以自动删除自带输入法的脚本。
