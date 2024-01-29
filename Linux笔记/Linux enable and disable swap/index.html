@@ -15,7 +15,7 @@
 <meta name="google-adsense-account" content="ca-pub-1958043528169920">
 <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
 
-    <title>Interpretation of ifconfig output</title>
+    <title>Linux enable and disable swap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://fastly.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
 <script>
@@ -528,7 +528,7 @@
     <main class="content cm-s-obsidian ">
       <header>
         
-          <h1 data-note-icon="">Interpretation of ifconfig output</h1>
+          <h1 data-note-icon="">Linux enable and disable swap</h1>
         
         <div class="header-meta">
           
@@ -543,101 +543,41 @@
                 
               
             </div>
-          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-01-18T10:30:09.713+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-01-19T19:46:14.403+08:00"></span></div></div></div>
+          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-01-29T16:56:32.806+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-01-29T17:05:30.147+08:00"></span></div></div></div>
       
       
       </header>
       
       
-      <pre><code class="language-bash">docker0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
-        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
-        ether 02:42:ae:71:c7:0a  txqueuelen 0  (Ethernet)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-enp0s5: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
-        inet 10.211.55.12  netmask 255.255.255.0  broadcast 10.211.55.255
-        inet6 fdb2:2c26:f4e4:0:21c:42ff:feca:2cdd  prefixlen 64  scopeid 0x0&lt;global&gt;
-        inet6 fe80::21c:42ff:feca:2cdd  prefixlen 64  scopeid 0x20&lt;link&gt;
-        ether 00:1c:42:ca:2c:dd  txqueuelen 1000  (Ethernet)
-        RX packets 423  bytes 276453 (269.9 KiB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 332  bytes 33369 (32.5 KiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
-        inet 127.0.0.1  netmask 255.0.0.0
-        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
-        loop  txqueuelen 1000  (Local Loopback)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+      <h1 id="1-enable-swap" tabindex="-1">1.  Enable Swap</h1>
+<h2 id="1-1-check-the-usage-of-swap" tabindex="-1">1.1 Check the usage of Swap</h2>
+<pre><code class="language-bash">               total        used        free      shared  buff/cache   available
+Mem:             417         188          21           2         221         229
+Swap:           2047           0        2047
 </code></pre>
-<p>这是通过运行<code>sudo ifconfig</code>命令获取的网络接口信息。以下是对输出中每个网络接口的解释：</p>
-<ol>
-<li>
-<p><strong>docker0:</strong></p>
-<ul>
-<li><strong>flags:</strong> 网络接口的标志，此处包括UP（已启动）、BROADCAST（支持广播）和MULTICAST（支持多播）等。</li>
-<li><strong>mtu:</strong> 最大传输单元，指定在单个网络层上通过一个连接传送的最大数据包大小。</li>
-<li><strong>inet:</strong> 接口的IPv4地址（172.17.0.1）。</li>
-<li><strong>netmask:</strong> 掩码，用于确定网络上的主机和网络部分。</li>
-<li><strong>broadcast:</strong> 广播地址，用于向网络上所有主机发送数据。</li>
-<li><strong>ether:</strong> 以太网地址（MAC地址）。</li>
-<li><strong>txqueuelen:</strong> 发送队列的长度。</li>
-<li><strong>RX packets/bytes:</strong> 接收的数据包和字节数。</li>
-<li><strong>TX packets/bytes:</strong> 发送的数据包和字节数。</li>
-<li><strong>RX errors/TX errors:</strong> 接收和发送的错误数量。</li>
-<li><strong>dropped:</strong> 丢弃的数据包数量。</li>
-<li><strong>overruns:</strong> 接收或发送缓冲区溢出次数。</li>
-<li><strong>frame:</strong> 接收到的帧错误次数。</li>
-<li><strong>carrier:</strong> 与载波相关的错误数量。</li>
-<li><strong>collisions:</strong> 发送时的碰撞次数。</li>
-</ul>
-</li>
-<li>
-<p><strong>enp0s5:</strong></p>
-<ul>
-<li>类似于docker0，但这是物理网络接口。</li>
-<li><strong>inet:</strong> 接口的IPv4地址（10.211.55.12）。</li>
-<li><strong>netmask:</strong> 掩码，用于确定网络上的主机和网络部分。</li>
-<li><strong>broadcast:</strong> 广播地址，用于向网络上所有主机发送数据。</li>
-<li><strong>ether:</strong> 以太网地址（MAC地址）。</li>
-<li><strong>inet6:</strong> IPv6地址和相关信息。</li>
-<li><strong>txqueuelen:</strong> 发送队列的长度。</li>
-<li><strong>RX packets/bytes:</strong> 接收的数据包和字节数。</li>
-<li><strong>TX packets/bytes:</strong> 发送的数据包和字节数。</li>
-<li><strong>RX errors/TX errors:</strong> 接收和发送的错误数量。</li>
-<li><strong>dropped:</strong> 丢弃的数据包数量。</li>
-<li><strong>overruns:</strong> 接收或发送缓冲区溢出次数。</li>
-<li><strong>frame:</strong> 接收到的帧错误次数。</li>
-<li><strong>carrier:</strong> 与载波相关的错误数量。</li>
-<li><strong>collisions:</strong> 发送时的碰撞次数。</li>
-</ul>
-</li>
-<li>
-<p><strong>lo (<a href="https://www.baeldung.com/linux/loopback-lo-device" target="_blank" class="external-link">Loopback</a>):</strong></p>
-<ul>
-<li><strong>flags:</strong> 网络接口的标志，包括UP（已启动）和LOOPBACK（环回）。</li>
-<li><strong>mtu:</strong> 最大传输单元，65536表示Loopback接口支持非常大的数据包。</li>
-<li><strong>inet:</strong> 环回接口的IPv4地址（127.0.0.1）。</li>
-<li><strong>netmask:</strong> 掩码，用于确定网络上的主机和网络部分。</li>
-<li><strong>inet6:</strong> IPv6地址和相关信息。</li>
-<li><strong>loop:</strong> 发送队列的长度。</li>
-<li><strong>RX packets/bytes:</strong> 接收的数据包和字节数。</li>
-<li><strong>TX packets/bytes:</strong> 发送的数据包和字节数。</li>
-<li><strong>RX errors/TX errors:</strong> 接收和发送的错误数量。</li>
-<li><strong>dropped:</strong> 丢弃的数据包数量。</li>
-<li><strong>overruns:</strong> 接收或发送缓冲区溢出次数。</li>
-<li><strong>frame:</strong> 接收到的帧错误次数。</li>
-<li><strong>carrier:</strong> 与载波相关的错误数量。</li>
-<li><strong>collisions:</strong> 发送时的碰撞次数。</li>
-</ul>
-</li>
-</ol>
+<h2 id="1-2-add-swap-file" tabindex="-1">1.2 Add Swap file</h2>
+<pre><code class="language-bash">cd /usr
+mkdir swap &amp;&amp; cd swap
+dd if=/dev/zero of=/usr/swap/swapfile1 bs=1M count=2048
+</code></pre>
+<p><code>bs=1M means the size of block written is 1M，count=2048 means we created a swap file which is 2048M totally.</code></p>
+<h2 id="1-3-check-the-size-of-swap-file-created" tabindex="-1">1.3 Check the size of swap file created</h2>
+<pre><code class="language-bash">du -sh /usr/swap/swapfile1
+</code></pre>
+<h2 id="1-4-make-the-swap-file-to-be-recognized-by-system" tabindex="-1">1.4 Make the swap file to be recognized by system</h2>
+<pre><code class="language-bash">mkswap /usr/swap/swapfile1
+</code></pre>
+<h2 id="1-5-enable-usage-of-the-swap-file" tabindex="-1">1.5 Enable usage of the swap file</h2>
+<pre><code class="language-bash">swapon /usr/swap/swapfile1
+</code></pre>
+<h2 id="1-6-edit-code-etc-fstab-code" tabindex="-1">1.6 Edit <code>/etc/fstab</code></h2>
+<pre><code class="language-bash">/usr/swap/swapfile1 swap swap defaults 0 0
+</code></pre>
+<h2 id="1-7-check-the-swap-file-mounted-successfully" tabindex="-1">1.7 Check the swap file mounted successfully</h2>
+<pre><code class="language-bash">swapon -s
+</code></pre>
+<p>Reference:<br>
+[1]:<a href="https://timberkito.com/?p=98" target="_blank" class="external-link">https://timberkito.com/?p=98</a></p>
 
       
       
@@ -652,6 +592,47 @@ lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
 
                   
                         
+                        
+                              <div class="toc">
+                                    <div class="toc-title-container">
+                                          <div class="toc-title">
+                                                On this page
+                                          </div>
+                                    </div>
+                                    <div class="toc-container">
+                                          <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#1-enable-swap">1.  Enable Swap</a>
+            
+                <ol>
+                    
+                    <li><a href="#1-1-check-the-usage-of-swap">1.1 Check the usage of Swap</a>
+            		</li>
+
+                    <li><a href="#1-2-add-swap-file">1.2 Add Swap file</a>
+            		</li>
+
+                    <li><a href="#1-3-check-the-size-of-swap-file-created">1.3 Check the size of swap file created</a>
+            		</li>
+
+                    <li><a href="#1-4-make-the-swap-file-to-be-recognized-by-system">1.4 Make the swap file to be recognized by system</a>
+            		</li>
+
+                    <li><a href="#1-5-enable-usage-of-the-swap-file">1.5 Enable usage of the swap file</a>
+            		</li>
+
+                    <li><a href="#1-6-edit-code-etc-fstab-code">1.6 Edit /etc/fstab</a>
+            		</li>
+
+                    <li><a href="#1-7-check-the-swap-file-mounted-successfully">1.7 Check the swap file mounted successfully</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            </nav>
+                                    </div>
+                              </div>
                         
 
                   

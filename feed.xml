@@ -3,7 +3,7 @@
     <title>Yet Another Blog</title>
     <link href="https://findyy99.github.io/feed.xml" rel="self" >
     <link href="https://findyy99.github.io" >
-    <updated>2024-01-29T07:56:46Z</updated>
+    <updated>2024-01-29T09:05:54Z</updated>
     <id>https://findyy99.github.io</id>
         <entry>
             <title>
@@ -218,6 +218,47 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
 
             </content>
             <link href="https://findyy99.github.io/Linux笔记/Nginx proxy port of docker/" >
+        </entry>
+        <entry>
+            <title>
+                Linux enable and disable swap
+                
+            </title>
+            <updated>2024-01-29T09:05:30.147Z</updated>
+            <id>https://findyy99.github.io/Linux笔记/Linux enable and disable swap/</id>
+            <content type="html">
+                &lt;h1 id=&quot;1-enable-swap&quot; tabindex=&quot;-1&quot;&gt;1.  Enable Swap&lt;/h1&gt;
+&lt;h2 id=&quot;1-1-check-the-usage-of-swap&quot; tabindex=&quot;-1&quot;&gt;1.1 Check the usage of Swap&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;               total        used        free      shared  buff/cache   available
+Mem:             417         188          21           2         221         229
+Swap:           2047           0        2047
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;1-2-add-swap-file&quot; tabindex=&quot;-1&quot;&gt;1.2 Add Swap file&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;cd /usr
+mkdir swap &amp;amp;&amp;amp; cd swap
+dd if=/dev/zero of=/usr/swap/swapfile1 bs=1M count=2048
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;bs=1M means the size of block written is 1M，count=2048 means we created a swap file which is 2048M totally.&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-3-check-the-size-of-swap-file-created&quot; tabindex=&quot;-1&quot;&gt;1.3 Check the size of swap file created&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;du -sh /usr/swap/swapfile1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;1-4-make-the-swap-file-to-be-recognized-by-system&quot; tabindex=&quot;-1&quot;&gt;1.4 Make the swap file to be recognized by system&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;mkswap /usr/swap/swapfile1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;1-5-enable-usage-of-the-swap-file&quot; tabindex=&quot;-1&quot;&gt;1.5 Enable usage of the swap file&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;swapon /usr/swap/swapfile1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;1-6-edit-code-etc-fstab-code&quot; tabindex=&quot;-1&quot;&gt;1.6 Edit &lt;code&gt;/etc/fstab&lt;/code&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;/usr/swap/swapfile1 swap swap defaults 0 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;1-7-check-the-swap-file-mounted-successfully&quot; tabindex=&quot;-1&quot;&gt;1.7 Check the swap file mounted successfully&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;swapon -s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Reference:&lt;br /&gt;
+[1]:&lt;a href=&quot;https://timberkito.com/?p=98&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://timberkito.com/?p=98&lt;/a&gt;&lt;/p&gt;
+
+            </content>
+            <link href="https://findyy99.github.io/Linux笔记/Linux enable and disable swap/" >
         </entry>
         <entry>
             <title>
