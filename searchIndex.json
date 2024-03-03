@@ -1,15 +1,15 @@
 [
 {
 		"title": "Home",
-		"date":"Sun Mar 03 2024 13:43:15 GMT+0000 (Coordinated Universal Time)",
+		"date":"Sun Mar 03 2024 13:43:22 GMT+0000 (Coordinated Universal Time)",
 		"url":"/",
-		"content": "Content\nMatplotlib\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Matplotlib/Matplotlib plot mixed with Chinese and English/\">Matplotlib plot mixed with Chinese and English</a>\nLinux\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Linux笔记/SSH Things/\">SSH Things</a>\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Linux笔记/Issue caused by Safari & Jupyter/\">Issue caused by Safari &amp; Jupyter</a>\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Linux笔记/Interpretation of ifconfig output/\">Interpretation of ifconfig output</a>\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Linux笔记/Nginx proxy port of docker/\">Nginx proxy port of docker</a>\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Linux笔记/Linux enable and disable swap/\">Linux enable and disable swap</a>\nMisc\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Misc/Delete stock input method of Windows 10 and Windows 11/\">Delete stock input method of Windows 10 and Windows 11</a>\n<a class=\"internal-link is-unresolved\" href=\"/404\" target=\"\">iPV6 for Padavan</a>\nLatex\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Latex/希腊字母-Greek alphabet Using in Tex/\">希腊字母-Greek alphabet Using in Tex</a>",
+		"content": "Content\nMatplotlib\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Matplotlib/Matplotlib plot mixed with Chinese and English/\">Matplotlib plot mixed with Chinese and English</a>\nLinux\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Linux笔记/SSH Things/\">SSH Things</a>\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Linux笔记/Issue caused by Safari & Jupyter/\">Issue caused by Safari &amp; Jupyter</a>\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Linux笔记/Interpretation of ifconfig output/\">Interpretation of ifconfig output</a>\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Linux笔记/Nginx proxy port of docker/\">Nginx proxy port of docker</a>\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Linux笔记/Linux enable and disable swap/\">Linux enable and disable swap</a>\nMisc\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Misc/Delete stock input method of Windows 10 and Windows 11/\">Delete stock input method of Windows 10 and Windows 11</a>\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/路由器/iPV6 for Padavan/\">iPV6 for Padavan</a>\nLatex\n<a class=\"internal-link\" target=\"\" data-note-icon=\"\" href=\"/Latex/希腊字母-Greek alphabet Using in Tex/\">希腊字母-Greek alphabet Using in Tex</a>",
 		"tags": [ "note","gardenEntry"]
 },
 
 {
 		"title": "希腊字母-Greek alphabet Using in Tex",
-		"date":"Sun Mar 03 2024 13:43:15 GMT+0000 (Coordinated Universal Time)",
+		"date":"Sun Mar 03 2024 13:43:22 GMT+0000 (Coordinated Universal Time)",
 		"url":"/Latex/希腊字母-Greek alphabet Using in Tex/",
 		"content": "小写字母\nTeX 指令\n大写字母\nTeX 指令\n小写字母\nTeX 指令\n大写字母\nTeX 指令\n\nα\nalpha\nA\nA\nξ\nxi\n\nXi\n\nβ\nbeta\nB\nB\no\no\nO\nO\n\nγ\ngamma\nΓ\nGamma\nπ\npi\nΠ\nPi\n\nδ\ndelta\nΔ\nDelta\nϖ\nvarpi\n\nϵ\nepsilon\nE\nE\nρ\nrho\nP\nP\n\nε\nvarepsilon\n\nϱ\nvarrho\n\nζ\nzeta\nZ\nZ\nσ\nsigma\nΣ\nSigma\n\nη\neta\nH\nH\nς\nvarsigma\n\nθ\ntheta\nΘ\nTheta\nτ\ntau\nT\nT\n\nϑ\nvartheta\n\nυ\nupsilon\nΥ\nUpsilon\n\nι\niota\nI\nI\nϕ\nphi\nΦ\nPhi\n\nκ\nkappa\nK\nK\nφ\nvarphi\n\nλ\nlambda\nΛ\nLambda\nχ\nchi\nX\nX\n\nμ\nmu\nM\nM\nψ\npsi\nΨ\nPsi\n\nν\nnu\nN\nN\nω\nomega\nΩ\nOmega\n\nReference：https://bcc16.ncu.edu.tw/7/latex/math_tex/2-html/",
 		"tags": [ "note","Latex"]
@@ -17,7 +17,7 @@
 
 {
 		"title": "Interpretation of ifconfig output",
-		"date":"Sun Mar 03 2024 13:43:15 GMT+0000 (Coordinated Universal Time)",
+		"date":"Sun Mar 03 2024 13:43:22 GMT+0000 (Coordinated Universal Time)",
 		"url":"/Linux笔记/Interpretation of ifconfig output/",
 		"content": "docker0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500\n        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255\n        ether 02:42:ae:71:c7:0a  txqueuelen 0  (Ethernet)\n        RX packets 0  bytes 0 (0.0 B)\n        RX errors 0  dropped 0  overruns 0  frame 0\n        TX packets 0  bytes 0 (0.0 B)\n        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0\n\nenp0s5: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500\n        inet 10.211.55.12  netmask 255.255.255.0  broadcast 10.211.55.255\n        inet6 fdb2:2c26:f4e4:0:21c:42ff:feca:2cdd  prefixlen 64  scopeid 0x0&lt;global&gt;\n        inet6 fe80::21c:42ff:feca:2cdd  prefixlen 64  scopeid 0x20&lt;link&gt;\n        ether 00:1c:42:ca:2c:dd  txqueuelen 1000  (Ethernet)\n        RX packets 423  bytes 276453 (269.9 KiB)\n        RX errors 0  dropped 0  overruns 0  frame 0\n        TX packets 332  bytes 33369 (32.5 KiB)\n      TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0\n\nlo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536\n        inet 127.0.0.1  netmask 255.0.0.0\n        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;\n        loop  txqueuelen 1000  (Local Loopback)\n        RX packets 0  bytes 0 (0.0 B)\n        RX errors 0  dropped 0  overruns 0  frame 0\n        TX packets 0  bytes 0 (0.0 B)\n        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0\n\n这是通过运行sudo ifconfig命令获取的网络接口信息。以下是对输出中每个网络接口的解释：\n\ndocker0:\n\nflags: 网络接口的标志，此处包括UP（已启动）、BROADCAST（支持广播）和MULTICAST（支持多播）等。\nmtu: 最大传输单元，指定在单个网络层上通过一个连接传送的最大数据包大小。\ninet: 接口的IPv4地址（172.17.0.1）。\nnetmask: 掩码，用于确定网络上的主机和网络部分。\nbroadcast: 广播地址，用于向网络上所有主机发送数据。\nether: 以太网地址（MAC地址）。\ntxqueuelen: 发送队列的长度。\nRX packets/bytes: 接收的数据包和字节数。\nTX packets/bytes: 发送的数据包和字节数。\nRX errors/TX errors: 接收和发送的错误数量。\ndropped: 丢弃的数据包数量。\noverruns: 接收或发送缓冲区溢出次数。\nframe: 接收到的帧错误次数。\ncarrier: 与载波相关的错误数量。\ncollisions: 发送时的碰撞次数。\n\nenp0s5:\n\n类似于docker0，但这是物理网络接口。\ninet: 接口的IPv4地址（10.211.55.12）。\nnetmask: 掩码，用于确定网络上的主机和网络部分。\nbroadcast: 广播地址，用于向网络上所有主机发送数据。\nether: 以太网地址（MAC地址）。\ninet6: IPv6地址和相关信息。\ntxqueuelen: 发送队列的长度。\nRX packets/bytes: 接收的数据包和字节数。\nTX packets/bytes: 发送的数据包和字节数。\nRX errors/TX errors: 接收和发送的错误数量。\ndropped: 丢弃的数据包数量。\noverruns: 接收或发送缓冲区溢出次数。\nframe: 接收到的帧错误次数。\ncarrier: 与载波相关的错误数量。\ncollisions: 发送时的碰撞次数。\n\nlo (Loopback):\n\nflags: 网络接口的标志，包括UP（已启动）和LOOPBACK（环回）。\nmtu: 最大传输单元，65536表示Loopback接口支持非常大的数据包。\ninet: 环回接口的IPv4地址（127.0.0.1）。\nnetmask: 掩码，用于确定网络上的主机和网络部分。\ninet6: IPv6地址和相关信息。\nloop: 发送队列的长度。\nRX packets/bytes: 接收的数据包和字节数。\nTX packets/bytes: 发送的数据包和字节数。\nRX errors/TX errors: 接收和发送的错误数量。\ndropped: 丢弃的数据包数量。\noverruns: 接收或发送缓冲区溢出次数。\nframe: 接收到的帧错误次数。\ncarrier: 与载波相关的错误数量。\ncollisions: 发送时的碰撞次数。",
 		"tags": [ "note","Linux"]
@@ -25,7 +25,7 @@
 
 {
 		"title": "Issue caused by Safari & Jupyter",
-		"date":"Sun Mar 03 2024 13:43:15 GMT+0000 (Coordinated Universal Time)",
+		"date":"Sun Mar 03 2024 13:43:22 GMT+0000 (Coordinated Universal Time)",
 		"url":"/Linux笔记/Issue caused by Safari &amp; Jupyter/",
 		"content": "I created an environment of jupyter on my linux server today, when I use Safari to access this jupyter server, it always raises the following error. After changing from Safari to Chrome, everything works fine!\n[W 2024-01-10 06:12:38.774 ServerApp] 404 GET ws://xxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.92ms referer=None\n[W 2024-01-10 06:12:39.150 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.09ms referer=None\n[W 2024-01-10 06:12:40.136 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.10ms referer=None\n[W 2024-01-10 06:12:40.719 ServerApp] 404 GET ws://xxxxx:8889/terminals/websocket/1 (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.23ms referer=None\n[W 2024-01-10 06:12:40.848 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=f0c4b3b4-387d-4b43-9a4a-7cc897d7ce5c (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.99ms referer=None\n[W 2024-01-10 06:12:41.432 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.01ms referer=None\n[W 2024-01-10 06:12:41.569 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.06ms referer=None\n[W 2024-01-10 06:12:42.608 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=f0c4b3b4-387d-4b43-9a4a-7cc897d7ce5c (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.13ms referer=None\n[W 2024-01-10 06:12:44.401 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.15ms referer=None\n[W 2024-01-10 06:12:45.005 ServerApp] 404 GET ws://xxxxx:8889/terminals/websocket/1 (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.78ms referer=None\n[W 2024-01-10 06:12:45.354 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.09ms referer=None\n[W 2024-01-10 06:12:46.965 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.12ms referer=None",
 		"tags": [ "note","Linux","Jupyter","Safari","macOS"]
@@ -33,7 +33,7 @@
 
 {
 		"title": "Linux enable and disable swap",
-		"date":"Sun Mar 03 2024 13:43:15 GMT+0000 (Coordinated Universal Time)",
+		"date":"Sun Mar 03 2024 13:43:22 GMT+0000 (Coordinated Universal Time)",
 		"url":"/Linux笔记/Linux enable and disable swap/",
 		"content": "1. Enable Swap\n1.1 Check the usage of Swap\n               total        used        free      shared  buff/cache   available\nMem:             417         188          21           2         221         229\nSwap:           2047           0        2047\n\n1.2 Add Swap file\ncd /usr\nmkdir swap &amp;&amp; cd swap\ndd if=/dev/zero of=/usr/swap/swapfile1 bs=1M count=2048\n\nbs=1M means the size of block written is 1M，count=2048 means we created a swap file which is 2048M totally.\n1.3 Check the size of swap file created\ndu -sh /usr/swap/swapfile1\n\n1.4 Make the swap file to be recognized by system\nmkswap /usr/swap/swapfile1\n\n1.5 Enable usage of the swap file\nswapon /usr/swap/swapfile1\n\n1.6 Edit /etc/fstab\n/usr/swap/swapfile1 swap swap defaults 0 0\n\n1.7 Check the swap file mounted successfully\nswapon -s\n\nReference:\n[1]:https://timberkito.com/?p=98",
 		"tags": [ "note","Linux"]
@@ -41,7 +41,7 @@
 
 {
 		"title": "Nginx proxy port of docker",
-		"date":"Sun Mar 03 2024 13:43:15 GMT+0000 (Coordinated Universal Time)",
+		"date":"Sun Mar 03 2024 13:43:22 GMT+0000 (Coordinated Universal Time)",
 		"url":"/Linux笔记/Nginx proxy port of docker/",
 		"content": "Generate certificate\ncertbot certonly --nginx -d vw.202025.xyz",
 		"tags": [ "note","Linux"]
@@ -49,7 +49,7 @@
 
 {
 		"title": "SSH Things",
-		"date":"Sun Mar 03 2024 13:43:15 GMT+0000 (Coordinated Universal Time)",
+		"date":"Sun Mar 03 2024 13:43:22 GMT+0000 (Coordinated Universal Time)",
 		"url":"/Linux笔记/SSH Things/",
 		"content": "Map the remote port to local\nssh -L53682:localhost:53682 ubuntu@158.101.140.179\n\nTransfer file using scp\nscp -O -i xxxx.pem user@ip:/xx/xx/xx/xxx.ipynb ~/Desktop/xxxx.ipynb",
 		"tags": [ "note","ssh","Linux"]
@@ -57,7 +57,7 @@
 
 {
 		"title": "解决使用 Python 的 matplotlib 画图时中文显示为乱码的问题 | J. Xu",
-		"date":"Sun Mar 03 2024 13:43:15 GMT+0000 (Coordinated Universal Time)",
+		"date":"Sun Mar 03 2024 13:43:22 GMT+0000 (Coordinated Universal Time)",
 		"url":"/Matplotlib/Matplotlib plot mixed with Chinese and English/",
 		"content": "在使用 Python 的 matplotlib 画图时如果设置了标题或者坐标轴名称为中文时，显示图片上中文出现乱码或四边形，不能正常显示我们需要的中文字，体验非常不好。下面给出一个解决方法。本篇以 Linux （Debian）系统为例。\n可以在 wfonts 下载，也可以在其他任何能够下载到 SimHei.ttf 的地方下载。\n把字体放在 matplotlib 能够发现的位置，如何指导正确的位置\n➜ ~ ipython\nPython 3.8.5 (default, Sep 4 2020, 07:30:14)\nType 'copyright', 'credits' or 'license' for more information\nIPython 7.23.0 -- An enhanced Interactive Python. Type '?' for help.\n\nIn [1]: import matplotlib\n\nIn [2]: matplotlib.matplotlib_fname()\nOut[2]: '/usr/local/miniconda/lib/python3.8/site-packages/matplotlib/mpl-data/matplotlibrc'\n\n从上面可以发现一个目录：'/usr/local/miniconda/lib/python3.8/site-packages/matplotlib/mpl-data/'，在该目录下有个文件夹\n➜ ~ ls /usr/local/miniconda/lib/python3.8/site-packages/matplotlib/mpl-data\nfonts images matplotlibrc plot_directive sample_data stylelib\n➜ ~ ls /usr/local/miniconda/lib/python3.8/site-packages/matplotlib/mpl-data/fonts\nafm pdfcorefonts ttf\n\n把下载的 SimHei.ttf 拷贝到 ttf 文件夹下\n一般需要先清除掉旧的 matplotlib 缓存后才能正常使用，缓存一般在家目录下，可以通过如下方法获得缓存地址\n➜ ~ ipython\nPython 3.8.5 (default, Sep 4 2020, 07:30:14)\nType 'copyright', 'credits' or 'license' for more information\nIPython 7.23.0 -- An enhanced Interactive Python. Type '?' for help.\n\nIn [1]: import matplotlib\n\nIn [2]: matplotlib.get_cachedir()\nOut[2]: '/home/jinzhongxu/.cache/matplotlib'\n\n发现我的确实在家目录下，因此直接去家目录删除即可\n➜ ~ ls .cache\njedi matplotlib yarn\n➜ ~ ls .cache/matplotlib\nfontlist-v330.json\n➜ ~ rm -r ~/.cache/matplotlib\n\n配置好中文字体后，只需要在每次画图时指定字体就可以正常显示中文字符了。\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nplt.rcParams[&quot;font.sans-serif&quot;] = [&quot;SimHei&quot;]\nplt.rcParams[&quot;axes.unicode_minus&quot;] = False\n\nx = np.linspace(-5, 5, 101)\ny = np.cos(x)\nplt.plot(x, y, &quot;r&quot;)\nplt.title(u&quot;余弦&quot;)\nplt.show()\n\n从上面可知，每次画图都需要在代码中配置中文字体才能正常显示中文字符，下面通过设置可以直接使用中文字体，那就是修改上面的配置文件\nvim /usr/local/miniconda/lib/python3.8/site-packages/matplotlib/mpl-data/matplotlibrc\n\nfont.family : sans-serif\n\nfont.sans-serif : SimHei, Bitstream Vera Sans, ...\n\naxes.unicode_minus : False\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\na = 3\nx = np.linspace(-(a + 1) * np.pi / 4, (a + 1) * np.pi / 4, 301)\ny1 = a * (1 + np.cos(x)) * np.cos(x)\ny2 = a * (1 + np.cos(x)) * np.sin(x)\n\nfig, ax = plt.subplots()\nfor key, spine in ax.spines.items():\n\nspine.set_visible(False)\n\nplt.plot(y2, -y1)\nplt.xticks([])\nplt.yticks([])\nplt.axis(&quot;equal&quot;)\nplt.show()\n\n整体调整\nimport matplotlib\n\nfont = {&quot;family&quot;: &quot;SimHei&quot;, &quot;weight&quot;: &quot;bold&quot;, &quot;size&quot;: 20}\n\nmatplotlib.rc(&quot;font&quot;, **font)\n\nimport matplotlib\n\nmatplotlib.rcParams.update({'font.size': 20})\n\nimport matplotlib.pyplot as plt\n\nplt.rcParams.update({'font.size': 20})\n\n单个调整\nimport matplotlib\n\nSIZE = 20\nmatplotlib.rc('font', size=SIZE)\nmatplotlib.rc('axes', titlesize=SIZE)\n\nimport matplotlib.pyplot as plt\n\nSIZE = 20\n\nplt.rc('font', size=SIZE)\nplt.rc('axes', titlesize=SIZE)\nplt.rc('axes', labelsize=SIZE)\nplt.rc('xtick', labelsize=SIZE)\nplt.rc('ytick', labelsize=SIZE)\nplt.rc('legend', fontsize=SIZE)\nplt.rc('figure', titlesize=SIZE)\n\nmatplotlib 对中文的支持（Font family [‘sans-serif’] not found.Falling back to DejaVu Sans）\nubuntu 系统下 matplotlib 中文乱码问题\n如何在 Matplotlib 中设置刻度标签 xticks 字体大小",
 		"tags": [ "note","Matplotlib","Linux"]
@@ -65,9 +65,17 @@
 
 {
 		"title": "Delete stock input method of Windows 10 and Windows 11",
-		"date":"Sun Mar 03 2024 13:43:15 GMT+0000 (Coordinated Universal Time)",
+		"date":"Sun Mar 03 2024 13:43:22 GMT+0000 (Coordinated Universal Time)",
 		"url":"/Misc/Delete stock input method of Windows 10 and Windows 11/",
 		"content": "由于中文输入法自带了中英文切换，而windows安装后自动又加了一个英语的输入法，导致在切换输入法及切换中英文时出现很烦人的情况，故查了很多网页，找了一个可以自动删除自带输入法的脚本。\n1. 新建删除脚本\n脚本内容如下，将其复制到NotePad中，保存，后缀改为.xml ，类似：Remove_en-US.xml.\n&lt;gs:GlobalizationServices xmlns:gs=&quot;urn:longhornGlobalizationUnattend&quot;&gt;\n\n&lt;!--User List--&gt;\n\n&lt;gs:UserList&gt;\n\n&lt;gs:User UserID=&quot;Current&quot;/&gt;\n\n&lt;/gs:UserList&gt;\n\n&lt;!--input preferences--&gt;\n\n&lt;gs:InputPreferences&gt;\n\n&lt;!--add en-US keyboard input--&gt;\n\n&lt;gs:InputLanguageID Action=&quot;add&quot; ID=&quot;0409:00000409&quot;/&gt;\n\n&lt;!--remove en-US keyboard input--&gt;\n\n&lt;gs:InputLanguageID Action=&quot;remove&quot; ID=&quot;0409:00000409&quot;/&gt;\n\n&lt;/gs:InputPreferences&gt;\n\n&lt;/gs:GlobalizationServices&gt;\n\n2. 新建批处理文件执行删除脚本\n内容如下：\ncontrol intl.cpl,, /f:&quot;\\\\Mac\\Home\\Desktop\\windows11\\delete_input\\Remove_en-US.xml&quot;\n\n将上述内容复制到NotePad中，保存为bat文件，类似：Remove_en-US.bat。请将\\\\Mac后的内容改为Remove_en-US.xml的路径。",
 		"tags": [ "note","Windows"]
+},
+
+{
+		"title": "iPV6 for Padavan",
+		"date":"Sun Mar 03 2024 13:43:22 GMT+0000 (Coordinated Universal Time)",
+		"url":"/路由器/iPV6 for Padavan/",
+		"content": "",
+		"tags": [ "note"]
 }
 ]
