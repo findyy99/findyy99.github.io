@@ -15,7 +15,7 @@
 <meta name="google-adsense-account" content="ca-pub-1958043528169920">
 <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
 
-    <title>CSL editor</title>
+    <title>Citation Style Language Editor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://fastly.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
 <script>
@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-03-19T09:40:32.995Z';
+        const searchIndexDate = '2024-03-19T09:40:38.174Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-03-19T09:40:32.995Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-03-19T09:40:38.174Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-19T09:40:32.995Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-19T09:40:38.174Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -528,7 +528,7 @@
     <main class="content cm-s-obsidian ">
       <header>
         
-          <h1 data-note-icon="">CSL editor</h1>
+          <h1 data-note-icon="">Citation Style Language Editor</h1>
         
         <div class="header-meta">
           
@@ -536,14 +536,35 @@
               
                 
               
+                
+                  <a class="tag" onclick="toggleTagSearch(this)">
+                    #Paper
+                  </a>
+                
+              
+                
+                  <a class="tag" onclick="toggleTagSearch(this)">
+                    #Zotero
+                  </a>
+                
+              
             </div>
-          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-03-19T17:22:37.922+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-03-19T17:22:53.083+08:00"></span></div></div></div>
+          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-03-19T17:22:37.922+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-03-19T17:39:58.977+08:00"></span></div></div></div>
       
       
       </header>
       
       
-      <p><a href="https://editor.citationstyles.org/about/" target="_blank" class="external-link">https://editor.citationstyles.org/about/</a></p>
+      <h1 id="what-is-citation-style-language" tabindex="-1">What is Citation Style Language?</h1>
+<p>According to the <a href="https://en.wikipedia.org/wiki/Citation_Style_Language" target="_blank" class="external-link">Wikipedia</a> , <strong>Citation Style Language</strong> (<strong>CSL</strong>) is an open XML file format that describes schema for the formatting of citations and bibliographies. The reference management program using CSL include <a href="https://www.zotero.org/" target="_blank" class="external-link">Zotero</a>(I am using), <a href="https://www.mendeley.com/" target="_blank" class="external-link">Mendeley</a>, <a href="https://refworks.proquest.com/" target="_blank" class="external-link">Refworks</a> and <a href="https://www.papersapp.com/" target="_blank" class="external-link">Papers</a>.</p>
+<h1 id="documentation-of-csl" tabindex="-1">Documentation of CSL</h1>
+<p>As far as I know, there are some resources which have provide many useful information about CSL.</p>
+<ul>
+<li><a href="https://citationstyles.org/about/" target="_blank" class="external-link">CSL</a></li>
+<li><a href="https://docs.citationstyles.org/en/stable/index.html" target="_blank" class="external-link">CSL Documentation</a></li>
+<li><a href="https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step" target="_blank" class="external-link">Editing CSL styles by Zotero</a></li>
+<li><a href="https://editor.citationstyles.org/visualEditor/" target="_blank" class="external-link">A genius Visual editor for CSL</a></li>
+</ul>
 
       
       
@@ -558,6 +579,26 @@
 
                   
                         
+                        
+                              <div class="toc">
+                                    <div class="toc-title-container">
+                                          <div class="toc-title">
+                                                On this page
+                                          </div>
+                                    </div>
+                                    <div class="toc-container">
+                                          <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#what-is-citation-style-language">What is Citation Style Language?</a>
+            		</li>
+
+                    <li><a href="#documentation-of-csl">Documentation of CSL</a>
+            		</li>
+                </ol>
+            </nav>
+                                    </div>
+                              </div>
                         
 
                   
