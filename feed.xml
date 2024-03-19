@@ -3,7 +3,7 @@
     <title>Yet Another Blog</title>
     <link href="https://findyy99.github.io/feed.xml" rel="self" >
     <link href="https://findyy99.github.io" >
-    <updated>2024-03-19T09:23:40Z</updated>
+    <updated>2024-03-19T09:40:33Z</updated>
     <id>https://findyy99.github.io</id>
         <entry>
             <title>
@@ -63,6 +63,19 @@
 
             </content>
             <link href="https://findyy99.github.io/Misc/Delete stock input method of Windows 10 and Windows 11/" >
+        </entry>
+        <entry>
+            <title>
+                CSL editor
+                
+            </title>
+            <updated>2024-03-19T09:22:53.083Z</updated>
+            <id>https://findyy99.github.io/Misc/CSL editor/</id>
+            <content type="html">
+                &lt;p&gt;&lt;a href=&quot;https://editor.citationstyles.org/about/&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://editor.citationstyles.org/about/&lt;/a&gt;&lt;/p&gt;
+
+            </content>
+            <link href="https://findyy99.github.io/Misc/CSL editor/" >
         </entry>
         <entry>
             <title>
@@ -584,7 +597,7 @@ lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt;  mtu 65536
                 Home
                 
             </title>
-            <updated>2024-03-19T09:23:05.235Z</updated>
+            <updated>2024-03-19T09:33:43.276Z</updated>
             <id>https://findyy99.github.io/</id>
             <content type="html">
                 &lt;h1 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h1&gt;
@@ -599,7 +612,7 @@ lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt;  mtu 65536
 &lt;h2 id=&quot;misc&quot; tabindex=&quot;-1&quot;&gt;Misc&lt;/h2&gt;
 &lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Misc/Delete%20stock%20input%20method%20of%20Windows%2010%20and%20Windows%2011/&quot;&gt;Delete stock input method of Windows 10 and Windows 11&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/%E8%B7%AF%E7%94%B1%E5%99%A8/iPV6%20for%20Padavan/&quot;&gt;iPV6 for Padavan&lt;/a&gt;&lt;br /&gt;
-&lt;a class=&quot;internal-link is-unresolved&quot; href=&quot;https://findyy99.github.io/404&quot; target=&quot;&quot;&gt;CSL editor&lt;/a&gt;&lt;/p&gt;
+&lt;a class=&quot;internal-link is-unresolved&quot; href=&quot;https://findyy99.github.io/404&quot; target=&quot;&quot;&gt;Citation Style Language Editor&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;latex&quot; tabindex=&quot;-1&quot;&gt;Latex&lt;/h2&gt;
 &lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Latex/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D-Greek%20alphabet%20Using%20in%20Tex/&quot;&gt;希腊字母-Greek alphabet Using in Tex&lt;/a&gt;&lt;/p&gt;
 
