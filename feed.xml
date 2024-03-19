@@ -3,7 +3,7 @@
     <title>Yet Another Blog</title>
     <link href="https://findyy99.github.io/feed.xml" rel="self" >
     <link href="https://findyy99.github.io" >
-    <updated>2024-03-19T09:40:38Z</updated>
+    <updated>2024-03-19T09:40:47Z</updated>
     <id>https://findyy99.github.io</id>
         <entry>
             <title>
@@ -85,6 +85,19 @@
 
             </content>
             <link href="https://findyy99.github.io/Misc/Citation Style Language Editor/" >
+        </entry>
+        <entry>
+            <title>
+                CSL editor
+                
+            </title>
+            <updated>2024-03-19T09:22:53.083Z</updated>
+            <id>https://findyy99.github.io/Misc/CSL editor/</id>
+            <content type="html">
+                &lt;p&gt;&lt;a href=&quot;https://editor.citationstyles.org/about/&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://editor.citationstyles.org/about/&lt;/a&gt;&lt;/p&gt;
+
+            </content>
+            <link href="https://findyy99.github.io/Misc/CSL editor/" >
         </entry>
         <entry>
             <title>
