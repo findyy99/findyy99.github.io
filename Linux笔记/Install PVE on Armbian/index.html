@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-04-26T16:03:43.100Z';
+        const searchIndexDate = '2024-04-26T16:03:44.847Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-04-26T16:03:43.100Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-04-26T16:03:44.847Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-04-26T16:03:43.100Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-04-26T16:03:44.847Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -644,7 +644,23 @@ Germany: https://de.mirrors.apqa.cn
 <pre><code class="language-bash">apt update &amp;&amp; apt install proxmox-ve -y
 </code></pre>
 <p>If there pops any selection windows, you need to select the first choice.<br>
-<img src="/img/user/Linux%E7%AC%94%E8%AE%B0/assets/armbian%20-%20Proxmox%20Virtual%20Environment.jpeg" alt="armbian - Proxmox Virtual Environment.jpeg"><br>
+<picture src="/img/user/Linux%E7%AC%94%E8%AE%B0/assets/armbian%20-%20Proxmox%20Virtual%20Environment.jpeg" alt="armbian - Proxmox Virtual Environment.jpeg"><source       media="(max-width:480px)"
+      srcset="/img/optimized/yP9sHtymo_-500.webp"
+      type="image/webp"
+      >
+      <source       media="(max-width:480px)"
+      srcset="/img/optimized/yP9sHtymo_-500.jpeg"
+      >
+      <source         media="(max-width:1920px)"
+        srcset="/img/optimized/yP9sHtymo_-700.webp"
+        type="image/webp"
+        ><source         media="(max-width:1920px)"
+        srcset="/img/optimized/yP9sHtymo_-700.jpeg"
+        ><img       class=""
+      src="/img/user/Linux%E7%AC%94%E8%AE%B0/assets/armbian%20-%20Proxmox%20Virtual%20Environment.jpeg"
+      alt="armbian - Proxmox Virtual Environment.jpeg"
+      width=""
+      ></picture><br>
 If everything works fine, you will access to your PVE via <code>https://ip:8006</code>.<br>
 <em>Note</em><br>
 If you encounter the following error,</p>
