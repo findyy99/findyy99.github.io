@@ -280,7 +280,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-03-19T09:40:47.088Z';
+        const searchIndexDate = '2024-04-26T16:03:41.092Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -292,9 +292,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-03-19T09:40:47.088Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-04-26T16:03:41.092Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-19T09:40:47.088Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-04-26T16:03:41.092Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -552,7 +552,8 @@
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Issue caused by Safari & Jupyter/">Issue caused by Safari &amp; Jupyter</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Interpretation of ifconfig output/">Interpretation of ifconfig output</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Nginx proxy port of docker/">Nginx proxy port of docker</a><br>
-<a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Linux enable and disable swap/">Linux enable and disable swap</a></p>
+<a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Linux enable and disable swap/">Linux enable and disable swap</a><br>
+<a class="internal-link is-unresolved" href="/404" target="">Install PVE on Armbian</a></p>
 <h2 id="misc" tabindex="-1">Misc</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Misc/Delete stock input method of Windows 10 and Windows 11/">Delete stock input method of Windows 10 and Windows 11</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/路由器/iPV6 for Padavan/">iPV6 for Padavan</a><br>
