@@ -3,7 +3,7 @@
     <title>Yet Another Blog</title>
     <link href="https://findyy99.github.io/feed.xml" rel="self" >
     <link href="https://findyy99.github.io" >
-    <updated>2024-05-13T14:45:47Z</updated>
+    <updated>2024-05-13T15:07:17Z</updated>
     <id>https://findyy99.github.io</id>
         <entry>
             <title>
@@ -803,7 +803,7 @@ systemctl disable spiceproxy.service&lt;/p&gt;
                 Home
                 
             </title>
-            <updated>2024-05-13T14:44:40.305Z</updated>
+            <updated>2024-05-13T15:06:29.320Z</updated>
             <id>https://findyy99.github.io/</id>
             <content type="html">
                 &lt;h1 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h1&gt;
@@ -818,7 +818,7 @@ systemctl disable spiceproxy.service&lt;/p&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/Install%20PVE%20on%20Armbian/&quot;&gt;Install PVE on Armbian&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/Using%20Zerotier%20on%20Armbian/&quot;&gt;Using Zerotier on Armbian&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/Custom%20PVE/&quot;&gt;Custom PVE&lt;/a&gt;&lt;br /&gt;
-&lt;a class=&quot;internal-link is-unresolved&quot; href=&quot;https://findyy99.github.io/404&quot; target=&quot;&quot;&gt;[Install LXC on PVE of Armbian&lt;/a&gt;]&lt;/p&gt;
+&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/Install%20LXC%20on%20PVE%20of%20Armbian/&quot;&gt;Install LXC on PVE of Armbian&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;misc&quot; tabindex=&quot;-1&quot;&gt;Misc&lt;/h2&gt;
 &lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Misc/Delete%20stock%20input%20method%20of%20Windows%2010%20and%20Windows%2011/&quot;&gt;Delete stock input method of Windows 10 and Windows 11&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/%E8%B7%AF%E7%94%B1%E5%99%A8/iPV6%20for%20Padavan/&quot;&gt;iPV6 for Padavan&lt;/a&gt;&lt;br /&gt;
