@@ -3,7 +3,7 @@
     <title>Yet Another Blog</title>
     <link href="https://findyy99.github.io/feed.xml" rel="self" >
     <link href="https://findyy99.github.io" >
-    <updated>2024-04-26T16:03:45Z</updated>
+    <updated>2024-05-13T10:13:16Z</updated>
     <id>https://findyy99.github.io</id>
         <entry>
             <title>
@@ -427,7 +427,7 @@ lo: flags=73&amp;lt;UP,LOOPBACK,RUNNING&amp;gt;  mtu 65536
                 Install PVE on Armbian
                 
             </title>
-            <updated>2024-04-26T16:02:50.529Z</updated>
+            <updated>2024-05-13T10:12:36.088Z</updated>
             <id>https://findyy99.github.io/Linux笔记/Install PVE on Armbian/</id>
             <content type="html">
                 &lt;p&gt;76:86:BA:56:45:A1&lt;/p&gt;
@@ -469,7 +469,7 @@ eg: R08
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;vim /etc/hosts
 
 eg:
-127.0.0.1   localhost.localdomain localhost
+127.0.0.1   localhost
 192.168.10.109   R08.proxmox.com R08
 ::1   localhost ip6-localhost ip6-loopback
 fe00::0   ip6-localnet
@@ -613,29 +613,17 @@ ss://YWVzLTI1Ni1nY206OTg3YmUxZTItYzAwNS00ZDRhLThhNDEtZDRmODUxNmY4Y2U5@hk6-web1.b
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;config interface &#39;loopback&#39;
-
         option ifname &#39;lo&#39;
-
         option proto &#39;static&#39;
-
         option ipaddr &#39;127.0.0.1&#39;
-
         option netmask &#39;255.0.0.0&#39;
 
-  
-
 config interface &#39;wan&#39;
-
         option ifname &#39;eth0&#39;
-
         option proto &#39;dhcp&#39;
 
-  
-
 config interface &#39;wan6&#39;
-
         option ifname &#39;eth0&#39;
-
         option proto &#39;dhcpv6&#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;src/gz openwrt_core &lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/23.05.3/targets/armsr/armv8/packages&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/23.05.3/targets/armsr/armv8/packages&lt;/a&gt;&lt;/p&gt;
