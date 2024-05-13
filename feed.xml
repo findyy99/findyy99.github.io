@@ -3,7 +3,7 @@
     <title>Yet Another Blog</title>
     <link href="https://findyy99.github.io/feed.xml" rel="self" >
     <link href="https://findyy99.github.io" >
-    <updated>2024-05-13T14:45:42Z</updated>
+    <updated>2024-05-13T14:45:46Z</updated>
     <id>https://findyy99.github.io</id>
         <entry>
             <title>
@@ -553,6 +553,55 @@ service pveproxy restart|
         </entry>
         <entry>
             <title>
+                Install LXC on PVE of Armbian
+                
+            </title>
+            <updated>2024-05-13T14:43:17.320Z</updated>
+            <id>https://findyy99.github.io/Linux笔记/Install LXC on PVE of Armbian/</id>
+            <content type="html">
+                &lt;p&gt;&lt;a href=&quot;https://images.linuxcontainers.org/images/&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://images.linuxcontainers.org/images/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;config interface &#39;loopback&#39;
+        option ifname &#39;lo&#39;
+        option proto &#39;static&#39;
+        option ipaddr &#39;127.0.0.1&#39;
+        option netmask &#39;255.0.0.0&#39;
+
+config interface &#39;wan&#39;
+        option ifname &#39;eth0&#39;
+        option proto &#39;dhcp&#39;
+
+config interface &#39;wan6&#39;
+        option ifname &#39;eth0&#39;
+        option proto &#39;dhcpv6&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;pct create 102 /mnt/KingSton/template/cache/immortalwrt-rockchip-armv8-friendlyarm_nanopc-t4-rootfs.tar.gz --ostype unmanaged --hostname ImmortalWrt --arch arm64 --cores 2 --memory 512 --swap 0 -net0 bridge=vmbr0,name=eth0&lt;/p&gt;
+
+            </content>
+            <link href="https://findyy99.github.io/Linux笔记/Install LXC on PVE of Armbian/" >
+        </entry>
+        <entry>
+            <title>
+                Custom PVE
+                
+            </title>
+            <updated>2024-05-13T14:43:31.161Z</updated>
+            <id>https://findyy99.github.io/Linux笔记/Custom PVE/</id>
+            <content type="html">
+                &lt;p&gt;systemctl stop pve-ha-lrm.service&lt;br /&gt;
+systemctl stop pve-ha-crm.service&lt;br /&gt;
+systemctl disable pve-ha-lrm.service&lt;br /&gt;
+systemctl disable pve-ha-crm.service&lt;/p&gt;
+&lt;p&gt;systemctl stop pve-firewall.service&lt;br /&gt;
+systemctl disable pve-firewall.service&lt;/p&gt;
+&lt;p&gt;systemctl stop spiceproxy.service&lt;br /&gt;
+systemctl disable spiceproxy.service&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.spiritlhl.net/guide/pve/pve_custom.html&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://www.spiritlhl.net/guide/pve/pve_custom.html&lt;/a&gt;&lt;/p&gt;
+
+            </content>
+            <link href="https://findyy99.github.io/Linux笔记/Custom PVE/" >
+        </entry>
+        <entry>
+            <title>
                 希腊字母-Greek alphabet Using in Tex
                 
             </title>
@@ -749,7 +798,7 @@ service pveproxy restart|
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/Linux%20enable%20and%20disable%20swap/&quot;&gt;Linux enable and disable swap&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/Install%20PVE%20on%20Armbian/&quot;&gt;Install PVE on Armbian&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link is-unresolved&quot; href=&quot;https://findyy99.github.io/404&quot; target=&quot;&quot;&gt;Using Zerotier on Armbian&lt;/a&gt;&lt;br /&gt;
-&lt;a class=&quot;internal-link is-unresolved&quot; href=&quot;https://findyy99.github.io/404&quot; target=&quot;&quot;&gt;Custom PVE&lt;/a&gt;&lt;br /&gt;
+&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Linux%E7%AC%94%E8%AE%B0/Custom%20PVE/&quot;&gt;Custom PVE&lt;/a&gt;&lt;br /&gt;
 &lt;a class=&quot;internal-link is-unresolved&quot; href=&quot;https://findyy99.github.io/404&quot; target=&quot;&quot;&gt;[Install LXC on PVE of Armbian&lt;/a&gt;]&lt;/p&gt;
 &lt;h2 id=&quot;misc&quot; tabindex=&quot;-1&quot;&gt;Misc&lt;/h2&gt;
 &lt;p&gt;&lt;a class=&quot;internal-link&quot; target=&quot;&quot; data-note-icon=&quot;&quot; href=&quot;https://findyy99.github.io/Misc/Delete%20stock%20input%20method%20of%20Windows%2010%20and%20Windows%2011/&quot;&gt;Delete stock input method of Windows 10 and Windows 11&lt;/a&gt;&lt;br /&gt;

@@ -280,7 +280,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-05-13T14:45:42.358Z';
+        const searchIndexDate = '2024-05-13T14:45:45.956Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -292,9 +292,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-05-13T14:45:42.358Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-05-13T14:45:45.956Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-13T14:45:42.358Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-13T14:45:45.956Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -555,7 +555,7 @@
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Linux enable and disable swap/">Linux enable and disable swap</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Install PVE on Armbian/">Install PVE on Armbian</a><br>
 <a class="internal-link is-unresolved" href="/404" target="">Using Zerotier on Armbian</a><br>
-<a class="internal-link is-unresolved" href="/404" target="">Custom PVE</a><br>
+<a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Custom PVE/">Custom PVE</a><br>
 <a class="internal-link is-unresolved" href="/404" target="">[Install LXC on PVE of Armbian</a>]</p>
 <h2 id="misc" tabindex="-1">Misc</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Misc/Delete stock input method of Windows 10 and Windows 11/">Delete stock input method of Windows 10 and Windows 11</a><br>
