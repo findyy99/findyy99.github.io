@@ -280,7 +280,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-05-13T14:45:45.956Z';
+        const searchIndexDate = '2024-05-13T14:45:47.262Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -292,9 +292,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-05-13T14:45:45.956Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-05-13T14:45:47.262Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-13T14:45:45.956Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-13T14:45:47.262Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -554,7 +554,7 @@
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Nginx proxy port of docker/">Nginx proxy port of docker</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Linux enable and disable swap/">Linux enable and disable swap</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Install PVE on Armbian/">Install PVE on Armbian</a><br>
-<a class="internal-link is-unresolved" href="/404" target="">Using Zerotier on Armbian</a><br>
+<a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Using Zerotier on Armbian/">Using Zerotier on Armbian</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Custom PVE/">Custom PVE</a><br>
 <a class="internal-link is-unresolved" href="/404" target="">[Install LXC on PVE of Armbian</a>]</p>
 <h2 id="misc" tabindex="-1">Misc</h2>

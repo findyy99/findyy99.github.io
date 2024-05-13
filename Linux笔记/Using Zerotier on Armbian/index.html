@@ -15,7 +15,7 @@
 <meta name="google-adsense-account" content="ca-pub-1958043528169920">
 <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
 
-    <title>Install LXC on PVE of Armbian</title>
+    <title>Using Zerotier on Armbian</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://fastly.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
 <script>
@@ -528,7 +528,7 @@
     <main class="content cm-s-obsidian ">
       <header>
         
-          <h1 data-note-icon="">Install LXC on PVE of Armbian</h1>
+          <h1 data-note-icon="">Using Zerotier on Armbian</h1>
         
         <div class="header-meta">
           
@@ -537,28 +537,19 @@
                 
               
             </div>
-          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-05-13T22:39:44.460+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-05-13T22:43:17.320+08:00"></span></div></div></div>
+          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-05-13T22:41:28.220+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-05-13T22:43:59.834+08:00"></span></div></div></div>
       
       
       </header>
       
       
-      <p><a href="https://images.linuxcontainers.org/images/" target="_blank" class="external-link">https://images.linuxcontainers.org/images/</a></p>
-<pre><code class="language-bash">config interface 'loopback'
-        option ifname 'lo'
-        option proto 'static'
-        option ipaddr '127.0.0.1'
-        option netmask '255.0.0.0'
-
-config interface 'wan'
-        option ifname 'eth0'
-        option proto 'dhcp'
-
-config interface 'wan6'
-        option ifname 'eth0'
-        option proto 'dhcpv6'
-</code></pre>
-<p>pct create 102 /mnt/KingSton/template/cache/immortalwrt-rockchip-armv8-friendlyarm_nanopc-t4-rootfs.tar.gz --ostype unmanaged --hostname ImmortalWrt --arch arm64 --cores 2 --memory 512 --swap 0 -net0 bridge=vmbr0,name=eth0</p>
+      <p>iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8080 -j DNAT --to-destination 192.168.10.182:80<br>
+iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 8080 -j ACCEPT</p>
+<h1 id="zero-tier-tcp-80-192-168-10-182-tcp-80" tabindex="-1">将从 ZeroTier 网络接收到的 TCP 80 端口流量转发到虚拟机 192.168.10.182 的 TCP 80 端口</h1>
+<p>iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8001 -j DNAT --to-destination 192.168.10.182:80</p>
+<h1 id="允许转发规则通过" tabindex="-1">允许转发规则通过</h1>
+<p>iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 80 -j ACCEPT<br>
+curl -v <a href="https://gh.findyy.workers.dev/https://github.com/xiaorouji/openwrt-passwall/releases/download/4.77-4/passwall_packages_ipk_aarch64_generic.zip" target="_blank" class="external-link">https://gh.findyy.workers.dev/https://github.com/xiaorouji/openwrt-passwall/releases/download/4.77-4/passwall_packages_ipk_aarch64_generic.zip</a></p>
 
       
       
@@ -573,6 +564,26 @@ config interface 'wan6'
 
                   
                         
+                        
+                              <div class="toc">
+                                    <div class="toc-title-container">
+                                          <div class="toc-title">
+                                                On this page
+                                          </div>
+                                    </div>
+                                    <div class="toc-container">
+                                          <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#zero-tier-tcp-80-192-168-10-182-tcp-80">将从 ZeroTier 网络接收到的 TCP 80 端口流量转发到虚拟机 192.168.10.182 的 TCP 80 端口</a>
+            		</li>
+
+                    <li><a href="#允许转发规则通过">允许转发规则通过</a>
+            		</li>
+                </ol>
+            </nav>
+                                    </div>
+                              </div>
                         
 
                   
