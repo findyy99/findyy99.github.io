@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Linux笔记/Install PVE on Armbian/","noteIcon":"","created":"2024-04-24T22:00:12.537+08:00","updated":"2024-04-27T00:02:50.529+08:00"}
+{"dg-publish":true,"permalink":"/Linux笔记/Install PVE on Armbian/","noteIcon":"","created":"2024-04-24T22:00:12.537+08:00","updated":"2024-05-13T18:12:36.088+08:00"}
 ---
 
 76:86:BA:56:45:A1
@@ -39,7 +39,7 @@ eg: R08
 vim /etc/hosts
 
 eg:
-127.0.0.1   localhost.localdomain localhost
+127.0.0.1   localhost
 192.168.10.109   R08.proxmox.com R08
 ::1   localhost ip6-localhost ip6-loopback
 fe00::0   ip6-localnet
@@ -224,29 +224,17 @@ ss://YWVzLTI1Ni1nY206OTg3YmUxZTItYzAwNS00ZDRhLThhNDEtZDRmODUxNmY4Y2U5@hk6-web1.b
 
 ```bash
 config interface 'loopback'
-
         option ifname 'lo'
-
         option proto 'static'
-
         option ipaddr '127.0.0.1'
-
         option netmask '255.0.0.0'
 
-  
-
 config interface 'wan'
-
         option ifname 'eth0'
-
         option proto 'dhcp'
 
-  
-
 config interface 'wan6'
-
         option ifname 'eth0'
-
         option proto 'dhcpv6'
 ```
 
