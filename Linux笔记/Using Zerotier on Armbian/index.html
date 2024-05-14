@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-05-13T15:07:16.822Z';
+        const searchIndexDate = '2024-05-14T00:18:04.711Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-05-13T15:07:16.822Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-05-14T00:18:04.711Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-13T15:07:16.822Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-14T00:18:04.711Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -536,20 +536,40 @@
               
                 
               
+                
+                  <a class="tag" onclick="toggleTagSearch(this)">
+                    #Zerotier
+                  </a>
+                
+              
+                
+                  <a class="tag" onclick="toggleTagSearch(this)">
+                    #Armbian
+                  </a>
+                
+              
+                
+                  <a class="tag" onclick="toggleTagSearch(this)">
+                    #Linux
+                  </a>
+                
+              
             </div>
-          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-05-13T22:41:28.220+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-05-13T22:43:59.834+08:00"></span></div></div></div>
+          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-05-13T22:41:28.220+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-05-14T08:17:37.698+08:00"></span></div></div></div>
       
       
       </header>
       
       
-      <p>iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8080 -j DNAT --to-destination 192.168.10.182:80<br>
-iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 8080 -j ACCEPT</p>
+      <pre><code class="language-bash">iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8080 -j DNAT --to-destination 192.168.10.182:80
+iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 8080 -j ACCEPT
+</code></pre>
 <h1 id="zero-tier-tcp-80-192-168-10-182-tcp-80" tabindex="-1">将从 ZeroTier 网络接收到的 TCP 80 端口流量转发到虚拟机 192.168.10.182 的 TCP 80 端口</h1>
-<p>iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8001 -j DNAT --to-destination 192.168.10.182:80</p>
+<pre><code class="language-bash">iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8001 -j DNAT --to-destination 192.168.10.182:80
+</code></pre>
 <h1 id="允许转发规则通过" tabindex="-1">允许转发规则通过</h1>
-<p>iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 80 -j ACCEPT<br>
-curl -v <a href="https://gh.findyy.workers.dev/https://github.com/xiaorouji/openwrt-passwall/releases/download/4.77-4/passwall_packages_ipk_aarch64_generic.zip" target="_blank" class="external-link">https://gh.findyy.workers.dev/https://github.com/xiaorouji/openwrt-passwall/releases/download/4.77-4/passwall_packages_ipk_aarch64_generic.zip</a></p>
+<pre><code class="language-bash">iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 80 -j ACCEPT
+</code></pre>
 
       
       

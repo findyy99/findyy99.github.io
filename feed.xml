@@ -3,7 +3,7 @@
     <title>Yet Another Blog</title>
     <link href="https://findyy99.github.io/feed.xml" rel="self" >
     <link href="https://findyy99.github.io" >
-    <updated>2024-05-13T15:07:17Z</updated>
+    <updated>2024-05-14T00:18:04Z</updated>
     <id>https://findyy99.github.io</id>
         <entry>
             <title>
@@ -226,16 +226,18 @@ plt.rc(&#39;figure&#39;, titlesize=SIZE)
                 Using Zerotier on Armbian
                 
             </title>
-            <updated>2024-05-13T14:43:59.834Z</updated>
+            <updated>2024-05-14T00:17:37.698Z</updated>
             <id>https://findyy99.github.io/Linux笔记/Using Zerotier on Armbian/</id>
             <content type="html">
-                &lt;p&gt;iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8080 -j DNAT --to-destination 192.168.10.182:80&lt;br /&gt;
-iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 8080 -j ACCEPT&lt;/p&gt;
+                &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8080 -j DNAT --to-destination 192.168.10.182:80
+iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 8080 -j ACCEPT
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&quot;zero-tier-tcp-80-192-168-10-182-tcp-80&quot; tabindex=&quot;-1&quot;&gt;将从 ZeroTier 网络接收到的 TCP 80 端口流量转发到虚拟机 192.168.10.182 的 TCP 80 端口&lt;/h1&gt;
-&lt;p&gt;iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8001 -j DNAT --to-destination 192.168.10.182:80&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8001 -j DNAT --to-destination 192.168.10.182:80
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&quot;允许转发规则通过&quot; tabindex=&quot;-1&quot;&gt;允许转发规则通过&lt;/h1&gt;
-&lt;p&gt;iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 80 -j ACCEPT&lt;br /&gt;
-curl -v &lt;a href=&quot;https://gh.findyy.workers.dev/https://github.com/xiaorouji/openwrt-passwall/releases/download/4.77-4/passwall_packages_ipk_aarch64_generic.zip&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://gh.findyy.workers.dev/https://github.com/xiaorouji/openwrt-passwall/releases/download/4.77-4/passwall_packages_ipk_aarch64_generic.zip&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 80 -j ACCEPT
+&lt;/code&gt;&lt;/pre&gt;
 
             </content>
             <link href="https://findyy99.github.io/Linux笔记/Using Zerotier on Armbian/" >
@@ -575,7 +577,7 @@ service pveproxy restart|
                 Install LXC on PVE of Armbian
                 
             </title>
-            <updated>2024-05-13T14:43:17.320Z</updated>
+            <updated>2024-05-14T00:13:58.570Z</updated>
             <id>https://findyy99.github.io/Linux笔记/Install LXC on PVE of Armbian/</id>
             <content type="html">
                 &lt;p&gt;&lt;a href=&quot;https://images.linuxcontainers.org/images/&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;https://images.linuxcontainers.org/images/&lt;/a&gt;&lt;/p&gt;
@@ -593,7 +595,8 @@ config interface &#39;wan6&#39;
         option ifname &#39;eth0&#39;
         option proto &#39;dhcpv6&#39;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;pct create 102 /mnt/KingSton/template/cache/immortalwrt-rockchip-armv8-friendlyarm_nanopc-t4-rootfs.tar.gz --ostype unmanaged --hostname ImmortalWrt --arch arm64 --cores 2 --memory 512 --swap 0 -net0 bridge=vmbr0,name=eth0&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;pct create 102 /mnt/KingSton/template/cache/immortalwrt-rockchip-armv8-friendlyarm_nanopc-t4-rootfs.tar.gz --ostype unmanaged --hostname ImmortalWrt --arch arm64 --cores 2 --memory 512 --swap 0 -net0 bridge=vmbr0,name=eth0
+&lt;/code&gt;&lt;/pre&gt;
 
             </content>
             <link href="https://findyy99.github.io/Linux笔记/Install LXC on PVE of Armbian/" >
