@@ -83,8 +83,8 @@
 		"title": "Using Zerotier on Armbian",
 		"date":"Tue May 14 2024 00:17:56 GMT+0000 (Coordinated Universal Time)",
 		"url":"/Linux笔记/Using Zerotier on Armbian/",
-		"content": "iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8080 -j DNAT --to-destination 192.168.10.182:80\niptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 8080 -j ACCEPT\n\n将从 ZeroTier 网络接收到的 TCP 80 端口流量转发到虚拟机 192.168.10.182 的 TCP 80 端口\niptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8001 -j DNAT --to-destination 192.168.10.182:80\n\n允许转发规则通过\niptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 80 -j ACCEPT",
-		"tags": [ "note","Zerotier","Armbian","Linux"]
+		"content": "iptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8080 -j DNAT --to-destination 192.168.10.182:80\niptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 8080 -j ACCEPT\n将从 ZeroTier 网络接收到的 TCP 80 端口流量转发到虚拟机 192.168.10.182 的 TCP 80 端口\niptables -t nat -A PREROUTING -i ztk4jp2wmc -p tcp --dport 8001 -j DNAT --to-destination 192.168.10.182:80\n允许转发规则通过\niptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 80 -j ACCEPT\ncurl -v https://gh.findyy.workers.dev/https://github.com/xiaorouji/openwrt-passwall/releases/download/4.77-4/passwall_packages_ipk_aarch64_generic.zip",
+		"tags": [ "note"]
 },
 
 {
