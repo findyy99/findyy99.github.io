@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-05-14T00:18:12.502Z';
+        const searchIndexDate = '2024-05-17T17:35:46.928Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-05-14T00:18:12.502Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-05-17T17:35:46.928Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-14T00:18:12.502Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-17T17:35:46.928Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -555,7 +555,7 @@
                 
               
             </div>
-          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-04-24T22:00:12.537+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-05-13T22:42:55.588+08:00"></span></div></div></div>
+          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-04-24T22:00:12.537+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-05-18T01:35:18.764+08:00"></span></div></div></div>
       
       
       </header>
@@ -582,8 +582,8 @@ hwaddress ether fc:7c:02:28:99:0e
 # the address and gateway depends on your network
 # address is the ip of your armbian device
 # gateway is the ip of your router
-address 192.168.1.228/24
-gateway 192.168.1.1
+address 192.168.10.109/24
+gateway 192.168.10.1
 </code></pre>
 <ol start="3">
 <li>Customize the node name of PVE</li>
