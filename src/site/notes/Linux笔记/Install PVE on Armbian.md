@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Linux笔记/Install PVE on Armbian/","tags":["PVE","Armbian","Linux"],"noteIcon":"","created":"2024-04-24T22:00:12.537+08:00","updated":"2024-05-13T22:42:55.588+08:00"}
+{"dg-publish":true,"permalink":"/Linux笔记/Install PVE on Armbian/","tags":["PVE","Armbian","Linux"],"noteIcon":"","created":"2024-04-24T22:00:12.537+08:00","updated":"2024-05-18T01:35:18.764+08:00"}
 ---
 
 1.	Disable `NetworkManager`
@@ -22,8 +22,8 @@ hwaddress ether fc:7c:02:28:99:0e
 # the address and gateway depends on your network
 # address is the ip of your armbian device
 # gateway is the ip of your router
-address 192.168.1.228/24
-gateway 192.168.1.1
+address 192.168.10.109/24
+gateway 192.168.10.1
 ```
 3.	Customize the node name of PVE
 ```bash
