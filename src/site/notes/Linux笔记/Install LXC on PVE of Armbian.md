@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Linux笔记/Install LXC on PVE of Armbian/","noteIcon":"","created":"2024-05-13T22:39:44.460+08:00","updated":"2024-05-14T08:13:58.570+08:00"}
+{"dg-publish":true,"permalink":"/Linux笔记/Install LXC on PVE of Armbian/","noteIcon":"","created":"2024-05-13T22:39:44.460+08:00","updated":"2024-05-19T21:51:09.842+08:00"}
 ---
 
 https://images.linuxcontainers.org/images/
@@ -22,5 +22,5 @@ config interface 'wan6'
 
 
 ```bash
-pct create 102 /mnt/KingSton/template/cache/immortalwrt-rockchip-armv8-friendlyarm_nanopc-t4-rootfs.tar.gz --ostype unmanaged --hostname ImmortalWrt --arch arm64 --cores 2 --memory 512 --swap 0 -net0 bridge=vmbr0,name=eth0
+pct create 100 /mnt/KingSton/template/cache/immortalwrt-rockchip-armv8-friendlyarm_nanopc-t4-rootfs.tar.gz --rootfs local:0.5 --ostype unmanaged --hostname ImmortalWrt --arch arm64 --cores 2 --memory 512 --swap 0 -net0 bridge=vmbr0,name=eth0
 ```
