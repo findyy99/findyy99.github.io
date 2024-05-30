@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-05-17T17:35:47.712Z';
+        const searchIndexDate = '2024-05-30T14:03:13.023Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-05-17T17:35:47.712Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-05-30T14:03:13.023Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-17T17:35:47.712Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-30T14:03:13.023Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -537,20 +537,23 @@
                 
               
             </div>
-          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-05-13T22:39:12.341+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-05-13T22:43:31.161+08:00"></span></div></div></div>
+          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-05-13T22:39:12.341+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-05-19T15:10:05.516+08:00"></span></div></div></div>
       
       
       </header>
       
       
-      <p>systemctl stop pve-ha-lrm.service<br>
-systemctl stop pve-ha-crm.service<br>
-systemctl disable pve-ha-lrm.service<br>
-systemctl disable pve-ha-crm.service</p>
-<p>systemctl stop pve-firewall.service<br>
-systemctl disable pve-firewall.service</p>
-<p>systemctl stop spiceproxy.service<br>
-systemctl disable spiceproxy.service</p>
+      <pre><code>systemctl stop pve-ha-lrm.service 
+systemctl stop pve-ha-crm.service 
+systemctl disable pve-ha-lrm.service
+systemctl disable pve-ha-crm.service
+</code></pre>
+<pre><code>systemctl stop pve-firewall.service 
+systemctl disable pve-firewall.service
+</code></pre>
+<pre><code>systemctl stop spiceproxy.service 
+systemctl disable spiceproxy.service
+</code></pre>
 <p><a href="https://www.spiritlhl.net/guide/pve/pve_custom.html" target="_blank" class="external-link">https://www.spiritlhl.net/guide/pve/pve_custom.html</a></p>
 
       
