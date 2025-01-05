@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Home/","tags":["gardenEntry"],"noteIcon":"","created":"2024-01-03T13:48:15.870+08:00","updated":"2024-05-13T23:06:29.320+08:00"}
+{"dg-publish":true,"permalink":"/Home/","tags":["gardenEntry"],"noteIcon":"","created":"2024-01-03T13:48:15.870+08:00","updated":"2025-01-05T10:59:54.084+08:00"}
 ---
 
 # Content
@@ -8,7 +8,7 @@
 
 ## Linux
 [[Linux笔记/SSH Things\|SSH Things]]
-[[Linux笔记/Issue caused by Safari & Jupyter\|Issue caused by Safari & Jupyter]]
+[[Linux笔记/Websocket and 404 error on Jupyterlab\|Websocket and 404 error on Jupyterlab]]
 [[Linux笔记/Interpretation of ifconfig output\|Interpretation of ifconfig output]]
 [[Linux笔记/Nginx proxy port of docker\|Nginx proxy port of docker]]
 [[Linux笔记/Linux enable and disable swap\|Linux enable and disable swap]]
