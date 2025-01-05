@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-05-30T14:03:13.023Z';
+        const searchIndexDate = '2025-01-05T03:00:40.074Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-05-30T14:03:13.023Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-01-05T03:00:40.074Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-30T14:03:13.023Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-01-05T03:00:40.074Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -555,7 +555,7 @@
                 
               
             </div>
-          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-05-13T22:41:28.220+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-05-14T08:17:37.698+08:00"></span></div></div></div>
+          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-05-13T22:41:28.220+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-05-30T22:02:40.392+08:00"></span></div></div></div>
       
       
       </header>
@@ -570,6 +570,7 @@ iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 8080 -j ACCEP
 <h1 id="允许转发规则通过" tabindex="-1">允许转发规则通过</h1>
 <pre><code class="language-bash">iptables -A FORWARD -i ztk4jp2wmc -d 192.168.10.182 -p tcp --dport 80 -j ACCEPT
 </code></pre>
+<p><a href="https://www.neko7ina.com/3pYN3eLUDHwEYg.html" target="_blank" class="external-link">https://www.neko7ina.com/3pYN3eLUDHwEYg.html</a></p>
 
       
       

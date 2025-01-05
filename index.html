@@ -280,7 +280,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-05-30T14:03:13.023Z';
+        const searchIndexDate = '2025-01-05T03:00:40.074Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -292,9 +292,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-05-30T14:03:13.023Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-01-05T03:00:40.074Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-30T14:03:13.023Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-01-05T03:00:40.074Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -549,7 +549,7 @@
 <p><a class="internal-link" target="" data-note-icon="" href="/Matplotlib/Matplotlib plot mixed with Chinese and English/">Matplotlib plot mixed with Chinese and English</a></p>
 <h2 id="linux" tabindex="-1">Linux</h2>
 <p><a class="internal-link" target="" data-note-icon="" href="/Linux笔记/SSH Things/">SSH Things</a><br>
-<a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Issue caused by Safari & Jupyter/">Issue caused by Safari &amp; Jupyter</a><br>
+<a class="internal-link is-unresolved" href="/404" target="">Websocket and 404 error on Jupyterlab</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Interpretation of ifconfig output/">Interpretation of ifconfig output</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Nginx proxy port of docker/">Nginx proxy port of docker</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Linux笔记/Linux enable and disable swap/">Linux enable and disable swap</a><br>
