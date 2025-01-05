@@ -15,7 +15,7 @@
 <meta name="google-adsense-account" content="ca-pub-1958043528169920">
 <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
 
-    <title>Citation Style Language Editor</title>
+    <title>Issue caused by Safari &amp; Jupyter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://fastly.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
 <script>
@@ -528,7 +528,7 @@
     <main class="content cm-s-obsidian ">
       <header>
         
-          <h1 data-note-icon="">Citation Style Language Editor</h1>
+          <h1 data-note-icon="">Issue caused by Safari &amp; Jupyter</h1>
         
         <div class="header-meta">
           
@@ -538,33 +538,49 @@
               
                 
                   <a class="tag" onclick="toggleTagSearch(this)">
-                    #Paper
+                    #Linux
                   </a>
                 
               
                 
                   <a class="tag" onclick="toggleTagSearch(this)">
-                    #Zotero
+                    #Jupyter
+                  </a>
+                
+              
+                
+                  <a class="tag" onclick="toggleTagSearch(this)">
+                    #Safari
+                  </a>
+                
+              
+                
+                  <a class="tag" onclick="toggleTagSearch(this)">
+                    #macOS
                   </a>
                 
               
             </div>
-          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-03-19T17:22:37.922+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-03-19T17:39:58.977+08:00"></span></div></div></div>
+          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-01-10T14:08:54.773+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-01-20T17:49:43.607+08:00"></span></div></div></div>
       
       
       </header>
       
       
-      <h1 id="what-is-citation-style-language" tabindex="-1">What is Citation Style Language?</h1>
-<p>According to the <a href="https://en.wikipedia.org/wiki/Citation_Style_Language" target="_blank" class="external-link">Wikipedia</a> , <strong>Citation Style Language</strong> (<strong>CSL</strong>) is an open XML file format that describes schema for the formatting of citations and bibliographies. The reference management program using CSL include <a href="https://www.zotero.org/" target="_blank" class="external-link">Zotero</a>(I am using), <a href="https://www.mendeley.com/" target="_blank" class="external-link">Mendeley</a>, <a href="https://refworks.proquest.com/" target="_blank" class="external-link">Refworks</a> and <a href="https://www.papersapp.com/" target="_blank" class="external-link">Papers</a>.</p>
-<h1 id="documentation-of-csl" tabindex="-1">Documentation of CSL</h1>
-<p>As far as I know, there are some resources which have provide many useful information about CSL.</p>
-<ul>
-<li><a href="https://citationstyles.org/about/" target="_blank" class="external-link">CSL</a></li>
-<li><a href="https://docs.citationstyles.org/en/stable/index.html" target="_blank" class="external-link">CSL Documentation</a></li>
-<li><a href="https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step" target="_blank" class="external-link">Editing CSL styles by Zotero</a></li>
-<li><a href="https://editor.citationstyles.org/visualEditor/" target="_blank" class="external-link">A genius Visual editor for CSL</a></li>
-</ul>
+      <p>I created an environment of jupyter on my linux server today, when I use Safari to access this jupyter server, it always raises the following error. After changing from Safari to Chrome, everything works fine!</p>
+<pre><code class="language-bash">[W 2024-01-10 06:12:38.774 ServerApp] 404 GET ws://xxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.92ms referer=None
+[W 2024-01-10 06:12:39.150 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.09ms referer=None
+[W 2024-01-10 06:12:40.136 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.10ms referer=None
+[W 2024-01-10 06:12:40.719 ServerApp] 404 GET ws://xxxxx:8889/terminals/websocket/1 (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.23ms referer=None
+[W 2024-01-10 06:12:40.848 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=f0c4b3b4-387d-4b43-9a4a-7cc897d7ce5c (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.99ms referer=None
+[W 2024-01-10 06:12:41.432 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.01ms referer=None
+[W 2024-01-10 06:12:41.569 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.06ms referer=None
+[W 2024-01-10 06:12:42.608 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=f0c4b3b4-387d-4b43-9a4a-7cc897d7ce5c (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.13ms referer=None
+[W 2024-01-10 06:12:44.401 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.15ms referer=None
+[W 2024-01-10 06:12:45.005 ServerApp] 404 GET ws://xxxxx:8889/terminals/websocket/1 (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 0.78ms referer=None
+[W 2024-01-10 06:12:45.354 ServerApp] 404 GET ws://xxxxx:8889/api/kernels/86d332d7-6158-49d0-a0e9-212e01cdd79b/channels?session_id=491d7cc6-0c1e-4ac7-b5bf-915f7f37981a (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.09ms referer=None
+[W 2024-01-10 06:12:46.965 ServerApp] 404 GET ws://xxxxx:8889/api/events/subscribe (71d61e3e104548e0aa3714a146ca00c2@219.157.128.206) 1.12ms referer=None
+</code></pre>
 
       
       
@@ -579,26 +595,6 @@
 
                   
                         
-                        
-                              <div class="toc">
-                                    <div class="toc-title-container">
-                                          <div class="toc-title">
-                                                On this page
-                                          </div>
-                                    </div>
-                                    <div class="toc-container">
-                                          <nav class="toc">
-                <ol>
-                    
-                    <li><a href="#what-is-citation-style-language">What is Citation Style Language?</a>
-            		</li>
-
-                    <li><a href="#documentation-of-csl">Documentation of CSL</a>
-            		</li>
-                </ol>
-            </nav>
-                                    </div>
-                              </div>
                         
 
                   
