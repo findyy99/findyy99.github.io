@@ -15,7 +15,7 @@
 <meta name="google-adsense-account" content="ca-pub-1958043528169920">
 <script async src="https://us.umami.is/script.js" data-website-id="143ae41e-5ed8-4a8d-bb7a-976fc96dbfed"></script>
 
-    <title>Issue caused by Safari &amp; Jupyter</title>
+    <title>Websocket and 404 error on Jupyterlab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://fastly.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
 <script>
@@ -282,7 +282,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2025-01-05T03:00:40.074Z';
+        const searchIndexDate = '2025-01-05T03:00:46.509Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -294,9 +294,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2025-01-05T03:00:40.074Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-01-05T03:00:46.509Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-01-05T03:00:40.074Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-01-05T03:00:46.509Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -528,7 +528,7 @@
     <main class="content cm-s-obsidian ">
       <header>
         
-          <h1 data-note-icon="">Issue caused by Safari &amp; Jupyter</h1>
+          <h1 data-note-icon="">Websocket and 404 error on Jupyterlab</h1>
         
         <div class="header-meta">
           
